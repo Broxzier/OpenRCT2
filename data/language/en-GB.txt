@@ -4322,6 +4322,7 @@ STR_6010    :{COMMA2DP32}m
 STR_6011    :{COMMA1DP16}ft
 STR_6012    :{COMMA1DP16}
 STR_6013    :Sloped
+STR_6014    :Modify Tile
 
 #############
 # Scenarios #

@@ -743,6 +743,7 @@ void Network::SetupDefaultGroups()
 	user->ToggleActionPermission(16); // Modify Groups
 	user->ToggleActionPermission(17); // Set Player Group
 	user->ToggleActionPermission(18); // Cheat
+	user->ToggleActionPermission(21); // Modify Tile
 	user->Id = 2;
 	group_list.push_back(std::move(user));
 	SetDefaultGroup(1);
@@ -784,6 +785,9 @@ void Network::LoadGroups()
 		}
 		json_decref(json);
 	}
+
+	// Host group should always contain all permissions.
+	group_list.at(0)->ActionsAllowed.fill(0xFF);
 }
 
 void Network::BeginChatLog()
