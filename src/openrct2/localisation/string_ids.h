@@ -3665,6 +3665,7 @@ enum {
 	STR_UNIT1DP_SUFFIX_FEET = 6011,
 	STR_UNIT1DP_NO_SUFFIX = 6012,
 	STR_TILE_INSPECTOR_PATH_SLOPED = 6013,
+	STR_ACTION_MODIFY_TILE = 6014,
 
 	// Have to include resource strings (from scenarios and objects) for the time being now that language is partially working
 	STR_COUNT = 32768
