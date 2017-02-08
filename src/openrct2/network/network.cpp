@@ -785,6 +785,9 @@ void Network::LoadGroups()
 		}
 		json_decref(json);
 	}
+
+	// Host group should always contain all permissions.
+	group_list.at(0)->ActionsAllowed.fill(0xFF);
 }
 
 void Network::BeginChatLog()
