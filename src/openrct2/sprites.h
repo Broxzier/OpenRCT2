@@ -753,6 +753,11 @@ enum {
 	SPR_G2_PASTE = SPR_G2_BEGIN + 79,
 	SPR_G2_TAB_DISABLED = SPR_G2_BEGIN + 80,
 
+	SPR_G2_COMPASS_NE = SPR_G2_BEGIN + 81,
+	SPR_G2_COMPASS_SE = SPR_G2_BEGIN + 82,
+	SPR_G2_COMPASS_SW = SPR_G2_BEGIN + 83,
+	SPR_G2_COMPASS_NW = SPR_G2_BEGIN + 84,
+
 	// 0x60000, chosen because it's a round hex number
 	// of the last possible range of image ID values that is large enough to fit all csg1 sprites.
 	SPR_CSG_BEGIN = 393216,
