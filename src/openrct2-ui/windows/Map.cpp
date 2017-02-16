@@ -860,6 +860,18 @@ static void window_map_paint(rct_window* w, rct_drawpixelinfo* dpi)
         gfx_draw_string_left(
             dpi, STR_MAP_SIZE, nullptr, w->colours[1], w->x + 4, w->y + w->widgets[WIDX_MAP_SIZE_SPINNER].top + 1);
     }
+
+    // Draw compass
+    const uint8_t rotation = get_current_rotation();
+    x = w->x + w->widgets[WIDX_MAP].left + 2;
+    y = w->y + w->widgets[WIDX_MAP].top + 2;
+    static int32_t compassSprites[] = {
+        SPR_G2_COMPASS_NE,
+        SPR_G2_COMPASS_SE,
+        SPR_G2_COMPASS_SW,
+        SPR_G2_COMPASS_NW,
+    };
+    gfx_draw_sprite(dpi, compassSprites[rotation], x, y, 0);
 }
 
 /**
