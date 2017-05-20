@@ -3719,6 +3719,11 @@ enum {
 	STR_MUTE_BUTTON_ON_TOOLBAR_TIP = 6057,
 	STR_MUTE_BUTTON_ON_TOOLBAR = 6058,
 
+	STR_MAP_MODIFIER_TITLE = 6059,
+	STR_SHOW_MAP_MODIFIER = 6060,
+	STR_MAP_MODIFIER_SURFACE_TYPES = 6061,
+	STR_MAP_MODIFIER_EDGE_TYPES = 6062,
+
 	// Have to include resource strings (from scenarios and objects) for the time being now that language is partially working
 	STR_COUNT = 32768
 };

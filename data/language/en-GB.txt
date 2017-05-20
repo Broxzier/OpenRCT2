@@ -4367,6 +4367,10 @@ STR_6055    :OpenRCT2 Heightmap File
 STR_6056    :{SMALLFONT}{BLACK}Mute
 STR_6057    :{SMALLFONT}{BLACK}Show a separate button for the Mute Option in the toolbar
 STR_6058    :Mute
+STR_6059    :Map Modifier
+STR_6060    :Show map modifier
+STR_6061    :Surface types
+STR_6062    :Edge types
 
 #############
 # Scenarios #

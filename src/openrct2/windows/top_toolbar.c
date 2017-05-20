@@ -117,7 +117,8 @@ typedef enum {
 	DDIDX_OBJECT_SELECTION = 2,
 	DDIDX_INVENTIONS_LIST = 3,
 	DDIDX_SCENARIO_OPTIONS = 4,
-	DDIDX_DEBUG_PAINT = 5,
+	DDIDX_MAP_MODIFIER = 5,
+	DDIDX_DEBUG_PAINT = 6,
 
 	TOP_TOOLBAR_DEBUG_COUNT
 } TOP_TOOLBAR_DEBUG_DDIDX;
@@ -3067,6 +3068,8 @@ void top_toolbar_init_debug_menu(rct_window* w, rct_widget* widget)
 	gDropdownItemsArgs[DDIDX_INVENTIONS_LIST] = STR_DEBUG_DROPDOWN_INVENTIONS_LIST;
 	gDropdownItemsFormat[DDIDX_SCENARIO_OPTIONS] = STR_TOGGLE_OPTION;
 	gDropdownItemsArgs[DDIDX_SCENARIO_OPTIONS] = STR_DEBUG_DROPDOWN_SCENARIO_OPTIONS;
+	gDropdownItemsFormat[DDIDX_MAP_MODIFIER] = STR_TOGGLE_OPTION;
+	gDropdownItemsArgs[DDIDX_MAP_MODIFIER] = STR_SHOW_MAP_MODIFIER;
 	gDropdownItemsFormat[DDIDX_DEBUG_PAINT] = STR_TOGGLE_OPTION;
 	gDropdownItemsArgs[DDIDX_DEBUG_PAINT] = STR_DEBUG_DROPDOWN_DEBUG_PAINT;
 
@@ -3125,6 +3128,9 @@ void top_toolbar_debug_menu_dropdown(sint16 dropdownIndex)
 			break;
 		case DDIDX_SCENARIO_OPTIONS:
 			window_editor_scenario_options_open();
+			break;
+		case DDIDX_MAP_MODIFIER:
+			window_map_modifier_open();
 			break;
 		case DDIDX_DEBUG_PAINT:
 			if (window_find_by_class(WC_DEBUG_PAINT) == NULL) {
