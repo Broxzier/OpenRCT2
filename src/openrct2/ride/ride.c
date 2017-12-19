@@ -5601,7 +5601,7 @@ sint32 ride_get_refund_price(sint32 ride_id)
             GAME_COMMAND_SET_MAZE_TRACK,
             z,
             0);
-        if (refundPrice == MONEY32_UNDEFINED &&
+        if (removePrice == MONEY32_UNDEFINED &&
             gGameCommandErrorText == 0)
         {
             tile_element_iterator_restart_for_tile(&it);

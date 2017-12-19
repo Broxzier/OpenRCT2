@@ -2048,6 +2048,7 @@ static money32 set_maze_track(uint16 x, uint8 flags, uint8 direction, uint16 y, 
     tileElement = map_get_track_element_at_of_type_from_ride(x, y, baseHeight, TRACK_ELEM_MAZE, rideIndex);
     if (tileElement == nullptr)
     {
+        // Prevents fill and move mode from creating new maze patches
         if (mode != GC_SET_MAZE_TRACK_BUILD)
         {
             gGameCommandErrorText = 0;
