@@ -130,6 +130,15 @@ static bool news_item_is_current_old()
     return false;
 }
 
+static bool news_item_is_hovered_over()
+{
+    sint32 x, y;
+    context_get_cursor_position_scaled(&x, &y);
+    if (x >= 0 && x < 100)
+        return true;
+    return false;
+}
+
 /**
  *
  *  rct2: 0x0066E252
@@ -147,7 +156,7 @@ void news_item_update_current()
     news_item_tick_current();
 
     // Removal of current news item
-    if (news_item_is_current_old())
+    if (news_item_is_current_old() && !news_item_is_hovered_over())
         news_item_close_current();
 }
 
