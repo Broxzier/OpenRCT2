@@ -30,7 +30,7 @@
 
 NewsItem gNewsItems[MAX_NEWS_ITEMS];
 
-/** rct2: 0x0097BE7C */
+/**  rct2: 0x0097BE7C */
 const uint8 news_type_properties[] =
 {
     0,                                              // NEWS_ITEM_NULL

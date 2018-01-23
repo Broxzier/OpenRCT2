@@ -1632,19 +1632,19 @@ const rct_ride_entry_vehicle CableLiftVehicle = {
     /* .peep_loading_positions = */ nullptr
 };
 
-/* rct2: 0x009A0AA0 */
+/*  rct2: 0x009A0AA0 */
 const uint16 RideFilmLength[3] = {
     5000, // MOUSE_TAILS
     6000, // STORM_CHASERS
     7000  // SPACE_RAIDERS
 };
 
-/* rct2: 0x009A0AC4 */
+/*  rct2: 0x009A0AC4 */
 const uint16 RideCrookedHouseLength[1] = {
     600
 };
 
-/* rct2: 0x0097D7C8, 0x0097D7C9, 0x0097D7CA */
+/*  rct2: 0x0097D7C8, 0x0097D7C9, 0x0097D7CA */
 const rct_ride_lift_data RideLiftData[] = {
     { SOUND_LIFT_3, 7, 7 }, // Spiral Roller coaster
     { SOUND_LIFT_1, 4, 6 }, // Stand Up Coaster
@@ -1739,7 +1739,7 @@ const rct_ride_lift_data RideLiftData[] = {
     { 255,          4, 6 }  // LIM Launched Roller Coaster
 };
 
-/** rct2: 0x0097D7CB */
+/**  rct2: 0x0097D7CB */
 const sint32 RidePhotoItems[] = {
     SHOP_ITEM_PHOTO,    // RIDE_TYPE_SPIRAL_ROLLER_COASTER
     SHOP_ITEM_PHOTO,    // RIDE_TYPE_STAND_UP_ROLLER_COASTER
@@ -2434,7 +2434,7 @@ const rct_ride_properties RideProperties[RIDE_TYPE_COUNT] = {
                 10, 31,  26, 18,  18, 0 },  // RIDE_TYPE_LIM_LAUNCHED_ROLLER_COASTER
 };
 
-/** rct2: 0x00982164 */
+/**  rct2: 0x00982164 */
 const rct_shop_item_stats ShopItemStats[SHOP_ITEM_COUNT] = {
     {  3, 14, 14, 14 }, // SHOP_ITEM_BALLOON
     { 15, 30, 30, 30 }, // SHOP_ITEM_TOY
@@ -2492,7 +2492,7 @@ const rct_shop_item_stats ShopItemStats[SHOP_ITEM_COUNT] = {
     {  0,  0,  0,  0 }, // SHOP_ITEM_EMPTY_BOWL_BLUE
 };
 
-/** rct2: 0x0097CC68 */
+/**  rct2: 0x0097CC68 */
 const uint8 RideConstructionDefaultTrackType[] = {
     TRACK_ELEM_END_STATION,     // RIDE_TYPE_SPIRAL_ROLLER_COASTER
     TRACK_ELEM_END_STATION,     // RIDE_TYPE_STAND_UP_ROLLER_COASTER

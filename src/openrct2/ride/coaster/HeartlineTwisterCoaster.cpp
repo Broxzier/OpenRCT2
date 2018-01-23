@@ -26,7 +26,7 @@
 #include "../TrackData.h"
 #include "../TrackPaint.h"
 
-/** rct2: 0x0087694C */
+/**  rct2: 0x0087694C */
 static void heartline_twister_rc_track_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
@@ -112,7 +112,7 @@ static void heartline_twister_rc_track_station(paint_session * session, uint8 ri
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0087695C */
+/**  rct2: 0x0087695C */
 static void heartline_twister_rc_track_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -196,7 +196,7 @@ static void heartline_twister_rc_track_25_deg_up(paint_session * session, uint8 
     paint_util_set_general_support_height(session, height + 56, 0x20);
 }
 
-/** rct2: 0x008769FC */
+/**  rct2: 0x008769FC */
 static void heartline_twister_rc_track_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -280,7 +280,7 @@ static void heartline_twister_rc_track_60_deg_up(paint_session * session, uint8 
     paint_util_set_general_support_height(session, height + 104, 0x20);
 }
 
-/** rct2: 0x0087696C */
+/**  rct2: 0x0087696C */
 static void heartline_twister_rc_track_flat_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -364,7 +364,7 @@ static void heartline_twister_rc_track_flat_to_25_deg_up(paint_session * session
     paint_util_set_general_support_height(session, height + 48, 0x20);
 }
 
-/** rct2: 0x008769BC */
+/**  rct2: 0x008769BC */
 static void heartline_twister_rc_track_25_deg_up_to_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -448,7 +448,7 @@ static void heartline_twister_rc_track_25_deg_up_to_60_deg_up(paint_session * se
     paint_util_set_general_support_height(session, height + 72, 0x20);
 }
 
-/** rct2: 0x008769CC */
+/**  rct2: 0x008769CC */
 static void heartline_twister_rc_track_60_deg_up_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -532,7 +532,7 @@ static void heartline_twister_rc_track_60_deg_up_to_25_deg_up(paint_session * se
     paint_util_set_general_support_height(session, height + 72, 0x20);
 }
 
-/** rct2: 0x0087697C */
+/**  rct2: 0x0087697C */
 static void heartline_twister_rc_track_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -616,28 +616,28 @@ static void heartline_twister_rc_track_25_deg_up_to_flat(paint_session * session
     paint_util_set_general_support_height(session, height + 40, 0x20);
 }
 
-/** rct2: 0x0087698C */
+/**  rct2: 0x0087698C */
 static void heartline_twister_rc_track_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     heartline_twister_rc_track_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x00876A0C */
+/**  rct2: 0x00876A0C */
 static void heartline_twister_rc_track_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     heartline_twister_rc_track_60_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0087699C */
+/**  rct2: 0x0087699C */
 static void heartline_twister_rc_track_flat_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     heartline_twister_rc_track_25_deg_up_to_flat(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008769DC */
+/**  rct2: 0x008769DC */
 static void heartline_twister_rc_track_25_deg_down_to_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -645,7 +645,7 @@ static void heartline_twister_rc_track_25_deg_down_to_60_deg_down(paint_session 
                                                       tileElement);
 }
 
-/** rct2: 0x008769EC */
+/**  rct2: 0x008769EC */
 static void heartline_twister_rc_track_60_deg_down_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -653,14 +653,14 @@ static void heartline_twister_rc_track_60_deg_down_to_25_deg_down(paint_session 
                                                       tileElement);
 }
 
-/** rct2: 0x008769AC */
+/**  rct2: 0x008769AC */
 static void heartline_twister_rc_track_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     heartline_twister_rc_track_flat_to_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x00876A6C */
+/**  rct2: 0x00876A6C */
 static void heartline_twister_rc_track_heartline_transfer_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -837,7 +837,7 @@ static void heartline_twister_rc_track_heartline_transfer_up(paint_session * ses
     }
 }
 
-/** rct2: 0x00876A7C */
+/**  rct2: 0x00876A7C */
 static void heartline_twister_rc_track_heartline_transfer_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1014,7 +1014,7 @@ static void heartline_twister_rc_track_heartline_transfer_down(paint_session * s
     }
 }
 
-/** rct2: 0x00876A4C */
+/**  rct2: 0x00876A4C */
 static void heartline_twister_rc_track_left_heartline_roll(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1235,7 +1235,7 @@ static void heartline_twister_rc_track_left_heartline_roll(paint_session * sessi
     }
 }
 
-/** rct2: 0x00876A5C */
+/**  rct2: 0x00876A5C */
 static void heartline_twister_rc_track_right_heartline_roll(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {

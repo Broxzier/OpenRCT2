@@ -180,7 +180,7 @@ static uint32 air_powered_vertical_rc_get_support_colour(paint_session * session
     return colourFlags;
 }
 
-/** rct2: 0x008AFAD4 */
+/**  rct2: 0x008AFAD4 */
 static void air_powered_vertical_rc_track_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -315,7 +315,7 @@ static void air_powered_vertical_rc_track_left_quarter_turn_5(paint_session * se
                                                        tileElement);
 }
 
-/** rct2: 0x008AFB74 */
+/**  rct2: 0x008AFB74 */
 static void air_powered_vertical_rc_track_flat_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -343,7 +343,7 @@ static void air_powered_vertical_rc_track_flat_to_left_bank(paint_session * sess
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x008AFB84 */
+/**  rct2: 0x008AFB84 */
 static void air_powered_vertical_rc_track_flat_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -378,7 +378,7 @@ static void air_powered_vertical_rc_track_left_bank_to_flat(paint_session * sess
                                                      tileElement);
 }
 
-/** rct2: 0x008AFBA4 */
+/**  rct2: 0x008AFBA4 */
 static void air_powered_vertical_rc_track_right_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -488,7 +488,7 @@ static void air_powered_vertical_rc_track_banked_left_quarter_turn_5(paint_sessi
                                                               tileElement);
 }
 
-/** rct2: 0x008AFBD4 */
+/**  rct2: 0x008AFBD4 */
 static void air_powered_vertical_rc_track_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {

@@ -180,7 +180,7 @@ static void maze_paint_setup(paint_session * session, uint8 rideIndex, uint8 tra
 }
 
 /**
- * rct2: 0x008A81E8
+ *  rct2: 0x008A81E8
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_maze(sint32 trackType, sint32 direction)
 {

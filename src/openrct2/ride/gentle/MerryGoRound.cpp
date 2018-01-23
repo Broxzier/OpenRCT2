@@ -20,14 +20,14 @@
 #include "../Track.h"
 #include "../TrackPaint.h"
 
-/** rct2: 0x0142805C */
+/**  rct2: 0x0142805C */
 static constexpr const uint32 merry_go_round_rider_offsets[] = { 0, 32, 64, 96, 16, 48, 80, 112 };
 
-/** rct2: 0x0142807C */
+/**  rct2: 0x0142807C */
 static constexpr const uint16 merry_go_round_breakdown_vibration[] = { 0, 1, 2, 3, 4, 3, 2, 1, 0, 0 };
 
 /**
- * rct2: 0x0076287D
+ *  rct2: 0x0076287D
  */
 static void paint_merry_go_round_structure(paint_session * session, uint8 rideIndex, uint8 direction, sint8 xOffset,
                                            sint8 yOffset, uint16 height)
@@ -111,7 +111,7 @@ static void paint_merry_go_round_structure(paint_session * session, uint8 rideIn
 }
 
 /**
- * rct2: 0x00761B0C
+ *  rct2: 0x00761B0C
  */
 static void paint_merry_go_round(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                                  rct_tile_element * tileElement)
@@ -179,7 +179,7 @@ static void paint_merry_go_round(paint_session * session, uint8 rideIndex, uint8
 }
 
 /**
- * rct2: 0x0076190C
+ *  rct2: 0x0076190C
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_merry_go_round(sint32 trackType, sint32 direction)
 {

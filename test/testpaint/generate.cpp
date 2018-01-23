@@ -136,7 +136,7 @@ private:
             if (trackType == TRACK_ELEM_END_STATION)
             {
                 const uint32 * paintFunctionList = RideTypeTrackPaintFunctionsOld[_rideType];
-                WriteLine(0, "/** rct2: 0x%08X, 0x%08X, 0x%08X */", paintFunctionList[TRACK_ELEM_END_STATION], paintFunctionList[TRACK_ELEM_BEGIN_STATION], paintFunctionList[TRACK_ELEM_MIDDLE_STATION]);
+                WriteLine(0, "/**  rct2: 0x%08X, 0x%08X, 0x%08X */", paintFunctionList[TRACK_ELEM_END_STATION], paintFunctionList[TRACK_ELEM_BEGIN_STATION], paintFunctionList[TRACK_ELEM_MIDDLE_STATION]);
                 WriteLine(0, "static void " + _rideName + "_track_station(uint8 rideIndex, uint8 trackSequence, uint8 direction, int height, rct_tile_element * tileElement)");
                 WriteLine(0, "{");
                 WriteLine(0, "}");
@@ -147,7 +147,7 @@ private:
 
     void GenerateTrackFunction(int trackType)
     {
-        WriteLine(0, "/** rct2: 0x%08X */", RideTypeTrackPaintFunctionsOld[_rideType][trackType]);
+        WriteLine(0, "/**  rct2: 0x%08X */", RideTypeTrackPaintFunctionsOld[_rideType][trackType]);
         WriteLine(0, "static void " + GetTrackFunctionName(trackType) + "(uint8 rideIndex, uint8 trackSequence, uint8 direction, int height, rct_tile_element * tileElement)");
         WriteLine(0, "{");
         if (!GenerateMirrorCall(1, trackType))

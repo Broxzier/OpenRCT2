@@ -491,7 +491,7 @@ static void viewport_move(sint16 x, sint16 y, rct_window* w, rct_viewport* viewp
     memcpy(viewport, &view_copy, sizeof(rct_viewport));
 }
 
-//rct2: 0x006E7A15
+// rct2: 0x006E7A15
 static void viewport_set_underground_flag(sint32 underground, rct_window* window, rct_viewport* viewport)
 {
     if (window->classification != WC_MAIN_WINDOW)
@@ -1181,7 +1181,7 @@ static void store_interaction_info(paint_struct *ps)
 }
 
 /**
- * rct2: 0x00679236, 0x00679662, 0x00679B0D, 0x00679FF1
+ *  rct2: 0x00679236, 0x00679662, 0x00679B0D, 0x00679FF1
  */
 static bool pixel_is_present_bmp(uint32 imageType, const rct_g1_element * g1, const uint8 * index, const uint8 * palette)
 {
@@ -1202,7 +1202,7 @@ static bool pixel_is_present_bmp(uint32 imageType, const rct_g1_element * g1, co
 }
 
 /**
- * rct2: 0x0067933B, 0x00679788, 0x00679C4A, 0x0067A117
+ *  rct2: 0x0067933B, 0x00679788, 0x00679C4A, 0x0067A117
  */
 static bool is_pixel_present_rle(const uint8 *esi, sint16 x_start_point, sint16 y_start_point, sint32 round) {
     const uint8 *ebx = esi + ((uint16 *) esi)[y_start_point];
@@ -1271,7 +1271,7 @@ static bool is_pixel_present_rle(const uint8 *esi, sint16 x_start_point, sint16 
 }
 
 /**
- * rct2: 0x00679074
+ *  rct2: 0x00679074
  *
  * @param dpi (edi)
  * @param imageId (ebx)

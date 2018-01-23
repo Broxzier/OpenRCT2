@@ -90,7 +90,7 @@ void vehicle_visual_launched_freefall(paint_session * session, sint32 x, sint32 
     assert(vehicleEntry->effect_visual == 1);
 }
 
-/** rct2: 0x006FD1F8 */
+/**  rct2: 0x006FD1F8 */
 static void paint_launched_freefall_base(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -162,7 +162,7 @@ static void paint_launched_freefall_base(paint_session * session, uint8 rideInde
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x006FD208 */
+/**  rct2: 0x006FD208 */
 static void paint_launched_freefall_tower_section(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -188,7 +188,7 @@ static void paint_launched_freefall_tower_section(paint_session * session, uint8
 }
 
 /**
- * rct2: 0x006FD0E8
+ *  rct2: 0x006FD0E8
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_launched_freefall(sint32 trackType, sint32 direction)
 {

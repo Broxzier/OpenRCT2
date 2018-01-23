@@ -305,7 +305,7 @@ void sprite_clear_all_unused()
 }
 
 /*
-* rct2: 0x0069EC6B
+*  rct2: 0x0069EC6B
 * bl: if bl & 2 > 0, the sprite ends up in the MISC linked list.
 */
 rct_sprite *create_sprite(uint8 bl)
@@ -347,7 +347,7 @@ rct_sprite *create_sprite(uint8 bl)
 }
 
 /*
- * rct2: 0x0069ED0B
+ *  rct2: 0x0069ED0B
  * This function moves a sprite to the specified sprite linked list.
  * There are 5/6 of those, and cl specifies a pointer offset
  * of the desired linked list in a uint16 array. Known valid values are

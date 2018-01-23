@@ -334,7 +334,7 @@ rct_window *window_staff_open(rct_peep* peep)
 }
 
 /**
-* rct2: 0x006BED21
+*  rct2: 0x006BED21
 * Disable the staff pickup if not in pickup state.
 */
 void window_staff_disable_widgets(rct_window* w)
@@ -577,7 +577,7 @@ void window_staff_overview_dropdown(rct_window *w, rct_widgetindex widgetIndex, 
 
 /**
  * Update the animation frame of the tab icon.
- *  rct2: 0x6BE602
+ *  rct2: 0x006BE602
  */
 void window_staff_overview_update(rct_window* w)
 {
@@ -706,7 +706,7 @@ void window_staff_stats_update(rct_window* w)
 
 /**
  *
- *  rct2: 0x6BEC80, 0x6BE9DA
+ *  rct2: 0x006BEC80, 0x6BE9DA
  */
 void window_staff_unknown_05(rct_window *w)
 {
@@ -881,7 +881,7 @@ void window_staff_overview_invalidate(rct_window *w)
 
 /**
  *
- *  rct2: 0x6BDEAF
+ *  rct2: 0x006BDEAF
  */
 void window_staff_overview_paint(rct_window *w, rct_drawpixelinfo *dpi)
 {
@@ -915,7 +915,7 @@ void window_staff_overview_paint(rct_window *w, rct_drawpixelinfo *dpi)
 
 /**
  *
- *  rct2: 0x6BEC8F
+ *  rct2: 0x006BEC8F
  */
 void window_staff_options_tab_paint(rct_window* w, rct_drawpixelinfo* dpi)
 {
@@ -936,7 +936,7 @@ void window_staff_options_tab_paint(rct_window* w, rct_drawpixelinfo* dpi)
 
 /**
  *
- *  rct2: 0x6BECD3
+ *  rct2: 0x006BECD3
  */
 void window_staff_stats_tab_paint(rct_window* w, rct_drawpixelinfo* dpi)
 {
@@ -956,7 +956,7 @@ void window_staff_stats_tab_paint(rct_window* w, rct_drawpixelinfo* dpi)
 }
 
 /**
-* Based on rct2: 0x6983dd in window_guest to be remerged into one when peep file added.
+* Based on rct2: 0x006983DD in window_guest to be remerged into one when peep file added.
 */
 void window_staff_overview_tab_paint(rct_window* w, rct_drawpixelinfo* dpi)
 {
@@ -1020,7 +1020,7 @@ void window_staff_overview_tab_paint(rct_window* w, rct_drawpixelinfo* dpi)
 
 /**
  *
- *  rct2: 0x6BE7C6
+ *  rct2: 0x006BE7C6
  */
 void window_staff_options_paint(rct_window *w, rct_drawpixelinfo *dpi)
 {
@@ -1032,7 +1032,7 @@ void window_staff_options_paint(rct_window *w, rct_drawpixelinfo *dpi)
 
 /**
  *
- *  rct2: 0x6BEA86
+ *  rct2: 0x006BEA86
  */
 void window_staff_stats_paint(rct_window *w, rct_drawpixelinfo *dpi)
 {
@@ -1153,7 +1153,7 @@ void window_staff_overview_tool_down(rct_window* w, rct_widgetindex widgetIndex,
 
 /**
  *
- *  rct2: 0x6BDFAE
+ *  rct2: 0x006BDFAE
  */
 void window_staff_overview_tool_abort(rct_window *w, rct_widgetindex widgetIndex)
 {
@@ -1167,7 +1167,7 @@ void window_staff_overview_tool_abort(rct_window *w, rct_widgetindex widgetIndex
     }
 }
 
-/* rct2: 0x6BDFED */
+/*  rct2: 0x006BDFED */
 void window_staff_overview_text_input(rct_window *w, rct_widgetindex widgetIndex, char *text)
 {
     if (widgetIndex != WIDX_RENAME)
@@ -1257,7 +1257,7 @@ void window_staff_viewport_init(rct_window* w){
 
 /**
 * Handle the costume of staff member.
-* rct2: 0x006BE802
+*  rct2: 0x006BE802
 */
 void window_staff_options_mousedown(rct_window *w, rct_widgetindex widgetIndex, rct_widget* widget)
 {
@@ -1298,7 +1298,7 @@ void window_staff_options_mousedown(rct_window *w, rct_widgetindex widgetIndex, 
 
 /**
  *
- *  rct2: 0x6BE809
+ *  rct2: 0x006BE809
  */
 void window_staff_options_dropdown(rct_window *w, rct_widgetindex widgetIndex, sint32 dropdownIndex)
 {

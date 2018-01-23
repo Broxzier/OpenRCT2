@@ -229,7 +229,7 @@ static void paint_spiral_slide(paint_session * session, uint8 rideIndex, uint8 t
 }
 
 /**
- * rct2: 0x0074840C
+ *  rct2: 0x0074840C
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_spiral_slide(sint32 trackType, sint32 direction)
 {

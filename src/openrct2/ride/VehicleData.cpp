@@ -18,7 +18,7 @@
 #include "VehicleData.h"
 
 // clang-format off
-/** rct2: 0x0099F100 */
+/**  rct2: 0x0099F100 */
 static constexpr const uint8 Rotation1TimeToSpriteMap_0[] = {
     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
     0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
@@ -71,7 +71,7 @@ static constexpr const uint8 Rotation1TimeToSpriteMap_0[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x0099F422 */
+/**  rct2: 0x0099F422 */
 static constexpr const uint8 Rotation1TimeToSpriteMap_1[] = {
     0,   0,   0,   1,   1,   1,   2,   2,   2,   3,   3,   3,   4,   4,   4,   5,   5,
     5,   6,   6,   6,   7,   7,   7,   8,   8,   8,   9,   9,   9,  10,  10,  10,  11,
@@ -115,7 +115,7 @@ static constexpr const uint8 Rotation1TimeToSpriteMap_1[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x0099F6AB */
+/**  rct2: 0x0099F6AB */
 static constexpr const uint8 Rotation1TimeToSpriteMap_2[] = {
     0,   0,   0,   1,   1,   1,   2,   2,   2,   3,   3,   3,   4,   4,   4,   5,   5,
     5,   6,   6,   6,   7,   7,   7,   8,   8,   8,   9,   9,   9,  10,  10,  10,  11,
@@ -168,14 +168,14 @@ static constexpr const uint8 Rotation1TimeToSpriteMap_2[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x0099F0F4 */
+/**  rct2: 0x0099F0F4 */
 const uint8 * Rotation1TimeToSpriteMaps[] = {
     Rotation1TimeToSpriteMap_0,
     Rotation1TimeToSpriteMap_1,
     Rotation1TimeToSpriteMap_2,
 };
 
-/** rct2: 0x009A2434 */
+/**  rct2: 0x009A2434 */
 static constexpr const uint8 Rotation2TimeToSpriteMap_0[] = {
     0,   0,   0,   0,   0,   0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   1,   2,
     2,   2,   2,   2,   2,   2,   2,   3,   3,   3,   3,   3,   3,   3,   3,   4,   4,
@@ -217,7 +217,7 @@ static constexpr const uint8 Rotation2TimeToSpriteMap_0[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x009A26A6 */
+/**  rct2: 0x009A26A6 */
 static constexpr const uint8 Rotation2TimeToSpriteMap_1[] = {
     46,  46,  47,  47,  48,  48,  46,  46,  47,  47,  48,  48,  46,  46,  47,  47,  48,
     48,  46,  46,  47,  47,  48,  48,  46,  46,  47,  47,  48,  48,  46,  46,  47,  47,
@@ -228,7 +228,7 @@ static constexpr const uint8 Rotation2TimeToSpriteMap_1[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x009A270E */
+/**  rct2: 0x009A270E */
 static constexpr const uint8 Rotation2TimeToSpriteMap_2[] = {
     43,  43,  44,  44,  45,  45,  43,  43,  44,  44,  45,  45,  43,  43,  44,  44,  45,
     45,  40,  40,  41,  41,  42,  42,  40,  40,  41,  41,  42,  42,  40,  40,  41,  41,
@@ -261,14 +261,14 @@ static constexpr const uint8 Rotation2TimeToSpriteMap_2[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x009A2428 */
+/**  rct2: 0x009A2428 */
 const uint8 * Rotation2TimeToSpriteMaps[] = {
     Rotation2TimeToSpriteMap_0,
     Rotation2TimeToSpriteMap_1,
     Rotation2TimeToSpriteMap_2,
 };
 
-/** rct2: 0x0099EB28 */
+/**  rct2: 0x0099EB28 */
 static constexpr const uint8 Rotation3TimeToSpriteMap_0[] = {
     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
     0,   0,   0,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,
@@ -305,7 +305,7 @@ static constexpr const uint8 Rotation3TimeToSpriteMap_0[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x0099ED49 */
+/**  rct2: 0x0099ED49 */
 static constexpr const uint8 Rotation3TimeToSpriteMap_1[] = {
     0,   0,   0,   1,   1,   1,   2,   2,   2,   3,   3,   3,   4,   4,   4,   5,   5,
     5,   6,   6,   6,   7,   7,   7,   8,   8,   8,   9,   9,   9,  10,  10,  10,  11,
@@ -333,7 +333,7 @@ static constexpr const uint8 Rotation3TimeToSpriteMap_1[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x0099EED1 */
+/**  rct2: 0x0099EED1 */
 static constexpr const uint8 Rotation3TimeToSpriteMap_2[] = {
     0,   0,   0,   1,   1,   1,   2,   2,   2,   3,   3,   3,   4,   4,   4,   5,   5,
     5,   6,   6,   6,   7,   7,   7,   8,   8,   8,   9,   9,   9,  10,  10,  10,  11,
@@ -370,14 +370,14 @@ static constexpr const uint8 Rotation3TimeToSpriteMap_2[] = {
     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
 };
 
-/** rct2: 0x0099EB1C */
+/**  rct2: 0x0099EB1C */
 const uint8 * Rotation3TimeToSpriteMaps[] = {
     Rotation3TimeToSpriteMap_0,
     Rotation3TimeToSpriteMap_1,
     Rotation3TimeToSpriteMap_2,
 };
 
-/** rct2: 0x009A12EC */
+/**  rct2: 0x009A12EC */
 static constexpr const top_spin_time_to_sprite_map TopSpinTimeToSpriteMap_0[] = {
     {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 },
     {  0,  0 }, {  0,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 },
@@ -463,7 +463,7 @@ static constexpr const top_spin_time_to_sprite_map TopSpinTimeToSpriteMap_0[] = 
     { 0xFF },
 };
 
-/** rct2: 0x009A1751 */
+/**  rct2: 0x009A1751 */
 static constexpr const top_spin_time_to_sprite_map TopSpinTimeToSpriteMap_1[] = {
     {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 },
     {  0,  0 }, {  0,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 },
@@ -568,7 +568,7 @@ static constexpr const top_spin_time_to_sprite_map TopSpinTimeToSpriteMap_1[] = 
     { 0xFF },
 };
 
-/** rct2: 0x009A1CC6 */
+/**  rct2: 0x009A1CC6 */
 static constexpr const top_spin_time_to_sprite_map TopSpinTimeToSpriteMap_2[] = {
     {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 }, {  0,  0 },
     {  0,  0 }, {  0,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 }, {  1,  0 },
@@ -708,14 +708,14 @@ static constexpr const top_spin_time_to_sprite_map TopSpinTimeToSpriteMap_2[] = 
     { 0xFF },
 };
 
-/** rct2: 0x009A12E0 */
+/**  rct2: 0x009A12E0 */
 const top_spin_time_to_sprite_map * TopSpinTimeToSpriteMaps[] = {
     TopSpinTimeToSpriteMap_0,
     TopSpinTimeToSpriteMap_1,
     TopSpinTimeToSpriteMap_2,
 };
 
-/** rct2: 0x009A0434 */
+/**  rct2: 0x009A0434 */
 const uint8 MotionSimulatorTimeToSpriteMap[] = {
     0,  0,  0,  4,  4,  4,  5,  5,  5,  6,  6,  6,  7,  7,  7,  8,  8,  8,  9,  9,  9,
     10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12, 13, 13, 13, 13, 14, 14, 14, 14, 15,
@@ -801,7 +801,7 @@ const uint8 MotionSimulatorTimeToSpriteMap[] = {
 
 const sint32 MotionSimulatorTimeToSpriteMapCount = static_cast<sint32>(Util::CountOf(MotionSimulatorTimeToSpriteMap));
 
-/** rct2: 0x009A2930 */
+/**  rct2: 0x009A2930 */
 const sint32 dword_9A2930[] = {
     0,      // 0000
     8716,   // 0001
@@ -821,7 +821,7 @@ const sint32 dword_9A2930[] = {
     34902,  // 1111
 };
 
-/** rct2: 0x009A2970 */
+/**  rct2: 0x009A2970 */
 const sint32 dword_9A2970[] = {
           0,    // 0
     -124548,    // 1
@@ -885,7 +885,7 @@ const sint32 dword_9A2970[] = {
     -110424,    // 59
 };
 
-/** rct2: 0x009A3684 */
+/**  rct2: 0x009A3684 */
 const sint32 SpriteDirectionToSoundDirection[] = {
     -0x4000,    // 0
     -0x3000,    // 1

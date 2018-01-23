@@ -448,7 +448,7 @@ static constexpr const sint8 SwingingTimeToSpriteMap_11[] =
     31, 0, -128
 };
 
-/** rct2: 0x0099F9D0 */
+/**  rct2: 0x0099F9D0 */
 static constexpr const sint8 * SwingingTimeToSpriteMaps[] = {
     SwingingTimeToSpriteMap_0,
     SwingingTimeToSpriteMap_1,
@@ -471,7 +471,7 @@ typedef struct
     uint32 distance;
 } unk_9a36c4;
 
-/** rct2: 0x009A36C4 */
+/**  rct2: 0x009A36C4 */
 static constexpr const unk_9a36c4 Unk9A36C4[] =
 {
     {-1, 0, 8716},
@@ -508,7 +508,7 @@ static constexpr const unk_9a36c4 Unk9A36C4[] =
     {-1, -1, 12327},
 };
 
-/** rct2: 0x009A37C4 */
+/**  rct2: 0x009A37C4 */
 static constexpr const LocationXY16 Unk9A37C4[] =
 {
     { 0,  0},
@@ -522,7 +522,7 @@ static constexpr const LocationXY16 Unk9A37C4[] =
     { 0, +1},
 };
 
-/** rct2: 0x009A37E4 */
+/**  rct2: 0x009A37E4 */
 static constexpr const sint32 Unk9A37E4[] =
 {
     2147483647,
@@ -587,7 +587,7 @@ static constexpr const sint32 Unk9A37E4[] =
     2115506168,
 };
 
-/** rct2: 0x009A38D4 */
+/**  rct2: 0x009A38D4 */
 static constexpr const sint32 Unk9A38D4[] =
 {
     0,
@@ -652,7 +652,7 @@ static constexpr const sint32 Unk9A38D4[] =
     369214930,
 };
 
-/** rct2: 0x009A39C4 */
+/**  rct2: 0x009A39C4 */
 static constexpr const sint32 Unk9A39C4[] =
 {
     2147483647,
@@ -3588,7 +3588,7 @@ static void vehicle_update_collision_setup(rct_vehicle * vehicle)
     vehicle->velocity                                                      = 0;
 }
 
-/** rct2: 0x009A3AC4, 0x009A3AC6 */
+/**  rct2: 0x009A3AC4, 0x009A3AC6 */
 static constexpr const LocationXY16 stru_9A3AC4[] = {
     { -256, 0 }, { -236, 98 }, { -181, 181 }, { -98, 236 }, { 0, 256 },  { 98, 236 },   { 181, 181 },   { 236, 98 },
     { 256, 0 },  { 236, -98 }, { 181, -181 }, { 98, -236 }, { 0, -256 }, { -98, -236 }, { -181, -181 }, { -236, -98 },
@@ -5053,7 +5053,7 @@ static void vehicle_update_haunted_house_operating(rct_vehicle * vehicle)
 
 /**
  *
- *  rct2: 0x006d9781
+ *  rct2: 0x006D9781
  */
 static void vehicle_update_crooked_house_operating(rct_vehicle * vehicle)
 {

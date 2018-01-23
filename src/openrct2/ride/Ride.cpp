@@ -62,7 +62,7 @@
 
 #pragma region Ride classification table
 
-/** rct2: 0x0097C3AF */
+/**  rct2: 0x0097C3AF */
 // clang-format off
 const uint8 gRideClassifications[255] = {
     RIDE_CLASS_RIDE, RIDE_CLASS_RIDE, RIDE_CLASS_RIDE, RIDE_CLASS_RIDE,
@@ -525,7 +525,7 @@ bool ride_try_get_origin_element(sint32 rideIndex, rct_xy_element *output)
 
 /**
 *
-* rct2: 0x006C6096
+*  rct2: 0x006C6096
 * Gets the next track block coordinates from the
 * coordinates of the first of element of a track block.
 * Use track_block_get_next if you are unsure if you are
@@ -2145,7 +2145,7 @@ void ride_update_popularity(Ride* ride, uint8 pop_amount){
     ride->window_invalidate_flags |= RIDE_INVALIDATE_RIDE_CUSTOMER;
 }
 
-/** rct2: 0x0098DDB8, 0x0098DDBA */
+/**  rct2: 0x0098DDB8, 0x0098DDBA */
 static constexpr const LocationXY16 ride_spiral_slide_main_tile_offset[][4] = {
     {
         {  32,  32 },

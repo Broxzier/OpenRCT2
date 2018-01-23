@@ -84,7 +84,7 @@ void path_paint_pole_support(paint_session * session, rct_tile_element* tileElem
 
 
 
-/* rct2: 0x006A5AE5 */
+/*  rct2: 0x006A5AE5 */
 static void path_bit_lights_paint(paint_session * session, rct_scenery_entry* pathBitEntry, rct_tile_element* tileElement, sint32 height, uint8 edges, uint32 pathBitImageFlags) {
     if (footpath_element_is_sloped(tileElement))
         height += 8;
@@ -135,7 +135,7 @@ static void path_bit_lights_paint(paint_session * session, rct_scenery_entry* pa
     }
 }
 
-/* rct2: 0x006A5C94 */
+/*  rct2: 0x006A5C94 */
 static void path_bit_bins_paint(paint_session * session, rct_scenery_entry* pathBitEntry, rct_tile_element* tileElement, sint32 height, uint8 edges, uint32 pathBitImageFlags) {
     if (footpath_element_is_sloped(tileElement))
         height += 8;
@@ -214,7 +214,7 @@ static void path_bit_bins_paint(paint_session * session, rct_scenery_entry* path
     }
 }
 
-/* rct2: 0x006A5E81 */
+/*  rct2: 0x006A5E81 */
 static void path_bit_benches_paint(paint_session * session, rct_scenery_entry* pathBitEntry, rct_tile_element* tileElement, sint32 height, uint8 edges, uint32 pathBitImageFlags) {
     uint32 imageId;
 
@@ -262,7 +262,7 @@ static void path_bit_benches_paint(paint_session * session, rct_scenery_entry* p
     }
 }
 
-/* rct2: 0x006A6008 */
+/*  rct2: 0x006A6008 */
 static void path_bit_jumping_fountains_paint(paint_session * session, rct_scenery_entry* pathBitEntry, rct_tile_element* tileElement, sint32 height, uint8 edges, uint32 pathBitImageFlags, rct_drawpixelinfo* dpi) {
     if (dpi->zoom_level != 0)
         return;
@@ -277,7 +277,7 @@ static void path_bit_jumping_fountains_paint(paint_session * session, rct_scener
 }
 
 /**
- * rct2: 0x006A4101
+ *  rct2: 0x006A4101
  * @param tile_element (esi)
  * @param (ecx)
  * @param ebp (ebp)
@@ -577,7 +577,7 @@ static void sub_6A4101(paint_session * session, rct_tile_element * tile_element,
 }
 
 /**
- * rct2: 0x006A3F61
+ *  rct2: 0x006A3F61
  * @param tile_element (esp[0])
  * @param connectedEdges (bp) (relative to the camera's rotation)
  * @param height (dx)
@@ -674,7 +674,7 @@ static void sub_6A3F61(paint_session * session, rct_tile_element * tile_element,
 }
 
 /**
- * rct2: 0x0006A3590
+ *  rct2: 0x006A3590
  */
 void path_paint(paint_session * session, uint8 direction, uint16 height, rct_tile_element * tile_element)
 {

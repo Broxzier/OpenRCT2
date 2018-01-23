@@ -46,15 +46,15 @@ typedef struct bound_box
     sint16 height;
 } bound_box;
 
-/** rct2: 0x01428220 */
+/**  rct2: 0x01428220 */
 static constexpr const sint16 MagicCarpetOscillationZ[] = { -2, -1, 1,  5,  10, 16, 23, 30, 37, 45, 52, 59, 65, 70, 74, 76,
                                                   77, 76, 74, 70, 65, 59, 52, 45, 37, 30, 23, 16, 10, 5,  1,  -1 };
 
-/** rct2: 0x01428260 */
+/**  rct2: 0x01428260 */
 static constexpr const sint8 MagicCarpetOscillationXY[] = { 0, 6,  12,  18,  23,  27,  30,  31,  32,  31,  30,  27,  23,  18,  12,  6,
                                                   0, -5, -11, -17, -22, -26, -29, -30, -31, -30, -29, -26, -22, -17, -11, -5 };
 
-/** rct2: 0x014281F0 */
+/**  rct2: 0x014281F0 */
 static constexpr const bound_box MagicCarpetBounds[] = { { 0, 8, 32, 16 }, { 8, 0, 16, 32 }, { 0, 8, 32, 16 }, { 8, 0, 16, 32 } };
 
 static rct_vehicle * get_first_vehicle(Ride * ride)
@@ -171,7 +171,7 @@ static void paint_magic_carpet_vehicle(paint_session * session, Ride * ride, uin
     }
 }
 
-/** rct2: 0x00899104 */
+/**  rct2: 0x00899104 */
 static void paint_magic_carpet_structure(paint_session * session, Ride * ride, uint8 direction, sint8 axisOffset, uint16 height)
 {
     rct_tile_element * savedTileElement = static_cast<rct_tile_element *>(session->CurrentlyDrawnItem);
@@ -207,7 +207,7 @@ static void paint_magic_carpet_structure(paint_session * session, Ride * ride, u
     session->CurrentlyDrawnItem = savedTileElement;
 }
 
-/** rct2: 0x00898514 */
+/**  rct2: 0x00898514 */
 static void paint_magic_carpet(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                                rct_tile_element * tileElement)
 {

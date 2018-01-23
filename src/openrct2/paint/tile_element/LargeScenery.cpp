@@ -183,7 +183,7 @@ static constexpr const boundbox s98E3C4[] = {
 
 /*
 *
-* rct2: 0x006B7F0C
+*  rct2: 0x006B7F0C
 */
 void large_scenery_paint(paint_session * session, uint8 direction, uint16 height, rct_tile_element * tileElement)
 {

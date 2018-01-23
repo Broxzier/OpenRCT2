@@ -304,7 +304,7 @@ const rct_trackdefinition TrackDefinitions[256] =
     { TRACK_QUARTER_LOOP_INVERTED,  TRACK_SLOPE_NONE,           TRACK_SLOPE_UP_90,          TRACK_BANK_UPSIDE_DOWN, TRACK_BANK_NONE,        0                  }, // 255
 };
 
-/**　rct2: 0x0099849D */
+/**  rct2: 0x0099849D */
 const rct_trackdefinition FlatRideTrackDefinitions[256] =
 {
     // TYPE                         VANGLE END                  VANGLE START                BANK END                BANK START              PREVIEW Z OFFSET
@@ -1970,7 +1970,7 @@ static uint8 maze_element_get_segment_bit(uint16 x, uint16 y)
     return 7;
 }
 
-/** rct2: 0x00993CE9 */
+/**  rct2: 0x00993CE9 */
 static constexpr const uint8 byte_993CE9[] = {
     0xFF, 0xE0, 0xFF,
     14, 0, 1, 2,
@@ -1979,12 +1979,12 @@ static constexpr const uint8 byte_993CE9[] = {
     12, 13, 14, 10,
 };
 
-/** rct2: 0x00993CFC */
+/**  rct2: 0x00993CFC */
 static constexpr const uint8 byte_993CFC[] = {
     5, 12, 0xFF, 0xFF, 9, 0, 0xFF, 0xFF, 13, 4, 0xFF, 0xFF, 1, 8, 0xFF, 0xFF
 };
 
-/** rct2: 0x00993D0C */
+/**  rct2: 0x00993D0C */
 static constexpr const uint8 byte_993D0C[] = {
     3, 0, 0xFF, 0xFF, 0, 1, 0xFF, 0xFF, 1, 2, 0xFF, 0xFF, 2, 3, 0xFF, 0xFF
 };

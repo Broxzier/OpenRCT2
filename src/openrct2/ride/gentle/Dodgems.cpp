@@ -96,7 +96,7 @@ static void paint_dodgems(paint_session * session, uint8 rideIndex, uint8 trackS
 }
 
 /**
- * rct2:
+ *  rct2:
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_dodgems(sint32 trackType, sint32 direction)
 {

@@ -21,7 +21,7 @@
 #include "../Track.h"
 #include "../TrackPaint.h"
 
-/** rct2: 0x008A2ABC */
+/**  rct2: 0x008A2ABC */
 static void paint_enterprise_structure(paint_session * session, Ride * ride, sint8 xOffset, sint8 yOffset, uint16 height,
                                        rct_tile_element * tileElement)
 {
@@ -83,7 +83,7 @@ static void paint_enterprise_structure(paint_session * session, Ride * ride, sin
     session->InteractionType    = VIEWPORT_INTERACTION_ITEM_RIDE;
 }
 
-/** rct2: 0x008A1584 */
+/**  rct2: 0x008A1584 */
 static void paint_enterprise(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                              rct_tile_element * tileElement)
 {
@@ -165,7 +165,7 @@ static void paint_enterprise(paint_session * session, uint8 rideIndex, uint8 tra
 }
 
 /**
- * rct2: 0x008A13B4
+ *  rct2: 0x008A13B4
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_enterprise(sint32 trackType, sint32 direction)
 {

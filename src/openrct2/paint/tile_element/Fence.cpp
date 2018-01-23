@@ -127,7 +127,7 @@ static void fence_paint_wall(paint_session * session, uint32 frameNum, const rct
     }
 }
 /**
- * rct2: 0x006E44B0
+ *  rct2: 0x006E44B0
  * @param direction (cl)
  * @param height (dx)
  * @param tile_element (esi)

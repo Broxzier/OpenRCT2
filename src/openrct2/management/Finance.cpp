@@ -29,7 +29,7 @@
 /**
  * Monthly staff wages
  *
- * rct2: 0x00992A00
+ *  rct2: 0x00992A00
  */
 const money32 wage_table[STAFF_TYPE_COUNT] =
 {
@@ -69,7 +69,7 @@ uint8 gCommandExpenditureType;
 
 /**
  * Pay an amount of money.
- *  rct2: 0x069C674
+ *  rct2: 0x0069C674
  * @param amount (eax)
  * @param type passed via global var 0x0141F56C (RCT2_ADDRESS_NEXT_EXPENDITURE_TYPE), our type is that var/4.
  */
@@ -112,7 +112,7 @@ void finance_pay_wages()
 
 /**
 * Pays the current research level's cost.
-* rct2: 0x00684DA5
+*  rct2: 0x00684DA5
 **/
 void finance_pay_research()
 {
@@ -356,7 +356,7 @@ void game_command_set_current_loan(sint32 * eax, sint32 * ebx, sint32 * ecx, sin
 /**
  * Shift the expenditure table history one month to the left
  * If the table is full, accumulate the sum of the oldest month first
- * rct2: 0x0069DEAD
+ *  rct2: 0x0069DEAD
  */
 void finance_shift_expenditure_table()
 {

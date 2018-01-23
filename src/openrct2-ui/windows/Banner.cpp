@@ -185,7 +185,7 @@ rct_window * window_banner_open(rct_windownumber number)
 
 /**
  *
- *  rct2: 0x6ba4d6
+ *  rct2: 0x006BA4D6
  */
 static void window_banner_mouseup(rct_window *w, rct_widgetindex widgetIndex)
 {
@@ -220,7 +220,7 @@ static void window_banner_mouseup(rct_window *w, rct_widgetindex widgetIndex)
 
 /**
  *
- *  rct2: 0x6ba4ff
+ *  rct2: 0x006BA4FF
  */
 static void window_banner_mousedown(rct_window *w, rct_widgetindex widgetIndex, rct_widget* widget)
 {
@@ -257,7 +257,7 @@ static void window_banner_mousedown(rct_window *w, rct_widgetindex widgetIndex, 
 
 /**
  *
- *  rct2: 0x6ba517
+ *  rct2: 0x006BA517
  */
 static void window_banner_dropdown(rct_window *w, rct_widgetindex widgetIndex, sint32 dropdownIndex)
 {
@@ -281,7 +281,7 @@ static void window_banner_dropdown(rct_window *w, rct_widgetindex widgetIndex, s
 
 /**
  *
- *  rct2: 0x6ba50c
+ *  rct2: 0x006BA50C
  */
 static void window_banner_textinput(rct_window *w, rct_widgetindex widgetIndex, char *text)
 {
@@ -329,7 +329,7 @@ static void window_banner_invalidate(rct_window *w)
     drop_down_widget->text = BannerColouredTextFormats[banner->text_colour];
 }
 
-/* rct2: 0x006BA4C5 */
+/*  rct2: 0x006BA4C5 */
 static void window_banner_paint(rct_window *w, rct_drawpixelinfo *dpi)
 {
     window_draw_widgets(w, dpi);
@@ -342,7 +342,7 @@ static void window_banner_paint(rct_window *w, rct_drawpixelinfo *dpi)
 
 /**
  *
- *  rct2: 0x6BA7B5
+ *  rct2: 0x006BA7B5
  */
 static void window_banner_viewport_rotate(rct_window *w)
 {

@@ -26,7 +26,7 @@
 #include "../TrackData.h"
 #include "../TrackPaint.h"
 
-/** rct2: 0x008A59A8 */
+/**  rct2: 0x008A59A8 */
 static void steeplechase_track_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                     sint32 height, rct_tile_element * tileElement)
 {
@@ -91,7 +91,7 @@ static void steeplechase_track_station(paint_session * session, uint8 rideIndex,
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x008A59B8 */
+/**  rct2: 0x008A59B8 */
 static void steeplechase_track_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -156,7 +156,7 @@ static void steeplechase_track_25_deg_up(paint_session * session, uint8 rideInde
     paint_util_set_general_support_height(session, height + 56, 0x20);
 }
 
-/** rct2: 0x008A59C8 */
+/**  rct2: 0x008A59C8 */
 static void steeplechase_track_flat_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -221,7 +221,7 @@ static void steeplechase_track_flat_to_25_deg_up(paint_session * session, uint8 
     paint_util_set_general_support_height(session, height + 48, 0x20);
 }
 
-/** rct2: 0x008A59D8 */
+/**  rct2: 0x008A59D8 */
 static void steeplechase_track_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -286,28 +286,28 @@ static void steeplechase_track_25_deg_up_to_flat(paint_session * session, uint8 
     paint_util_set_general_support_height(session, height + 40, 0x20);
 }
 
-/** rct2: 0x008A59E8 */
+/**  rct2: 0x008A59E8 */
 static void steeplechase_track_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                            sint32 height, rct_tile_element * tileElement)
 {
     steeplechase_track_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A59F8 */
+/**  rct2: 0x008A59F8 */
 static void steeplechase_track_flat_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     steeplechase_track_25_deg_up_to_flat(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5A08 */
+/**  rct2: 0x008A5A08 */
 static void steeplechase_track_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     steeplechase_track_flat_to_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5A18 */
+/**  rct2: 0x008A5A18 */
 static void steeplechase_track_left_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -453,7 +453,7 @@ static void steeplechase_track_left_quarter_turn_5(paint_session * session, uint
     }
 }
 
-/** rct2: 0x008A5A28 */
+/**  rct2: 0x008A5A28 */
 static void steeplechase_track_right_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -461,7 +461,7 @@ static void steeplechase_track_right_quarter_turn_5(paint_session * session, uin
     steeplechase_track_left_quarter_turn_5(session, rideIndex, trackSequence, (direction - 1) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5A38 */
+/**  rct2: 0x008A5A38 */
 static void steeplechase_track_s_bend_left(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                            sint32 height, rct_tile_element * tileElement)
 {
@@ -585,7 +585,7 @@ static void steeplechase_track_s_bend_left(paint_session * session, uint8 rideIn
     }
 }
 
-/** rct2: 0x008A5A48 */
+/**  rct2: 0x008A5A48 */
 static void steeplechase_track_s_bend_right(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
@@ -711,7 +711,7 @@ static void steeplechase_track_s_bend_right(paint_session * session, uint8 rideI
     }
 }
 
-/** rct2: 0x008A5A88 */
+/**  rct2: 0x008A5A88 */
 static void steeplechase_track_left_quarter_turn_3(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -809,7 +809,7 @@ static void steeplechase_track_left_quarter_turn_3(paint_session * session, uint
     }
 }
 
-/** rct2: 0x008A5A98 */
+/**  rct2: 0x008A5A98 */
 static void steeplechase_track_right_quarter_turn_3(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -817,7 +817,7 @@ static void steeplechase_track_right_quarter_turn_3(paint_session * session, uin
     steeplechase_track_left_quarter_turn_3(session, rideIndex, trackSequence, (direction - 1) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5AA8 */
+/**  rct2: 0x008A5AA8 */
 static void steeplechase_track_brakes(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                       sint32 height, rct_tile_element * tileElement)
 {
@@ -840,7 +840,7 @@ static void steeplechase_track_brakes(paint_session * session, uint8 rideIndex, 
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x008A5AD8 */
+/**  rct2: 0x008A5AD8 */
 static void steeplechase_track_left_eighth_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -971,7 +971,7 @@ static void steeplechase_track_left_eighth_to_diag(paint_session * session, uint
     }
 }
 
-/** rct2: 0x008A5AE8 */
+/**  rct2: 0x008A5AE8 */
 static void steeplechase_track_right_eighth_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1102,7 +1102,7 @@ static void steeplechase_track_right_eighth_to_diag(paint_session * session, uin
     }
 }
 
-/** rct2: 0x008A5AF8 */
+/**  rct2: 0x008A5AF8 */
 static void steeplechase_track_left_eighth_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1110,7 +1110,7 @@ static void steeplechase_track_left_eighth_to_orthogonal(paint_session * session
     steeplechase_track_right_eighth_to_diag(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5B08 */
+/**  rct2: 0x008A5B08 */
 static void steeplechase_track_right_eighth_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1118,7 +1118,7 @@ static void steeplechase_track_right_eighth_to_orthogonal(paint_session * sessio
     steeplechase_track_left_eighth_to_diag(session, rideIndex, trackSequence, (direction + 3) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5AC8 */
+/**  rct2: 0x008A5AC8 */
 static void steeplechase_track_diag_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -1255,7 +1255,7 @@ static void steeplechase_track_diag_flat(paint_session * session, uint8 rideInde
     }
 }
 
-/** rct2: 0x008A5B38 */
+/**  rct2: 0x008A5B38 */
 static void steeplechase_track_diag_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                               sint32 height, rct_tile_element * tileElement)
 {
@@ -1392,7 +1392,7 @@ static void steeplechase_track_diag_25_deg_up(paint_session * session, uint8 rid
     }
 }
 
-/** rct2: 0x008A5B18 */
+/**  rct2: 0x008A5B18 */
 static void steeplechase_track_diag_flat_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1529,7 +1529,7 @@ static void steeplechase_track_diag_flat_to_25_deg_up(paint_session * session, u
     }
 }
 
-/** rct2: 0x008A5B28 */
+/**  rct2: 0x008A5B28 */
 static void steeplechase_track_diag_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1666,7 +1666,7 @@ static void steeplechase_track_diag_25_deg_up_to_flat(paint_session * session, u
     }
 }
 
-/** rct2: 0x008A5B68 */
+/**  rct2: 0x008A5B68 */
 static void steeplechase_track_diag_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                 sint32 height, rct_tile_element * tileElement)
 {
@@ -1803,7 +1803,7 @@ static void steeplechase_track_diag_25_deg_down(paint_session * session, uint8 r
     }
 }
 
-/** rct2: 0x008A5B48 */
+/**  rct2: 0x008A5B48 */
 static void steeplechase_track_diag_flat_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1938,7 +1938,7 @@ static void steeplechase_track_diag_flat_to_25_deg_down(paint_session * session,
     paint_util_set_general_support_height(session, height + 56, 0x20);
 }
 
-/** rct2: 0x008A5B58 */
+/**  rct2: 0x008A5B58 */
 static void steeplechase_track_diag_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2075,7 +2075,7 @@ static void steeplechase_track_diag_25_deg_down_to_flat(paint_session * session,
     }
 }
 
-/** rct2: 0x008A5AB8 */
+/**  rct2: 0x008A5AB8 */
 static void steeplechase_track_block_brakes(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {

@@ -149,7 +149,7 @@ static constexpr const staff_naming_convention StaffNamingConvention[] = {
 };
 
 /*
-* rct2: 0x006BD3CC
+*  rct2: 0x006BD3CC
 **/
 rct_window * window_staff_list_open()
 {
@@ -195,7 +195,7 @@ static void window_staff_list_cancel_tools(rct_window *w) {
 }
 
 /*
-* rct2: 0x006BD9B1
+*  rct2: 0x006BD9B1
 **/
 void window_staff_list_close(rct_window *w)
 {
@@ -615,7 +615,7 @@ void window_staff_list_paint(rct_window *w, rct_drawpixelinfo *dpi)
     gfx_draw_string_left(dpi, STR_STAFF_LIST_COUNTER, gCommonFormatArgs, COLOUR_BLACK, w->x + 4, window_staff_list_widgets[WIDX_STAFF_LIST_LIST].bottom + w->y + 2);
 }
 
-/** rct2: 0x00992A08 */
+/**  rct2: 0x00992A08 */
 static constexpr const uint32 staffOrderBaseSprites[] = {
     SPR_STAFF_ORDERS_SWEEPING,
     SPR_STAFF_ORDERS_INSPECT_RIDES,

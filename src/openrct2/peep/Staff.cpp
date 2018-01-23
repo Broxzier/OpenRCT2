@@ -322,7 +322,7 @@ static money32 staff_hire_new_staff_member(uint8 staff_type, uint8 flags, sint16
                 STR_ENTERTAINER_X,
             };
 
-            /* rct2: 0x009929FC */
+            /*  rct2: 0x009929FC */
             static constexpr const uint8 spriteTypes[] = {
                 PEEP_SPRITE_TYPE_HANDYMAN,
                 PEEP_SPRITE_TYPE_MECHANIC,
@@ -398,7 +398,7 @@ void game_command_hire_new_staff_member(sint32 * eax, sint32 * ebx, sint32 * ecx
                                        (*ebx & 0xFF0000) >> 16, edi);
 }
 
-/** rct2: 0x00982134 */
+/**  rct2: 0x00982134 */
 static constexpr const bool peep_slow_walking_types[] = {
     false, // PEEP_SPRITE_TYPE_NORMAL
     false, // PEEP_SPRITE_TYPE_HANDYMAN

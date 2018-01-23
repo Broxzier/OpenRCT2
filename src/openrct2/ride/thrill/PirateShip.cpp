@@ -36,10 +36,10 @@ typedef struct pirate_ship_bound_box
     sint16 offset_y;
 } pirate_ship_bound_box;
 
-/** rct2: 0x008A83B0 */
+/**  rct2: 0x008A83B0 */
 static constexpr const uint32 pirate_ship_base_sprite_offset[] = { 0, 9, 0, 9 };
 
-/** rct2: 0x008A83C0 */
+/**  rct2: 0x008A83C0 */
 static constexpr const pirate_ship_bound_box pirate_ship_data[] = {
     { 31, 16, 1, 8 },
     { 16, 31, 8, 1 },
@@ -60,7 +60,7 @@ static constexpr const uint32 pirate_ship_frame_sprites[][2] = {
     { SPR_PIRATE_SHIP_FRAME_NW_SE, SPR_PIRATE_SHIP_FRAME_FRONT_NW_SE },
 };
 
-/** rct2: 0x4AF254 */
+/**  rct2: 0x004AF254 */
 static void paint_pirate_ship_structure(paint_session * session, Ride * ride, uint8 direction, sint8 axisOffset, uint16 height)
 {
     uint32 imageId, baseImageId;
@@ -166,7 +166,7 @@ static void paint_pirate_ship_structure(paint_session * session, Ride * ride, ui
     session->InteractionType    = VIEWPORT_INTERACTION_ITEM_RIDE;
 }
 
-/** rct2: 0x008A85C4 */
+/**  rct2: 0x008A85C4 */
 static void paint_pirate_ship(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                               rct_tile_element * tileElement)
 {
@@ -314,7 +314,7 @@ static void paint_pirate_ship(paint_session * session, uint8 rideIndex, uint8 tr
 }
 
 /**
- * rct2: 0x008A83E0
+ *  rct2: 0x008A83E0
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_pirate_ship(sint32 trackType, sint32 direction)
 {

@@ -23,7 +23,7 @@
 #include "../../world/Banner.h"
 #include "../../world/Scenery.h"
 
-/** rct2: 0x0098D884 */
+/**  rct2: 0x0098D884 */
 // BannerBoundBoxes[rotation][0] is for the pole in the back
 // BannerBoundBoxes[rotation][1] is for the pole and the banner in the front
 const LocationXY16 BannerBoundBoxes[][2] = {

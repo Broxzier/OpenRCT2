@@ -79,7 +79,7 @@ void vehicle_visual_observation_tower(paint_session * session, sint32 x, sint32 
     assert(vehicleEntry->effect_visual == 1);
 }
 
-/** rct2: 0x0070DD6C */
+/**  rct2: 0x0070DD6C */
 static void paint_observation_tower_base(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -152,7 +152,7 @@ static void paint_observation_tower_base(paint_session * session, uint8 rideInde
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0070DD7C */
+/**  rct2: 0x0070DD7C */
 static void paint_observation_tower_section(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
@@ -178,7 +178,7 @@ static void paint_observation_tower_section(paint_session * session, uint8 rideI
 }
 
 /**
- * rct2: 0x0070DC5C
+ *  rct2: 0x0070DC5C
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_observation_tower(sint32 trackType, sint32 direction)
 {

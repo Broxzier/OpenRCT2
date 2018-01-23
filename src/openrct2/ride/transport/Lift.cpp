@@ -52,7 +52,7 @@ static void paint_lift_cage(paint_session * session, sint8 index, uint32 colourF
     sub_98197C(session, imageId, 0, 0, 2, 2, 30, height, 28, 28, height, get_current_rotation());
 }
 
-/** rct2: 0x0076C6CC */
+/**  rct2: 0x0076C6CC */
 static void paint_lift_base(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                             rct_tile_element * tileElement)
 {
@@ -121,7 +121,7 @@ static void paint_lift_base(paint_session * session, uint8 rideIndex, uint8 trac
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0076C6DC */
+/**  rct2: 0x0076C6DC */
 static void paint_lift_tower_section(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                      sint32 height, rct_tile_element * tileElement)
 {
@@ -139,7 +139,7 @@ static void paint_lift_tower_section(paint_session * session, uint8 rideIndex, u
 }
 
 /**
- * rct2: 0x0076C5BC
+ *  rct2: 0x0076C5BC
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_lift(sint32 trackType, sint32 direction)
 {

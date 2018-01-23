@@ -9995,7 +9995,7 @@ void bolliger_mabillard_track_flat_to_60_deg_up_long_base(paint_session * sessio
     }
 }
 
-/** rct2: 0x008AC104 */
+/**  rct2: 0x008AC104 */
 void bolliger_mabillard_track_60_deg_up_to_flat_long_base(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement,
                                                           sint32 supportType)

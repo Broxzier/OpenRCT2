@@ -1214,7 +1214,7 @@ typedef struct rct_window_graphs_y_axis {
     rct_string_id label;
 } rct_window_graphs_y_axis;
 
-/** rct2: 0x0098DD98 */
+/**  rct2: 0x0098DD98 */
 static constexpr const rct_window_graphs_y_axis window_graphs_y_axi[] = {
     {11, 0,  10, STR_RIDE_STATS_VELOCITY_FORMAT},   // GRAPH_VELOCITY
     {10, 0,  15, STR_RIDE_STATS_ALTITUDE_FORMAT},   // GRAPH_ALTITUDE
@@ -1384,7 +1384,7 @@ static void window_ride_draw_tab_images(rct_drawpixelinfo *dpi, rct_window *w)
 
 /**
 *
-* rct2: 0x006AEB9F
+*  rct2: 0x006AEB9F
 */
 static void window_ride_disable_tabs(rct_window *w)
 {
@@ -1896,7 +1896,7 @@ static void window_ride_init_viewport(rct_window *w)
     w->viewport_focus_coordinates.width = w->width;
     w->viewport_focus_coordinates.height = w->height;
 
-    //rct2: 0x006aec9c only used here so brought it into the function
+    // rct2: 0x006AEC9C only used here so brought it into the function
     if (!w->viewport && ride->overall_view.xy != RCT_XY8_UNDEFINED){
         rct_widget* view_widget = &w->widgets[WIDX_VIEWPORT];
 

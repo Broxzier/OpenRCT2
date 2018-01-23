@@ -50,7 +50,7 @@ typedef struct litter_sprite {
     uint8 direction_mask;
 } litter_sprite;
 
-/** rct2: 0x0097EF6C */
+/**  rct2: 0x0097EF6C */
 static constexpr const litter_sprite litter_sprites[] = {
     { SPR_LITTER_SICK,              0x1 },
     { SPR_LITTER_SICK_ALT,          0x1 },

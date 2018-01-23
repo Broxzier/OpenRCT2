@@ -19,7 +19,7 @@
 #include "Supports.h"
 #include "tile_element/TileElement.h"
 
-/** rct2: 0x0097AF20, 0x0097AF21 */
+/**  rct2: 0x0097AF20, 0x0097AF21 */
 // clang-format off
 static constexpr const LocationXY8 loc_97AF20[] = {
     {4,  4},
@@ -33,7 +33,7 @@ static constexpr const LocationXY8 loc_97AF20[] = {
     {16, 28}
 };
 
-/** rct2: 0x0097AF32 */
+/**  rct2: 0x0097AF32 */
 static constexpr const uint8 _97AF32[] = {
     5, 2, 5, 2, 5, 2, 5, 2,
     7, 1, 7, 1, 7, 1, 7, 1,
@@ -76,7 +76,7 @@ static constexpr const uint8 _97AF32[] = {
     5, 7, 5, 7, 5, 7, 5, 7,
 };
 
-/** rct2: 0x0097B052, 0x0097B053 */
+/**  rct2: 0x0097B052, 0x0097B053 */
 static constexpr const LocationXY16 loc_97B052[] = {
     {-15, -1},
     {0,   -2},
@@ -88,7 +88,7 @@ static constexpr const LocationXY16 loc_97B052[] = {
     {-1,  -26}
 };
 
-/** rct2: 0x0097B062, 0x0097B063 */
+/**  rct2: 0x0097B062, 0x0097B063 */
 static constexpr const LocationXY8 _97B062[] = {
     { 18,  3 },
     {  3, 18 },
@@ -100,7 +100,7 @@ static constexpr const LocationXY8 _97B062[] = {
     {  3, 32 }
 };
 
-/** rct2: 0x0097B072 */
+/**  rct2: 0x0097B072 */
 static constexpr const uint32 _metalSupportTypeToCrossbeamImages[][8] = {
     { 3370, 3371, 3370, 3371, 3372, 3373, 3372, 3373 }, // METAL_SUPPORTS_TUBES
     { 3374, 3375, 3374, 3375, 3376, 3377, 3376, 3377 }, // METAL_SUPPORTS_FORK
@@ -117,7 +117,7 @@ static constexpr const uint32 _metalSupportTypeToCrossbeamImages[][8] = {
     { 3370, 3371, 3370, 3371, 3372, 3373, 3372, 3373 }, // METAL_SUPPORTS_BOXED_COATED
 };
 
-/** rct2: 0x0097B142 */
+/**  rct2: 0x0097B142 */
 static constexpr const uint8 supportTypeToHeight[] = {
     6,
     3,
@@ -139,7 +139,7 @@ typedef struct metal_supports_images {
     uint16 beam_id;
 } metal_supports_images;
 
-/** rct2: 0x0097B15C */
+/**  rct2: 0x0097B15C */
 static constexpr const metal_supports_images _97B15C[] = {
     { 3243, 3209 },
     { 3279, 3262 },
@@ -156,7 +156,7 @@ static constexpr const metal_supports_images _97B15C[] = {
     { 3334, 3353 },
 };
 
-/** rct2: 0x0097B190 */
+/**  rct2: 0x0097B190 */
 static constexpr const metal_supports_images _97B190[] = {
     { 3243, 3226 }, // 3209
     { 3279, 3262 },
@@ -173,7 +173,7 @@ static constexpr const metal_supports_images _97B190[] = {
     { 3334, 3353 },
 };
 
-/** rct2: 0x0097B404 */
+/**  rct2: 0x0097B404 */
 static constexpr const uint8 metal_supports_slope_image_map[] = {
      0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14,  0,
      0,  0,  0,  0,  0,  0,  0, 15,  0,  0,  0, 16,  0, 17, 18,  0,

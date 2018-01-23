@@ -74,7 +74,7 @@ static rct_window_event_list window_staff_fire_events = {
     window_staff_fire_paint,
     nullptr
 };
-/** Based off of rct2: 0x6C0A77 */
+/** Based off of rct2: 0x006C0A77 */
 rct_window* window_staff_fire_prompt_open(rct_peep* peep)
 {
     rct_window * w;

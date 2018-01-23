@@ -180,7 +180,7 @@ extern "C" {
 // Global for paint clipping height.
 extern uint8 gClipHeight;
 
-/** rct2: 0x00993CC4. The white ghost that indicates not-yet-built elements. */
+/**  rct2: 0x00993CC4. The white ghost that indicates not-yet-built elements. */
 #define CONSTRUCTION_MARKER (COLOUR_DARK_GREEN << 19 | COLOUR_GREY << 24 | IMAGE_TYPE_REMAP);
 extern bool gShowDirtyVisuals;
 extern bool gPaintBoundingBoxes;

@@ -1061,7 +1061,7 @@ extern "C"
     }
 
     /**
-    * rct2: 0x006881D0
+    *  rct2: 0x006881D0
     *
     * @param image_id (ebx)
     * @param x (ax)
@@ -1098,7 +1098,7 @@ extern "C"
     }
 
     /**
-    * rct2: 0x0068818E
+    *  rct2: 0x0068818E
     *
     * @param image_id (ebx)
     * @param x (ax)
@@ -1137,7 +1137,7 @@ extern "C"
     }
 
     /**
-    * rct2: 0x00685EBC, 0x00686046, 0x00685FC8, 0x00685F4A, 0x00685ECC
+    *  rct2: 0x00685EBC, 0x00686046, 0x00685FC8, 0x00685F4A, 0x00685ECC
     * @param amount (eax)
     * @param string_id (bx)
     * @param y (cx)

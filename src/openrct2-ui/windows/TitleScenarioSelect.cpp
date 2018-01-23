@@ -292,7 +292,7 @@ static void window_scenarioselect_scrollgetsize(rct_window *w, sint32 scrollInde
 
 /**
  *
- *  rct2: 0x6780FE
+ *  rct2: 0x006780FE
  */
 static void window_scenarioselect_scrollmousedown(rct_window *w, sint32 scrollIndex, sint32 x, sint32 y)
 {
@@ -322,7 +322,7 @@ static void window_scenarioselect_scrollmousedown(rct_window *w, sint32 scrollIn
 
 /**
  *
- *  rct2: 0x678162
+ *  rct2: 0x00678162
  */
 static void window_scenarioselect_scrollmouseover(rct_window *w, sint32 scrollIndex, sint32 x, sint32 y)
 {

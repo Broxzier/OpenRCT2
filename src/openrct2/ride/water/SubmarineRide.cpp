@@ -203,7 +203,7 @@ static void submarine_ride_paint_track_right_quarter_turn_1_tile(paint_session *
 }
 
 /**
- * rct2: 0x008995D4
+ *  rct2: 0x008995D4
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_submarine_ride(sint32 trackType, sint32 direction)
 {

@@ -27,35 +27,35 @@
 #include "../TrackPaint.h"
 #include "BolligerMabillardTrack.h"
 
-/** rct2: 0x008AB6A4 */
+/**  rct2: 0x008AB6A4 */
 static void twister_rc_track_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                                   rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_flat(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB8F4, 0x008AB904, 0x008AB914 */
+/**  rct2: 0x008AB8F4, 0x008AB904, 0x008AB914 */
 static void twister_rc_track_station(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                      sint32 height, rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_station(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB6B4 */
+/**  rct2: 0x008AB6B4 */
 static void twister_rc_track_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                        sint32 height, rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_25_deg_up(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB6C4 */
+/**  rct2: 0x008AB6C4 */
 static void twister_rc_track_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                        sint32 height, rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_60_deg_up(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB6D4 */
+/**  rct2: 0x008AB6D4 */
 static void twister_rc_track_flat_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -63,7 +63,7 @@ static void twister_rc_track_flat_to_25_deg_up(paint_session * session, uint8 ri
                                                METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB6E4 */
+/**  rct2: 0x008AB6E4 */
 static void twister_rc_track_25_deg_up_to_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -71,7 +71,7 @@ static void twister_rc_track_25_deg_up_to_60_deg_up(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB6F4 */
+/**  rct2: 0x008AB6F4 */
 static void twister_rc_track_60_deg_up_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -79,7 +79,7 @@ static void twister_rc_track_60_deg_up_to_25_deg_up(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB704 */
+/**  rct2: 0x008AB704 */
 static void twister_rc_track_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -87,7 +87,7 @@ static void twister_rc_track_25_deg_up_to_flat(paint_session * session, uint8 ri
                                                METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB714 */
+/**  rct2: 0x008AB714 */
 static void twister_rc_track_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -95,7 +95,7 @@ static void twister_rc_track_25_deg_down(paint_session * session, uint8 rideInde
                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB724 */
+/**  rct2: 0x008AB724 */
 static void twister_rc_track_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -103,7 +103,7 @@ static void twister_rc_track_60_deg_down(paint_session * session, uint8 rideInde
                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB734 */
+/**  rct2: 0x008AB734 */
 static void twister_rc_track_flat_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -111,7 +111,7 @@ static void twister_rc_track_flat_to_25_deg_down(paint_session * session, uint8 
                                                  METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB744 */
+/**  rct2: 0x008AB744 */
 static void twister_rc_track_25_deg_down_to_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -119,7 +119,7 @@ static void twister_rc_track_25_deg_down_to_60_deg_down(paint_session * session,
                                                         METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB754 */
+/**  rct2: 0x008AB754 */
 static void twister_rc_track_60_deg_down_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -127,7 +127,7 @@ static void twister_rc_track_60_deg_down_to_25_deg_down(paint_session * session,
                                                         METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB764 */
+/**  rct2: 0x008AB764 */
 static void twister_rc_track_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -135,7 +135,7 @@ static void twister_rc_track_25_deg_down_to_flat(paint_session * session, uint8 
                                                  METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB774 */
+/**  rct2: 0x008AB774 */
 static void twister_rc_track_left_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -143,7 +143,7 @@ static void twister_rc_track_left_quarter_turn_5(paint_session * session, uint8 
                                                  METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB784 */
+/**  rct2: 0x008AB784 */
 static void twister_rc_track_right_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -151,7 +151,7 @@ static void twister_rc_track_right_quarter_turn_5(paint_session * session, uint8
                                                   METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB794 */
+/**  rct2: 0x008AB794 */
 static void twister_rc_track_flat_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -159,7 +159,7 @@ static void twister_rc_track_flat_to_left_bank(paint_session * session, uint8 ri
                                                METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB7A4 */
+/**  rct2: 0x008AB7A4 */
 static void twister_rc_track_flat_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                 sint32 height, rct_tile_element * tileElement)
 {
@@ -167,7 +167,7 @@ static void twister_rc_track_flat_to_right_bank(paint_session * session, uint8 r
                                                 METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB7B4 */
+/**  rct2: 0x008AB7B4 */
 static void twister_rc_track_left_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -175,7 +175,7 @@ static void twister_rc_track_left_bank_to_flat(paint_session * session, uint8 ri
                                                METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB7C4 */
+/**  rct2: 0x008AB7C4 */
 static void twister_rc_track_right_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                 sint32 height, rct_tile_element * tileElement)
 {
@@ -183,7 +183,7 @@ static void twister_rc_track_right_bank_to_flat(paint_session * session, uint8 r
                                                 METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB7D4 */
+/**  rct2: 0x008AB7D4 */
 static void twister_rc_track_banked_left_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -191,7 +191,7 @@ static void twister_rc_track_banked_left_quarter_turn_5(paint_session * session,
                                                         METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB7E4 */
+/**  rct2: 0x008AB7E4 */
 static void twister_rc_track_banked_right_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -199,7 +199,7 @@ static void twister_rc_track_banked_right_quarter_turn_5(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB7F4 */
+/**  rct2: 0x008AB7F4 */
 static void twister_rc_track_left_bank_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -207,7 +207,7 @@ static void twister_rc_track_left_bank_to_25_deg_up(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB804 */
+/**  rct2: 0x008AB804 */
 static void twister_rc_track_right_bank_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -215,7 +215,7 @@ static void twister_rc_track_right_bank_to_25_deg_up(paint_session * session, ui
                                                      METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB814 */
+/**  rct2: 0x008AB814 */
 static void twister_rc_track_25_deg_up_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -223,7 +223,7 @@ static void twister_rc_track_25_deg_up_to_left_bank(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB824 */
+/**  rct2: 0x008AB824 */
 static void twister_rc_track_25_deg_up_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -231,7 +231,7 @@ static void twister_rc_track_25_deg_up_to_right_bank(paint_session * session, ui
                                                      METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB834 */
+/**  rct2: 0x008AB834 */
 static void twister_rc_track_left_bank_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -239,7 +239,7 @@ static void twister_rc_track_left_bank_to_25_deg_down(paint_session * session, u
                                                       METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB844 */
+/**  rct2: 0x008AB844 */
 static void twister_rc_track_right_bank_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -247,7 +247,7 @@ static void twister_rc_track_right_bank_to_25_deg_down(paint_session * session, 
                                                        METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB854 */
+/**  rct2: 0x008AB854 */
 static void twister_rc_track_25_deg_down_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -255,7 +255,7 @@ static void twister_rc_track_25_deg_down_to_left_bank(paint_session * session, u
                                                       METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB864 */
+/**  rct2: 0x008AB864 */
 static void twister_rc_track_25_deg_down_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -263,21 +263,21 @@ static void twister_rc_track_25_deg_down_to_right_bank(paint_session * session, 
                                                        METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB874 */
+/**  rct2: 0x008AB874 */
 static void twister_rc_track_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                        sint32 height, rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_left_bank(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB884 */
+/**  rct2: 0x008AB884 */
 static void twister_rc_track_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                         sint32 height, rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_right_bank(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB894 */
+/**  rct2: 0x008AB894 */
 static void twister_rc_track_left_quarter_turn_5_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -285,7 +285,7 @@ static void twister_rc_track_left_quarter_turn_5_25_deg_up(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB8A4 */
+/**  rct2: 0x008AB8A4 */
 static void twister_rc_track_right_quarter_turn_5_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -293,7 +293,7 @@ static void twister_rc_track_right_quarter_turn_5_25_deg_up(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB8B4 */
+/**  rct2: 0x008AB8B4 */
 static void twister_rc_track_left_quarter_turn_5_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -301,7 +301,7 @@ static void twister_rc_track_left_quarter_turn_5_25_deg_down(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB8C4 */
+/**  rct2: 0x008AB8C4 */
 static void twister_rc_track_right_quarter_turn_5_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -309,7 +309,7 @@ static void twister_rc_track_right_quarter_turn_5_25_deg_down(paint_session * se
                                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB8D4 */
+/**  rct2: 0x008AB8D4 */
 static void twister_rc_track_s_bend_left(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -317,7 +317,7 @@ static void twister_rc_track_s_bend_left(paint_session * session, uint8 rideInde
                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB8E4 */
+/**  rct2: 0x008AB8E4 */
 static void twister_rc_track_s_bend_right(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                           sint32 height, rct_tile_element * tileElement)
 {
@@ -325,7 +325,7 @@ static void twister_rc_track_s_bend_right(paint_session * session, uint8 rideInd
                                           METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA84 */
+/**  rct2: 0x008ABA84 */
 static void twister_rc_track_left_vertical_loop(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                 sint32 height, rct_tile_element * tileElement)
 {
@@ -333,7 +333,7 @@ static void twister_rc_track_left_vertical_loop(paint_session * session, uint8 r
                                                 METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA94 */
+/**  rct2: 0x008ABA94 */
 static void twister_rc_track_right_vertical_loop(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -341,7 +341,7 @@ static void twister_rc_track_right_vertical_loop(paint_session * session, uint8 
                                                  METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB924 */
+/**  rct2: 0x008AB924 */
 static void twister_rc_track_left_quarter_turn_3(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -349,7 +349,7 @@ static void twister_rc_track_left_quarter_turn_3(paint_session * session, uint8 
                                                  METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB934 */
+/**  rct2: 0x008AB934 */
 static void twister_rc_track_right_quarter_turn_3(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -357,7 +357,7 @@ static void twister_rc_track_right_quarter_turn_3(paint_session * session, uint8
                                                   METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB944 */
+/**  rct2: 0x008AB944 */
 static void twister_rc_track_left_quarter_turn_3_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -365,7 +365,7 @@ static void twister_rc_track_left_quarter_turn_3_bank(paint_session * session, u
                                                       METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB954 */
+/**  rct2: 0x008AB954 */
 static void twister_rc_track_right_quarter_turn_3_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -373,7 +373,7 @@ static void twister_rc_track_right_quarter_turn_3_bank(paint_session * session, 
                                                        METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB964 */
+/**  rct2: 0x008AB964 */
 static void twister_rc_track_left_quarter_turn_3_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -381,7 +381,7 @@ static void twister_rc_track_left_quarter_turn_3_25_deg_up(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB974 */
+/**  rct2: 0x008AB974 */
 static void twister_rc_track_right_quarter_turn_3_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -389,7 +389,7 @@ static void twister_rc_track_right_quarter_turn_3_25_deg_up(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB984 */
+/**  rct2: 0x008AB984 */
 static void twister_rc_track_left_quarter_turn_3_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -397,7 +397,7 @@ static void twister_rc_track_left_quarter_turn_3_25_deg_down(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB994 */
+/**  rct2: 0x008AB994 */
 static void twister_rc_track_right_quarter_turn_3_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -405,7 +405,7 @@ static void twister_rc_track_right_quarter_turn_3_25_deg_down(paint_session * se
                                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB9A4 */
+/**  rct2: 0x008AB9A4 */
 static void twister_rc_track_left_half_banked_helix_up_small(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -413,7 +413,7 @@ static void twister_rc_track_left_half_banked_helix_up_small(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB9B4 */
+/**  rct2: 0x008AB9B4 */
 static void twister_rc_track_right_half_banked_helix_up_small(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -421,7 +421,7 @@ static void twister_rc_track_right_half_banked_helix_up_small(paint_session * se
                                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB9C4 */
+/**  rct2: 0x008AB9C4 */
 static void twister_rc_track_left_half_banked_helix_down_small(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -429,7 +429,7 @@ static void twister_rc_track_left_half_banked_helix_down_small(paint_session * s
                                                                METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB9D4 */
+/**  rct2: 0x008AB9D4 */
 static void twister_rc_track_right_half_banked_helix_down_small(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -437,7 +437,7 @@ static void twister_rc_track_right_half_banked_helix_down_small(paint_session * 
                                                                 tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB9E4 */
+/**  rct2: 0x008AB9E4 */
 static void twister_rc_track_left_half_banked_helix_up_large(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -445,7 +445,7 @@ static void twister_rc_track_left_half_banked_helix_up_large(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AB9F4 */
+/**  rct2: 0x008AB9F4 */
 static void twister_rc_track_right_half_banked_helix_up_large(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -453,7 +453,7 @@ static void twister_rc_track_right_half_banked_helix_up_large(paint_session * se
                                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA04 */
+/**  rct2: 0x008ABA04 */
 static void twister_rc_track_left_half_banked_helix_down_large(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -461,7 +461,7 @@ static void twister_rc_track_left_half_banked_helix_down_large(paint_session * s
                                                                METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA14 */
+/**  rct2: 0x008ABA14 */
 static void twister_rc_track_right_half_banked_helix_down_large(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -469,7 +469,7 @@ static void twister_rc_track_right_half_banked_helix_down_large(paint_session * 
                                                                 tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA44 */
+/**  rct2: 0x008ABA44 */
 static void twister_rc_track_left_quarter_turn_1_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -477,7 +477,7 @@ static void twister_rc_track_left_quarter_turn_1_60_deg_up(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA24 */
+/**  rct2: 0x008ABA24 */
 static void twister_rc_track_right_quarter_turn_1_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -485,7 +485,7 @@ static void twister_rc_track_right_quarter_turn_1_60_deg_up(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA34 */
+/**  rct2: 0x008ABA34 */
 static void twister_rc_track_left_quarter_turn_1_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -493,7 +493,7 @@ static void twister_rc_track_left_quarter_turn_1_60_deg_down(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA54 */
+/**  rct2: 0x008ABA54 */
 static void twister_rc_track_right_quarter_turn_1_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -501,14 +501,14 @@ static void twister_rc_track_right_quarter_turn_1_60_deg_down(paint_session * se
                                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA64 */
+/**  rct2: 0x008ABA64 */
 static void twister_rc_track_brakes(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                     sint32 height, rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_brakes(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE04 */
+/**  rct2: 0x008ABE04 */
 static void twister_rc_track_25_deg_up_left_banked(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -516,7 +516,7 @@ static void twister_rc_track_25_deg_up_left_banked(paint_session * session, uint
                                                    METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE14 */
+/**  rct2: 0x008ABE14 */
 static void twister_rc_track_25_deg_up_right_banked(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -524,7 +524,7 @@ static void twister_rc_track_25_deg_up_right_banked(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABA74 */
+/**  rct2: 0x008ABA74 */
 static void twister_rc_track_on_ride_photo(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                            sint32 height, rct_tile_element * tileElement)
 {
@@ -532,7 +532,7 @@ static void twister_rc_track_on_ride_photo(paint_session * session, uint8 rideIn
                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE24 */
+/**  rct2: 0x008ABE24 */
 static void twister_rc_track_25_deg_down_left_banked(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -540,7 +540,7 @@ static void twister_rc_track_25_deg_down_left_banked(paint_session * session, ui
                                                      METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE34 */
+/**  rct2: 0x008ABE34 */
 static void twister_rc_track_25_deg_down_right_banked(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -548,14 +548,14 @@ static void twister_rc_track_25_deg_down_right_banked(paint_session * session, u
                                                       METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE44 */
+/**  rct2: 0x008ABE44 */
 static void twister_rc_track_90_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                        sint32 height, rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_90_deg_up(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE54 */
+/**  rct2: 0x008ABE54 */
 static void twister_rc_track_90_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -563,7 +563,7 @@ static void twister_rc_track_90_deg_down(paint_session * session, uint8 rideInde
                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE64 */
+/**  rct2: 0x008ABE64 */
 static void twister_rc_track_60_deg_up_to_90_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -571,7 +571,7 @@ static void twister_rc_track_60_deg_up_to_90_deg_up(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE74 */
+/**  rct2: 0x008ABE74 */
 static void twister_rc_track_90_deg_down_to_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -579,7 +579,7 @@ static void twister_rc_track_90_deg_down_to_60_deg_down(paint_session * session,
                                                         METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE84 */
+/**  rct2: 0x008ABE84 */
 static void twister_rc_track_90_deg_up_to_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -587,7 +587,7 @@ static void twister_rc_track_90_deg_up_to_60_deg_up(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABE94 */
+/**  rct2: 0x008ABE94 */
 static void twister_rc_track_60_deg_down_to_90_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -595,7 +595,7 @@ static void twister_rc_track_60_deg_down_to_90_deg_down(paint_session * session,
                                                         METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABAB4 */
+/**  rct2: 0x008ABAB4 */
 static void twister_rc_track_left_eighth_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -603,7 +603,7 @@ static void twister_rc_track_left_eighth_to_diag(paint_session * session, uint8 
                                                  METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABAC4 */
+/**  rct2: 0x008ABAC4 */
 static void twister_rc_track_right_eighth_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -611,7 +611,7 @@ static void twister_rc_track_right_eighth_to_diag(paint_session * session, uint8
                                                   METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABAD4 */
+/**  rct2: 0x008ABAD4 */
 static void twister_rc_track_left_eighth_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -619,7 +619,7 @@ static void twister_rc_track_left_eighth_to_orthogonal(paint_session * session, 
                                                        METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABAE4 */
+/**  rct2: 0x008ABAE4 */
 static void twister_rc_track_right_eighth_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -627,7 +627,7 @@ static void twister_rc_track_right_eighth_to_orthogonal(paint_session * session,
                                                         METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABAF4 */
+/**  rct2: 0x008ABAF4 */
 static void twister_rc_track_left_eighth_bank_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -635,7 +635,7 @@ static void twister_rc_track_left_eighth_bank_to_diag(paint_session * session, u
                                                       METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB04 */
+/**  rct2: 0x008ABB04 */
 static void twister_rc_track_right_eighth_bank_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -643,7 +643,7 @@ static void twister_rc_track_right_eighth_bank_to_diag(paint_session * session, 
                                                        METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB14 */
+/**  rct2: 0x008ABB14 */
 static void twister_rc_track_left_eighth_bank_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -651,7 +651,7 @@ static void twister_rc_track_left_eighth_bank_to_orthogonal(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB24 */
+/**  rct2: 0x008ABB24 */
 static void twister_rc_track_right_eighth_bank_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -659,14 +659,14 @@ static void twister_rc_track_right_eighth_bank_to_orthogonal(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABAA4 */
+/**  rct2: 0x008ABAA4 */
 static void twister_rc_track_diag_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                        sint32 height, rct_tile_element * tileElement)
 {
     bolliger_mabillard_track_diag_flat(session, rideIndex, trackSequence, direction, height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB54 */
+/**  rct2: 0x008ABB54 */
 static void twister_rc_track_diag_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
@@ -674,7 +674,7 @@ static void twister_rc_track_diag_25_deg_up(paint_session * session, uint8 rideI
                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABBB4 */
+/**  rct2: 0x008ABBB4 */
 static void twister_rc_track_diag_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
@@ -682,7 +682,7 @@ static void twister_rc_track_diag_60_deg_up(paint_session * session, uint8 rideI
                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB34 */
+/**  rct2: 0x008ABB34 */
 static void twister_rc_track_diag_flat_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -690,7 +690,7 @@ static void twister_rc_track_diag_flat_to_25_deg_up(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB94 */
+/**  rct2: 0x008ABB94 */
 static void twister_rc_track_diag_25_deg_up_to_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -698,7 +698,7 @@ static void twister_rc_track_diag_25_deg_up_to_60_deg_up(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABBA4 */
+/**  rct2: 0x008ABBA4 */
 static void twister_rc_track_diag_60_deg_up_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -706,7 +706,7 @@ static void twister_rc_track_diag_60_deg_up_to_25_deg_up(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB44 */
+/**  rct2: 0x008ABB44 */
 static void twister_rc_track_diag_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -714,7 +714,7 @@ static void twister_rc_track_diag_25_deg_up_to_flat(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB84 */
+/**  rct2: 0x008ABB84 */
 static void twister_rc_track_diag_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                               sint32 height, rct_tile_element * tileElement)
 {
@@ -722,7 +722,7 @@ static void twister_rc_track_diag_25_deg_down(paint_session * session, uint8 rid
                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABBE4 */
+/**  rct2: 0x008ABBE4 */
 static void twister_rc_track_diag_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                               sint32 height, rct_tile_element * tileElement)
 {
@@ -730,7 +730,7 @@ static void twister_rc_track_diag_60_deg_down(paint_session * session, uint8 rid
                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB64 */
+/**  rct2: 0x008ABB64 */
 static void twister_rc_track_diag_flat_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -738,7 +738,7 @@ static void twister_rc_track_diag_flat_to_25_deg_down(paint_session * session, u
                                                       METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABBC4 */
+/**  rct2: 0x008ABBC4 */
 static void twister_rc_track_diag_25_deg_down_to_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -746,7 +746,7 @@ static void twister_rc_track_diag_25_deg_down_to_60_deg_down(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABBD4 */
+/**  rct2: 0x008ABBD4 */
 static void twister_rc_track_diag_60_deg_down_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -754,7 +754,7 @@ static void twister_rc_track_diag_60_deg_down_to_25_deg_down(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABB74 */
+/**  rct2: 0x008ABB74 */
 static void twister_rc_track_diag_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -762,7 +762,7 @@ static void twister_rc_track_diag_25_deg_down_to_flat(paint_session * session, u
                                                       METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC14 */
+/**  rct2: 0x008ABC14 */
 static void twister_rc_track_diag_flat_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -770,7 +770,7 @@ static void twister_rc_track_diag_flat_to_left_bank(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC24 */
+/**  rct2: 0x008ABC24 */
 static void twister_rc_track_diag_flat_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -778,7 +778,7 @@ static void twister_rc_track_diag_flat_to_right_bank(paint_session * session, ui
                                                      METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC34 */
+/**  rct2: 0x008ABC34 */
 static void twister_rc_track_diag_left_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -786,7 +786,7 @@ static void twister_rc_track_diag_left_bank_to_flat(paint_session * session, uin
                                                     METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC44 */
+/**  rct2: 0x008ABC44 */
 static void twister_rc_track_diag_right_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -794,7 +794,7 @@ static void twister_rc_track_diag_right_bank_to_flat(paint_session * session, ui
                                                      METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC74 */
+/**  rct2: 0x008ABC74 */
 static void twister_rc_track_diag_left_bank_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -802,7 +802,7 @@ static void twister_rc_track_diag_left_bank_to_25_deg_up(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC84 */
+/**  rct2: 0x008ABC84 */
 static void twister_rc_track_diag_right_bank_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -810,7 +810,7 @@ static void twister_rc_track_diag_right_bank_to_25_deg_up(paint_session * sessio
                                                           METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC54 */
+/**  rct2: 0x008ABC54 */
 static void twister_rc_track_diag_25_deg_up_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -818,7 +818,7 @@ static void twister_rc_track_diag_25_deg_up_to_left_bank(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC64 */
+/**  rct2: 0x008ABC64 */
 static void twister_rc_track_diag_25_deg_up_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -826,7 +826,7 @@ static void twister_rc_track_diag_25_deg_up_to_right_bank(paint_session * sessio
                                                           METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC94 */
+/**  rct2: 0x008ABC94 */
 static void twister_rc_track_diag_left_bank_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -834,7 +834,7 @@ static void twister_rc_track_diag_left_bank_to_25_deg_down(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABCA4 */
+/**  rct2: 0x008ABCA4 */
 static void twister_rc_track_diag_right_bank_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -842,7 +842,7 @@ static void twister_rc_track_diag_right_bank_to_25_deg_down(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABCB4 */
+/**  rct2: 0x008ABCB4 */
 static void twister_rc_track_diag_25_deg_down_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -850,7 +850,7 @@ static void twister_rc_track_diag_25_deg_down_to_left_bank(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABCC4 */
+/**  rct2: 0x008ABCC4 */
 static void twister_rc_track_diag_25_deg_down_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -858,7 +858,7 @@ static void twister_rc_track_diag_25_deg_down_to_right_bank(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABBF4 */
+/**  rct2: 0x008ABBF4 */
 static void twister_rc_track_diag_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
@@ -866,7 +866,7 @@ static void twister_rc_track_diag_left_bank(paint_session * session, uint8 rideI
                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABC04 */
+/**  rct2: 0x008ABC04 */
 static void twister_rc_track_diag_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                              sint32 height, rct_tile_element * tileElement)
 {
@@ -874,7 +874,7 @@ static void twister_rc_track_diag_right_bank(paint_session * session, uint8 ride
                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD74 */
+/**  rct2: 0x008ABD74 */
 static void twister_rc_track_left_bank_to_left_quarter_turn_3_25_deg_up(paint_session * session, uint8 rideIndex,
                                                                         uint8 trackSequence, uint8 direction, sint32 height,
                                                                         rct_tile_element * tileElement)
@@ -883,7 +883,7 @@ static void twister_rc_track_left_bank_to_left_quarter_turn_3_25_deg_up(paint_se
                                                                         tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD84 */
+/**  rct2: 0x008ABD84 */
 static void twister_rc_track_right_bank_to_right_quarter_turn_3_25_deg_up(paint_session * session, uint8 rideIndex,
                                                                           uint8 trackSequence, uint8 direction, sint32 height,
                                                                           rct_tile_element * tileElement)
@@ -892,7 +892,7 @@ static void twister_rc_track_right_bank_to_right_quarter_turn_3_25_deg_up(paint_
                                                                           tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD94 */
+/**  rct2: 0x008ABD94 */
 static void twister_rc_track_left_quarter_turn_3_25_deg_down_to_left_bank(paint_session * session, uint8 rideIndex,
                                                                           uint8 trackSequence, uint8 direction, sint32 height,
                                                                           rct_tile_element * tileElement)
@@ -901,7 +901,7 @@ static void twister_rc_track_left_quarter_turn_3_25_deg_down_to_left_bank(paint_
                                                                           tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABDA4 */
+/**  rct2: 0x008ABDA4 */
 static void twister_rc_track_right_quarter_turn_3_25_deg_down_to_right_bank(paint_session * session, uint8 rideIndex,
                                                                             uint8 trackSequence, uint8 direction, sint32 height,
                                                                             rct_tile_element * tileElement)
@@ -910,7 +910,7 @@ static void twister_rc_track_right_quarter_turn_3_25_deg_down_to_right_bank(pain
                                                                             height, tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC0E4 */
+/**  rct2: 0x008AC0E4 */
 static void twister_rc_track_block_brakes(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                           sint32 height, rct_tile_element * tileElement)
 {
@@ -918,7 +918,7 @@ static void twister_rc_track_block_brakes(paint_session * session, uint8 rideInd
                                           METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABEA4 */
+/**  rct2: 0x008ABEA4 */
 static void twister_rc_track_left_banked_quarter_turn_3_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -926,7 +926,7 @@ static void twister_rc_track_left_banked_quarter_turn_3_25_deg_up(paint_session 
                                                                   tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABEB4 */
+/**  rct2: 0x008ABEB4 */
 static void twister_rc_track_right_banked_quarter_turn_3_25_deg_up(paint_session * session, uint8 rideIndex,
                                                                    uint8 trackSequence, uint8 direction, sint32 height,
                                                                    rct_tile_element * tileElement)
@@ -935,7 +935,7 @@ static void twister_rc_track_right_banked_quarter_turn_3_25_deg_up(paint_session
                                                                    tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABEC4 */
+/**  rct2: 0x008ABEC4 */
 static void twister_rc_track_left_banked_quarter_turn_3_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                     uint8 trackSequence, uint8 direction, sint32 height,
                                                                     rct_tile_element * tileElement)
@@ -944,7 +944,7 @@ static void twister_rc_track_left_banked_quarter_turn_3_25_deg_down(paint_sessio
                                                                     tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABED4 */
+/**  rct2: 0x008ABED4 */
 static void twister_rc_track_right_banked_quarter_turn_3_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                      uint8 trackSequence, uint8 direction, sint32 height,
                                                                      rct_tile_element * tileElement)
@@ -953,7 +953,7 @@ static void twister_rc_track_right_banked_quarter_turn_3_25_deg_down(paint_sessi
                                                                      tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABEE4 */
+/**  rct2: 0x008ABEE4 */
 static void twister_rc_track_left_banked_quarter_turn_5_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -961,7 +961,7 @@ static void twister_rc_track_left_banked_quarter_turn_5_25_deg_up(paint_session 
                                                                   tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABEF4 */
+/**  rct2: 0x008ABEF4 */
 static void twister_rc_track_right_banked_quarter_turn_5_25_deg_up(paint_session * session, uint8 rideIndex,
                                                                    uint8 trackSequence, uint8 direction, sint32 height,
                                                                    rct_tile_element * tileElement)
@@ -970,7 +970,7 @@ static void twister_rc_track_right_banked_quarter_turn_5_25_deg_up(paint_session
                                                                    tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF04 */
+/**  rct2: 0x008ABF04 */
 static void twister_rc_track_left_banked_quarter_turn_5_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                     uint8 trackSequence, uint8 direction, sint32 height,
                                                                     rct_tile_element * tileElement)
@@ -979,7 +979,7 @@ static void twister_rc_track_left_banked_quarter_turn_5_25_deg_down(paint_sessio
                                                                     tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF14 */
+/**  rct2: 0x008ABF14 */
 static void twister_rc_track_right_banked_quarter_turn_5_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                      uint8 trackSequence, uint8 direction, sint32 height,
                                                                      rct_tile_element * tileElement)
@@ -988,7 +988,7 @@ static void twister_rc_track_right_banked_quarter_turn_5_25_deg_down(paint_sessi
                                                                      tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF24 */
+/**  rct2: 0x008ABF24 */
 static void twister_rc_track_25_deg_up_to_left_banked_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -996,7 +996,7 @@ static void twister_rc_track_25_deg_up_to_left_banked_25_deg_up(paint_session * 
                                                                 tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF34 */
+/**  rct2: 0x008ABF34 */
 static void twister_rc_track_25_deg_up_to_right_banked_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                  uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1004,7 +1004,7 @@ static void twister_rc_track_25_deg_up_to_right_banked_25_deg_up(paint_session *
                                                                  tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF44 */
+/**  rct2: 0x008ABF44 */
 static void twister_rc_track_left_banked_25_deg_up_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1012,7 +1012,7 @@ static void twister_rc_track_left_banked_25_deg_up_to_25_deg_up(paint_session * 
                                                                 tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF54 */
+/**  rct2: 0x008ABF54 */
 static void twister_rc_track_right_banked_25_deg_up_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                  uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1020,7 +1020,7 @@ static void twister_rc_track_right_banked_25_deg_up_to_25_deg_up(paint_session *
                                                                  tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF64 */
+/**  rct2: 0x008ABF64 */
 static void twister_rc_track_25_deg_down_to_left_banked_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                     uint8 trackSequence, uint8 direction, sint32 height,
                                                                     rct_tile_element * tileElement)
@@ -1029,7 +1029,7 @@ static void twister_rc_track_25_deg_down_to_left_banked_25_deg_down(paint_sessio
                                                                     tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF74 */
+/**  rct2: 0x008ABF74 */
 static void twister_rc_track_25_deg_down_to_right_banked_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                      uint8 trackSequence, uint8 direction, sint32 height,
                                                                      rct_tile_element * tileElement)
@@ -1038,7 +1038,7 @@ static void twister_rc_track_25_deg_down_to_right_banked_25_deg_down(paint_sessi
                                                                      tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF84 */
+/**  rct2: 0x008ABF84 */
 static void twister_rc_track_left_banked_25_deg_down_to_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                     uint8 trackSequence, uint8 direction, sint32 height,
                                                                     rct_tile_element * tileElement)
@@ -1047,7 +1047,7 @@ static void twister_rc_track_left_banked_25_deg_down_to_25_deg_down(paint_sessio
                                                                     tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABF94 */
+/**  rct2: 0x008ABF94 */
 static void twister_rc_track_right_banked_25_deg_down_to_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                      uint8 trackSequence, uint8 direction, sint32 height,
                                                                      rct_tile_element * tileElement)
@@ -1056,7 +1056,7 @@ static void twister_rc_track_right_banked_25_deg_down_to_25_deg_down(paint_sessi
                                                                      tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABFA4 */
+/**  rct2: 0x008ABFA4 */
 static void twister_rc_track_left_banked_flat_to_left_banked_25_deg_up(paint_session * session, uint8 rideIndex,
                                                                        uint8 trackSequence, uint8 direction, sint32 height,
                                                                        rct_tile_element * tileElement)
@@ -1065,7 +1065,7 @@ static void twister_rc_track_left_banked_flat_to_left_banked_25_deg_up(paint_ses
                                                                        tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABFB4 */
+/**  rct2: 0x008ABFB4 */
 static void twister_rc_track_right_banked_flat_to_right_banked_25_deg_up(paint_session * session, uint8 rideIndex,
                                                                          uint8 trackSequence, uint8 direction, sint32 height,
                                                                          rct_tile_element * tileElement)
@@ -1074,7 +1074,7 @@ static void twister_rc_track_right_banked_flat_to_right_banked_25_deg_up(paint_s
                                                                          tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABFE4 */
+/**  rct2: 0x008ABFE4 */
 static void twister_rc_track_left_banked_25_deg_up_to_left_banked_flat(paint_session * session, uint8 rideIndex,
                                                                        uint8 trackSequence, uint8 direction, sint32 height,
                                                                        rct_tile_element * tileElement)
@@ -1083,7 +1083,7 @@ static void twister_rc_track_left_banked_25_deg_up_to_left_banked_flat(paint_ses
                                                                        tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABFF4 */
+/**  rct2: 0x008ABFF4 */
 static void twister_rc_track_right_banked_25_deg_up_to_right_banked_flat(paint_session * session, uint8 rideIndex,
                                                                          uint8 trackSequence, uint8 direction, sint32 height,
                                                                          rct_tile_element * tileElement)
@@ -1092,7 +1092,7 @@ static void twister_rc_track_right_banked_25_deg_up_to_right_banked_flat(paint_s
                                                                          tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC004 */
+/**  rct2: 0x008AC004 */
 static void twister_rc_track_left_banked_flat_to_left_banked_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                          uint8 trackSequence, uint8 direction, sint32 height,
                                                                          rct_tile_element * tileElement)
@@ -1101,7 +1101,7 @@ static void twister_rc_track_left_banked_flat_to_left_banked_25_deg_down(paint_s
                                                                          tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC014 */
+/**  rct2: 0x008AC014 */
 static void twister_rc_track_right_banked_flat_to_right_banked_25_deg_down(paint_session * session, uint8 rideIndex,
                                                                            uint8 trackSequence, uint8 direction, sint32 height,
                                                                            rct_tile_element * tileElement)
@@ -1110,7 +1110,7 @@ static void twister_rc_track_right_banked_flat_to_right_banked_25_deg_down(paint
                                                                            tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABFC4 */
+/**  rct2: 0x008ABFC4 */
 static void twister_rc_track_left_banked_25_deg_down_to_left_banked_flat(paint_session * session, uint8 rideIndex,
                                                                          uint8 trackSequence, uint8 direction, sint32 height,
                                                                          rct_tile_element * tileElement)
@@ -1119,7 +1119,7 @@ static void twister_rc_track_left_banked_25_deg_down_to_left_banked_flat(paint_s
                                                                          tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABFD4 */
+/**  rct2: 0x008ABFD4 */
 static void twister_rc_track_right_banked_25_deg_down_to_right_banked_flat(paint_session * session, uint8 rideIndex,
                                                                            uint8 trackSequence, uint8 direction, sint32 height,
                                                                            rct_tile_element * tileElement)
@@ -1128,7 +1128,7 @@ static void twister_rc_track_right_banked_25_deg_down_to_right_banked_flat(paint
                                                                            tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC024 */
+/**  rct2: 0x008AC024 */
 static void twister_rc_track_flat_to_left_banked_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1136,7 +1136,7 @@ static void twister_rc_track_flat_to_left_banked_25_deg_up(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC034 */
+/**  rct2: 0x008AC034 */
 static void twister_rc_track_flat_to_right_banked_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1144,7 +1144,7 @@ static void twister_rc_track_flat_to_right_banked_25_deg_up(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC044 */
+/**  rct2: 0x008AC044 */
 static void twister_rc_track_left_banked_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1152,7 +1152,7 @@ static void twister_rc_track_left_banked_25_deg_up_to_flat(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC054 */
+/**  rct2: 0x008AC054 */
 static void twister_rc_track_right_banked_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1160,7 +1160,7 @@ static void twister_rc_track_right_banked_25_deg_up_to_flat(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC064 */
+/**  rct2: 0x008AC064 */
 static void twister_rc_track_flat_to_left_banked_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1168,7 +1168,7 @@ static void twister_rc_track_flat_to_left_banked_25_deg_down(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC074 */
+/**  rct2: 0x008AC074 */
 static void twister_rc_track_flat_to_right_banked_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1176,7 +1176,7 @@ static void twister_rc_track_flat_to_right_banked_25_deg_down(paint_session * se
                                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC084 */
+/**  rct2: 0x008AC084 */
 static void twister_rc_track_left_banked_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1184,7 +1184,7 @@ static void twister_rc_track_left_banked_25_deg_down_to_flat(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC094 */
+/**  rct2: 0x008AC094 */
 static void twister_rc_track_right_banked_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1192,7 +1192,7 @@ static void twister_rc_track_right_banked_25_deg_down_to_flat(paint_session * se
                                                               METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC0A4 */
+/**  rct2: 0x008AC0A4 */
 static void twister_rc_track_left_quarter_turn_1_90_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1200,7 +1200,7 @@ static void twister_rc_track_left_quarter_turn_1_90_deg_up(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC0B4 */
+/**  rct2: 0x008AC0B4 */
 static void twister_rc_track_right_quarter_turn_1_90_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1208,7 +1208,7 @@ static void twister_rc_track_right_quarter_turn_1_90_deg_up(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC0C4 */
+/**  rct2: 0x008AC0C4 */
 static void twister_rc_track_left_quarter_turn_1_90_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1216,7 +1216,7 @@ static void twister_rc_track_left_quarter_turn_1_90_deg_down(paint_session * ses
                                                              METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC0D4 */
+/**  rct2: 0x008AC0D4 */
 static void twister_rc_track_right_quarter_turn_1_90_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1289,7 +1289,7 @@ static void twister_rc_track_diag_60_deg_down_to_flat(paint_session * session, u
 }
 
 /* The following track elements used to be specific to the Steel Twister */
-/** rct2: 0x008ABCD4 */
+/**  rct2: 0x008ABCD4 */
 static void twister_rc_track_half_loop_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                           sint32 height, rct_tile_element * tileElement)
 {
@@ -1297,7 +1297,7 @@ static void twister_rc_track_half_loop_up(paint_session * session, uint8 rideInd
                                           METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABCE4 */
+/**  rct2: 0x008ABCE4 */
 static void twister_rc_track_half_loop_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
@@ -1305,7 +1305,7 @@ static void twister_rc_track_half_loop_down(paint_session * session, uint8 rideI
                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD34 */
+/**  rct2: 0x008ABD34 */
 static void twister_rc_track_left_corkscrew_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -1313,7 +1313,7 @@ static void twister_rc_track_left_corkscrew_up(paint_session * session, uint8 ri
                                                METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD44 */
+/**  rct2: 0x008ABD44 */
 static void twister_rc_track_right_corkscrew_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                 sint32 height, rct_tile_element * tileElement)
 {
@@ -1321,7 +1321,7 @@ static void twister_rc_track_right_corkscrew_up(paint_session * session, uint8 r
                                                 METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD54 */
+/**  rct2: 0x008ABD54 */
 static void twister_rc_track_left_corkscrew_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -1329,7 +1329,7 @@ static void twister_rc_track_left_corkscrew_down(paint_session * session, uint8 
                                                  METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD64 */
+/**  rct2: 0x008ABD64 */
 static void twister_rc_track_right_corkscrew_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1337,7 +1337,7 @@ static void twister_rc_track_right_corkscrew_down(paint_session * session, uint8
                                                   METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC0F4 */
+/**  rct2: 0x008AC0F4 */
 static void twister_rc_track_flat_to_60_deg_up_long_base(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1345,7 +1345,7 @@ static void twister_rc_track_flat_to_60_deg_up_long_base(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC104 */
+/**  rct2: 0x008AC104 */
 static void twister_rc_track_60_deg_up_to_flat_long_base(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1353,7 +1353,7 @@ static void twister_rc_track_60_deg_up_to_flat_long_base(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC114 */
+/**  rct2: 0x008AC114 */
 static void twister_rc_track_flat_to_60_deg_down_long_base(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1361,7 +1361,7 @@ static void twister_rc_track_flat_to_60_deg_down_long_base(paint_session * sessi
                                                            METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC124 */
+/**  rct2: 0x008AC124 */
 static void twister_rc_track_60_deg_up_to_flat_long_base122(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1369,7 +1369,7 @@ static void twister_rc_track_60_deg_up_to_flat_long_base122(paint_session * sess
                                                             METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABCF4 */
+/**  rct2: 0x008ABCF4 */
 static void twister_rc_track_left_barrel_roll_up_to_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1377,7 +1377,7 @@ static void twister_rc_track_left_barrel_roll_up_to_down(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD04 */
+/**  rct2: 0x008ABD04 */
 static void twister_rc_track_right_barrel_roll_up_to_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1385,7 +1385,7 @@ static void twister_rc_track_right_barrel_roll_up_to_down(paint_session * sessio
                                                           METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD14 */
+/**  rct2: 0x008ABD14 */
 static void twister_rc_track_left_barrel_roll_down_to_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1393,7 +1393,7 @@ static void twister_rc_track_left_barrel_roll_down_to_up(paint_session * session
                                                          METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABD24 */
+/**  rct2: 0x008ABD24 */
 static void twister_rc_track_right_barrel_roll_down_to_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1401,7 +1401,7 @@ static void twister_rc_track_right_barrel_roll_down_to_up(paint_session * sessio
                                                           METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABDB4 */
+/**  rct2: 0x008ABDB4 */
 static void twister_rc_track_powered_lift(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                           sint32 height, rct_tile_element * tileElement)
 {
@@ -1409,7 +1409,7 @@ static void twister_rc_track_powered_lift(paint_session * session, uint8 rideInd
                                           METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABDC4 */
+/**  rct2: 0x008ABDC4 */
 static void twister_rc_track_left_large_half_loop_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1417,7 +1417,7 @@ static void twister_rc_track_left_large_half_loop_up(paint_session * session, ui
                                                      METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABDD4 */
+/**  rct2: 0x008ABDD4 */
 static void twister_rc_track_right_large_half_loop_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1425,7 +1425,7 @@ static void twister_rc_track_right_large_half_loop_up(paint_session * session, u
                                                       METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABDE4 */
+/**  rct2: 0x008ABDE4 */
 static void twister_rc_track_right_large_half_loop_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1433,7 +1433,7 @@ static void twister_rc_track_right_large_half_loop_down(paint_session * session,
                                                         METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008ABDF4 */
+/**  rct2: 0x008ABDF4 */
 static void twister_rc_track_left_large_half_loop_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1441,7 +1441,7 @@ static void twister_rc_track_left_large_half_loop_down(paint_session * session, 
                                                        METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC134 */
+/**  rct2: 0x008AC134 */
 static void twister_rc_track_90_deg_to_inverted_flat_quarter_loop_up(paint_session * session, uint8 rideIndex,
                                                                      uint8 trackSequence, uint8 direction, sint32 height,
                                                                      rct_tile_element * tileElement)
@@ -1450,7 +1450,7 @@ static void twister_rc_track_90_deg_to_inverted_flat_quarter_loop_up(paint_sessi
                                                                      tileElement, METAL_SUPPORTS_TUBES);
 }
 
-/** rct2: 0x008AC144 */
+/**  rct2: 0x008AC144 */
 static void twister_rc_track_inverted_flat_to_90_deg_quarter_loop_down(paint_session * session, uint8 rideIndex,
                                                                        uint8 trackSequence, uint8 direction, sint32 height,
                                                                        rct_tile_element * tileElement)

@@ -42,7 +42,7 @@ typedef struct ferris_wheel_bound_box
     sint16 offset_y;
 } ferris_wheel_bound_box;
 
-/** rct2: 0x008A8CA8 */
+/**  rct2: 0x008A8CA8 */
 static ferris_wheel_bound_box ferris_wheel_data[] = {
     { 31, 16, 1, 8 },
     { 16, 31, 8, 1 },
@@ -51,7 +51,7 @@ static ferris_wheel_bound_box ferris_wheel_data[] = {
 };
 
 /**
- * rct2: 0x004C3874
+ *  rct2: 0x004C3874
  */
 static void paint_ferris_wheel_structure(paint_session * session, uint8 rideIndex, uint8 direction, sint8 axisOffset,
                                          uint16 height)
@@ -135,7 +135,7 @@ static void paint_ferris_wheel_structure(paint_session * session, uint8 rideInde
 }
 
 /**
- * rct2: 0x008A8EC4
+ *  rct2: 0x008A8EC4
  */
 static void paint_ferris_wheel(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                                rct_tile_element * tileElement)
@@ -206,7 +206,7 @@ static void paint_ferris_wheel(paint_session * session, uint8 rideIndex, uint8 t
 }
 
 /**
- * rct2: 0x008A8CC8
+ *  rct2: 0x008A8CC8
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_ferris_wheel(sint32 trackType, sint32 direction)
 {

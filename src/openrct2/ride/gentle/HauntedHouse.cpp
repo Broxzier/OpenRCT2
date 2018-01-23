@@ -28,12 +28,12 @@ typedef struct haunted_house_bound_box
     sint16 length_y;
 } haunted_house_bound_box;
 
-/** rct2: 0x1428180 */
+/**  rct2: 0x01428180 */
 static haunted_house_bound_box haunted_house_data[] = { { 6, 0, 42, 24 }, { 0 }, { -16, -16, 32, 32 }, { 0 },
                                                         { 0, 6, 24, 42 }, { 0 } };
 
 /**
- * rct2: 0x0076F72C
+ *  rct2: 0x0076F72C
  */
 static void paint_haunted_house_structure(paint_session * session, uint8 rideIndex, uint8 direction, sint8 xOffset,
                                           sint8 yOffset, uint8 part, uint16 height)
@@ -88,7 +88,7 @@ static void paint_haunted_house_structure(paint_session * session, uint8 rideInd
 }
 
 /**
- * rct2: 0x0076E9B0
+ *  rct2: 0x0076E9B0
  */
 static void paint_haunted_house(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                                 rct_tile_element * tileElement)
@@ -147,7 +147,7 @@ static void paint_haunted_house(paint_session * session, uint8 rideIndex, uint8 
 }
 
 /**
- * rct2: 0x0076E7B0
+ *  rct2: 0x0076E7B0
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_haunted_house(sint32 trackType, sint32 direction)
 {

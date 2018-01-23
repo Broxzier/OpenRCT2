@@ -90,7 +90,7 @@ rct_window * window_editor_main_open()
 
 /**
 *
-* rct2: 0x0066FC97
+*  rct2: 0x0066FC97
 * This function immediately jumps to 0x00685BE1
 */
 static void window_editor_main_paint(rct_window *w, rct_drawpixelinfo *dpi)

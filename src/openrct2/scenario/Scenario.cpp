@@ -763,7 +763,7 @@ static void scenario_objective_check_park_value_by()
 /**
 * Checks if there are 10 rollercoasters of different subtype with
 * excitement >= 600 .
-* rct2:
+*  rct2:
 **/
 static void scenario_objective_check_10_rollercoasters()
 {

@@ -21,7 +21,7 @@
 #include "../TrackPaint.h"
 
 /**
- * rct2: 0x0077084A
+ *  rct2: 0x0077084A
  */
 static void paint_circus_show_tent(paint_session * session, uint8 rideIndex, uint8 direction, sint8 al, sint8 cl, uint16 height)
 {
@@ -52,7 +52,7 @@ static void paint_circus_show_tent(paint_session * session, uint8 rideIndex, uin
     session->InteractionType    = VIEWPORT_INTERACTION_ITEM_RIDE;
 }
 /**
- * rct2: 0x0076FAD4
+ *  rct2: 0x0076FAD4
  */
 static void paint_circus_show(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                               rct_tile_element * tileElement)
@@ -120,7 +120,7 @@ static void paint_circus_show(paint_session * session, uint8 rideIndex, uint8 tr
 }
 
 /**
- * rct2: 0x0076F8D4
+ *  rct2: 0x0076F8D4
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_circus_show(sint32 trackType, sint32 direction)
 {

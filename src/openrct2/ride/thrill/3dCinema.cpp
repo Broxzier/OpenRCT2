@@ -21,7 +21,7 @@
 #include "../TrackPaint.h"
 
 /**
- * rct2: 0x007664C2
+ *  rct2: 0x007664C2
  */
 static void paint_3d_cinema_structure(paint_session * session, uint8 rideIndex, uint8 direction, sint8 xOffset, sint8 yOffset,
                                       uint16 height)
@@ -58,7 +58,7 @@ static void paint_3d_cinema_structure(paint_session * session, uint8 rideIndex, 
 }
 
 /**
- * rct2: 0x0076574C
+ *  rct2: 0x0076574C
  */
 static void paint_3d_cinema(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                             rct_tile_element * tileElement)

@@ -91,7 +91,7 @@ rct_window * window_main_open()
 
 /**
  *
- *  rct2: 0x66CCAE
+ *  rct2: 0x0066CCAE
  * This function immediately jumps to 0x00685BE1 this is the second function
  * decompiled.
  */

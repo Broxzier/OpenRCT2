@@ -211,7 +211,7 @@ static constexpr const char *gPeepEasterEggNames[] = {
     "DAVID ELLIS"
 };
 
-/** rct2: 0x00981DB0 */
+/**  rct2: 0x00981DB0 */
 static struct
 {
     uint8 action;
@@ -799,7 +799,7 @@ static void peep_decide_whether_to_leave_park(rct_peep * peep)
 }
 
 // clang-format off
-/** rct2: 0x009822F4, 0x00982310 */
+/**  rct2: 0x009822F4, 0x00982310 */
 static constexpr const uint8 byte_9822F4[] = {
     0,      // SHOP_ITEM_BALLOON
     0,      // SHOP_ITEM_TOY
@@ -857,7 +857,7 @@ static constexpr const uint8 byte_9822F4[] = {
     0       // SHOP_ITEM_EMPTY_BOWL_BLUE
 };
 
-/** rct2: 009823AC */
+/**  rct2: 0x009823AC */
 static constexpr const uint8 crowded_thoughts[] = {
     PEEP_THOUGHT_TYPE_LOST,
     PEEP_THOUGHT_TYPE_TIRED,
@@ -877,7 +877,7 @@ static constexpr const uint8 crowded_thoughts[] = {
     PEEP_THOUGHT_TYPE_NONE,
 };
 
-/** rct2: 0x00982326 */
+/**  rct2: 0x00982326 */
 static constexpr const uint8 peep_item_containers[] = {
     0xFF,                           // PEEP_ITEM_BALLOON
     0xFF,                           // PEEP_ITEM_TOY
@@ -909,7 +909,7 @@ static constexpr const uint8 peep_item_containers[] = {
     0xFF,                           // PEEP_ITEM_EMPTY_BOTTLE
 };
 
-/** rct2: 0x00982342 */
+/**  rct2: 0x00982342 */
 static constexpr const uint8 peep_extra_item_containers[] = {
     0xFF,                           // PEEP_ITEM_PHOTO2
     0xFF,                           // PEEP_ITEM_PHOTO3
@@ -1457,7 +1457,7 @@ static void sub_68F41A(rct_peep * peep, sint32 index)
 }
 
 /*
- * rct2: 0x68F3AE
+ *  rct2: 0x0068F3AE
  * Set peep state to falling if path below has gone missing, return 1 if current path is valid, 0 if peep starts falling
  */
 static sint32 checkForPath(rct_peep * peep)
@@ -1586,7 +1586,7 @@ static void peep_state_reset(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x69C308
+ *  rct2: 0x0069C308
  * Check if lost.
  */
 static void peep_check_if_lost(rct_peep * peep)
@@ -1612,7 +1612,7 @@ static void peep_check_if_lost(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x69C26B
+ *  rct2: 0x0069C26B
  * Check if cant find ride.
  */
 static void peep_check_cant_find_ride(rct_peep * peep)
@@ -1644,7 +1644,7 @@ static void peep_check_cant_find_ride(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x69C2D0
+ *  rct2: 0x0069C2D0
  * Check if cant find exit.
  */
 static void peep_check_cant_find_exit(rct_peep * peep)
@@ -1663,12 +1663,12 @@ static void peep_check_cant_find_exit(rct_peep * peep)
         peep->peep_is_lost_countdown = 90;
 }
 
-/** rct2: 0x00981D7C, 0x00981D7E */
+/**  rct2: 0x00981D7C, 0x00981D7E */
 static constexpr const LocationXY16 word_981D7C[4] = { { -2, 0 }, { 0, 2 }, { 2, 0 }, { 0, -2 } };
 
 /**
  *
- *  rct2: 0x6939EB
+ *  rct2: 0x006939EB
  * Also used to move peeps to the correct position to
  * start an action. Returns 1 if the correct destination
  * has not yet been reached. xy_distance is how close the
@@ -2259,7 +2259,7 @@ void peep_remove(rct_peep * peep)
 
 /**
  * Falling and its subset drowning
- *  rct2: 0x690028
+ *  rct2: 0x00690028
  */
 static void peep_update_falling(rct_peep * peep)
 {
@@ -2403,7 +2403,7 @@ static void peep_try_get_up_from_sitting(rct_peep * peep)
     peep_update_current_action_sprite_type(peep);
 }
 
-/** rct2: 0x00981F2C, 0x00981F2E */
+/**  rct2: 0x00981F2C, 0x00981F2E */
 static constexpr const LocationXY16 _981F2C[] = {
     { 7, 12 }, { 12, 25 }, { 25, 20 }, { 20, 7 }, { 7, 20 }, { 20, 25 }, { 25, 12 }, { 12, 7 },
 };
@@ -2851,7 +2851,7 @@ static void peep_update_ride_sub_state_0(rct_peep * peep)
     peep_go_to_ride_entrance(peep, ride);
 }
 
-/** rct2: 0x00981FD4, 0x00981FD6 */
+/**  rct2: 0x00981FD4, 0x00981FD6 */
 static constexpr const LocationXY16 _981FD4[] = {
     { 8, 8 },
     { 8, 24 },
@@ -3988,7 +3988,7 @@ static void peep_update_ride_sub_state_14(rct_peep * peep)
     peep->destination_y = y;
 }
 
-/** rct2: 0x00981F0C, 0x00981F0E */
+/**  rct2: 0x00981F0C, 0x00981F0E */
 static constexpr const LocationXY16 _981F0C[] = {
     { 25, 56 },
     { 56, 7 },
@@ -3996,7 +3996,7 @@ static constexpr const LocationXY16 _981F0C[] = {
     { -24, 25 },
 };
 
-/** rct2: 0x00981F1C, 0x00981F1E */
+/**  rct2: 0x00981F1C, 0x00981F1E */
 static constexpr const LocationXY16 _981F1C[] = {
     { 8, 56 },
     { 56, 24 },
@@ -4172,7 +4172,7 @@ static void peep_update_ride_sub_state_16(rct_peep * peep)
     peep->destination_y = y;
 }
 
-/** rct2: 0x00981FE4 */
+/**  rct2: 0x00981FE4 */
 static constexpr const uint8 _981FE4[][4] = {
     { 15, 7, 15, 7 },
     { 11, 3, 11, 3 },
@@ -4180,7 +4180,7 @@ static constexpr const uint8 _981FE4[][4] = {
     { 3, 11, 3, 11 },
 };
 
-/** rct2: 0x00981FF4 */
+/**  rct2: 0x00981FF4 */
 static constexpr const uint8 _981FF4[][4] = {
     { 1, 2, 14, 0 },
     { 4, 5, 6, 2 },
@@ -4518,7 +4518,7 @@ static void peep_update_ride_sub_state_21(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x691A30
+ *  rct2: 0x00691A30
  * Used by entering_ride and queueing_front */
 static void peep_update_ride(rct_peep * peep)
 {
@@ -4723,7 +4723,7 @@ static void peep_update_fixing(sint32 steps, rct_peep * peep)
 }
 
 /**
- * rct2: 0x006C0EEC
+ *  rct2: 0x006C0EEC
  */
 static bool peep_update_fixing_sub_state_0(Ride * ride)
 {
@@ -4734,7 +4734,7 @@ static bool peep_update_fixing_sub_state_0(Ride * ride)
 }
 
 /**
- * rct2: 0x006C0F09
+ *  rct2: 0x006C0F09
  */
 static bool peep_update_fixing_sub_state_1(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -4792,7 +4792,7 @@ static bool peep_update_fixing_sub_state_1(bool firstRun, rct_peep * peep, Ride 
 }
 
 /**
- * rct2: 0x006C0FD3
+ *  rct2: 0x006C0FD3
  */
 static bool peep_update_fixing_sub_state_2345(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -4834,7 +4834,7 @@ static bool peep_update_fixing_sub_state_2345(bool firstRun, rct_peep * peep, Ri
 }
 
 /**
- * rct2: 0x006C107B
+ *  rct2: 0x006C107B
  */
 static bool peep_update_fixing_sub_state_6(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -4873,7 +4873,7 @@ static bool peep_update_fixing_sub_state_6(bool firstRun, rct_peep * peep, Ride 
     return false;
 }
 
-/** rct2: 0x00992A3C */
+/**  rct2: 0x00992A3C */
 static constexpr const LocationXY16 _992A3C[] = {
     { -12, 0 },
     { 0, 12 },
@@ -4882,7 +4882,7 @@ static constexpr const LocationXY16 _992A3C[] = {
 };
 
 /**
- * rct2: 0x006C1114
+ *  rct2: 0x006C1114
  */
 static bool peep_update_fixing_sub_state_7(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -4945,7 +4945,7 @@ static bool peep_update_fixing_sub_state_7(bool firstRun, rct_peep * peep, Ride 
 }
 
 /**
- * rct2: 0x006C11F5
+ *  rct2: 0x006C11F5
  */
 static bool peep_update_fixing_sub_state_8(bool firstRun, rct_peep * peep)
 {
@@ -4973,7 +4973,7 @@ static bool peep_update_fixing_sub_state_8(bool firstRun, rct_peep * peep)
 }
 
 /**
- * rct2: 0x006C1239
+ *  rct2: 0x006C1239
  */
 static bool peep_update_fixing_sub_state_9(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -5057,7 +5057,7 @@ static bool peep_update_fixing_sub_state_9(bool firstRun, rct_peep * peep, Ride 
 }
 
 /**
- * rct2: 0x006C1368
+ *  rct2: 0x006C1368
  */
 static bool peep_update_fixing_sub_state_10(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -5091,7 +5091,7 @@ static bool peep_update_fixing_sub_state_10(bool firstRun, rct_peep * peep, Ride
 }
 
 /**
- * rct2: 0x006C13CE
+ *  rct2: 0x006C13CE
  */
 static bool peep_update_fixing_sub_state_11(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -5131,7 +5131,7 @@ static bool peep_update_fixing_sub_state_11(bool firstRun, rct_peep * peep, Ride
 }
 
 /**
- * rct2: 0x006C1474
+ *  rct2: 0x006C1474
  */
 static bool peep_update_fixing_sub_state_12(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -5181,7 +5181,7 @@ static bool peep_update_fixing_sub_state_12(bool firstRun, rct_peep * peep, Ride
 }
 
 /**
- * rct2: 0x006C1504
+ *  rct2: 0x006C1504
  */
 static bool peep_update_fixing_sub_state_13(bool firstRun, sint32 steps, rct_peep * peep, Ride * ride)
 {
@@ -5223,7 +5223,7 @@ static bool peep_update_fixing_sub_state_13(bool firstRun, sint32 steps, rct_pee
 }
 
 /**
- * rct2: 0x006C157E
+ *  rct2: 0x006C157E
  */
 static bool peep_update_fixing_sub_state_14(bool firstRun, rct_peep * peep, Ride * ride)
 {
@@ -5284,7 +5284,7 @@ static bool peep_update_fixing_sub_state_14(bool firstRun, rct_peep * peep, Ride
 }
 
 /**
- * rct2: 0x6B7588
+ *  rct2: 0x006B7588
  */
 static void peep_update_ride_inspected(sint32 rideIndex)
 {
@@ -5298,7 +5298,7 @@ static void peep_update_ride_inspected(sint32 rideIndex)
 
 /**
  *
- *  rct2: 0x69185D
+ *  rct2: 0x0069185D
  */
 static void peep_update_queuing(rct_peep * peep)
 {
@@ -5426,7 +5426,7 @@ static void peep_update_queuing(rct_peep * peep)
     }
 }
 
-/** rct2: 0x009929C8 */
+/**  rct2: 0x009929C8 */
 static constexpr const LocationXY16 _9929C8[] = {
     { 28, 28 }, { 28, 4 }, { 20, 4 }, { 20, 28 }, { 12, 28 }, { 12, 4 }, { 4, 4 }, { 4, 28 },
 };
@@ -5631,7 +5631,7 @@ static void peep_update_emptying_bin(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x6BF641
+ *  rct2: 0x006BF641
  */
 static void peep_update_sweeping(rct_peep * peep)
 {
@@ -5672,7 +5672,7 @@ static void peep_update_sweeping(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x6902A2
+ *  rct2: 0x006902A2
  */
 static void peep_update_1(rct_peep * peep)
 {
@@ -5699,7 +5699,7 @@ static void peep_update_1(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x690009
+ *  rct2: 0x00690009
  */
 static void peep_update_picked(rct_peep * peep)
 {
@@ -5714,7 +5714,7 @@ static void peep_update_picked(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x6914CD
+ *  rct2: 0x006914CD
  */
 static void peep_update_leaving_park(rct_peep * peep)
 {
@@ -5752,7 +5752,7 @@ static void peep_update_leaving_park(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x6916D6
+ *  rct2: 0x006916D6
  */
 static void peep_update_watching(rct_peep * peep)
 {
@@ -5853,7 +5853,7 @@ static void peep_update_watching(rct_peep * peep)
 }
 
 /**
- * rct2: 0x691451
+ *  rct2: 0x00691451
  */
 static void peep_update_entering_park(rct_peep * peep)
 {
@@ -5984,7 +5984,7 @@ static sint32 peep_update_walking_find_bench(rct_peep * peep)
     return 1;
 }
 
-/** rct2: 0x00992A4C */
+/**  rct2: 0x00992A4C */
 static constexpr const LocationXY16 _992A4C[] = {
     { 11, 16 },
     { 16, 21 },
@@ -6292,7 +6292,7 @@ static void peep_update_buying(rct_peep * peep)
     peep->sub_state = 1;
 }
 
-/** rct2: 0x0097EFCC */
+/**  rct2: 0x0097EFCC */
 static constexpr const uint8 item_standard_litter[32] = {
     LITTER_TYPE_RUBBISH,          // PEEP_ITEM_BALLOON
     LITTER_TYPE_RUBBISH,          // PEEP_ITEM_TOY
@@ -6324,7 +6324,7 @@ static constexpr const uint8 item_standard_litter[32] = {
     LITTER_TYPE_EMPTY_BOTTLE,     // PEEP_ITEM_EMPTY_BOTTLE
 };
 
-/** rct2: 0x0097EFE8 */
+/**  rct2: 0x0097EFE8 */
 static constexpr const uint8 item_extra_litter[32] = {
     LITTER_TYPE_RUBBISH,            // PEEP_ITEM_PHOTO2
     LITTER_TYPE_RUBBISH,            // PEEP_ITEM_PHOTO3
@@ -6754,7 +6754,7 @@ static void peep_update_answering(rct_peep * peep)
     invalidate_sprite_2((rct_sprite *)peep);
 }
 
-/** rct2: 0x00992A5C */
+/**  rct2: 0x00992A5C */
 static constexpr const LocationXY16 _992A5C[] = {
     { 3, 16 }, { 16, 29 }, { 29, 16 }, { 16, 3 }, { 3, 29 }, { 29, 29 }, { 29, 3 }, { 3, 3 },
 };
@@ -7023,7 +7023,7 @@ static void peep_update_patrolling(rct_peep * peep)
 }
 
 // clang-format off
-/** rct2: 0x00981F4C, 0x00981F4E */
+/**  rct2: 0x00981F4C, 0x00981F4E */
 static constexpr const LocationXY16 _981F4C[] = {
     {  7,  5 },
     {  5, 25 },
@@ -7832,7 +7832,7 @@ void peep_update_days_in_queue()
 }
 
 // clang-format off
-/** rct2: 0x009823A0 */
+/**  rct2: 0x009823A0 */
 static constexpr const enum PEEP_NAUSEA_TOLERANCE nausea_tolerance_distribution[] = {
     PEEP_NAUSEA_TOLERANCE_NONE,
     PEEP_NAUSEA_TOLERANCE_LOW, PEEP_NAUSEA_TOLERANCE_LOW,
@@ -7840,7 +7840,7 @@ static constexpr const enum PEEP_NAUSEA_TOLERANCE nausea_tolerance_distribution[
     PEEP_NAUSEA_TOLERANCE_HIGH, PEEP_NAUSEA_TOLERANCE_HIGH, PEEP_NAUSEA_TOLERANCE_HIGH, PEEP_NAUSEA_TOLERANCE_HIGH, PEEP_NAUSEA_TOLERANCE_HIGH, PEEP_NAUSEA_TOLERANCE_HIGH,
 };
 
-/** rct2: 0x009823BC */
+/**  rct2: 0x009823BC */
 static constexpr const uint8 trouser_colours[] = {
     COLOUR_BLACK,
     COLOUR_GREY,
@@ -7869,7 +7869,7 @@ static constexpr const uint8 trouser_colours[] = {
     COLOUR_BORDEAUX_RED,
 };
 
-/** rct2: 0x009823D5 */
+/**  rct2: 0x009823D5 */
 static constexpr const uint8 tshirt_colours[] = {
     COLOUR_BLACK,
     COLOUR_GREY,
@@ -8090,7 +8090,7 @@ rct_peep * peep_generate(sint32 x, sint32 y, sint32 z)
 }
 
 /**
- * rct2: 0x00698B0D
+ *  rct2: 0x00698B0D
  * peep.sprite_index (eax)
  * thought.type (ebx)
  * argument_1 (ecx & ebx)
@@ -8229,7 +8229,7 @@ void get_arguments_from_action(rct_peep * peep, uint32 * argument_1, uint32 * ar
 }
 
 /**
- * rct2: 0x00698342
+ *  rct2: 0x00698342
  * thought.item (eax)
  * thought.type (ebx)
  * argument_1 (esi & ebx)
@@ -8259,7 +8259,7 @@ void peep_thought_set_format_args(rct_peep_thought * thought)
     }
 }
 
-/** rct2: 0x00982004 */
+/**  rct2: 0x00982004 */
 static constexpr const bool peep_allow_pick_up[] = {
     true,  // PEEP_STATE_FALLING
     false, // PEEP_STATE_1
@@ -8540,7 +8540,7 @@ static sint32 peep_should_find_bench(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x699F5A
+ *  rct2: 0x00699F5A
  * al:thought_type
  * ah:thought_arguments
  * esi: peep
@@ -8774,7 +8774,7 @@ static sint32 peep_return_to_centre_of_tile(rct_peep * peep)
 
 /**
  *
- *  rct2: 0x00693f2C
+ *  rct2: 0x00693F2C
  */
 static sint32 peep_interact_with_entrance(rct_peep * peep, sint16 x, sint16 y, rct_tile_element * tile_element)
 {
@@ -11793,7 +11793,7 @@ static void peep_update_favourite_ride(rct_peep * peep, Ride * ride)
     }
 }
 
-/* rct2: 0x00695555 */
+/*  rct2: 0x00695555 */
 static sint16 peep_calculate_ride_value_satisfaction(rct_peep * peep, Ride * ride)
 {
     if (gParkFlags & PARK_FLAGS_NO_MONEY)
@@ -12569,7 +12569,7 @@ static void peep_easter_egg_peep_interactions(rct_peep * peep)
 }
 
 /**
- * rct2: 0x0069101A
+ *  rct2: 0x0069101A
  *
  * @return (CF)
  */

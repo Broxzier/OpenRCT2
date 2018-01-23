@@ -33,7 +33,7 @@
 
 bool gDisableErrorWindowSound = false;
 
-/** rct2: 0x0098DA74 */
+/**  rct2: 0x0098DA74 */
 const rct_object_entry RequiredSelectedObjects[7] = {
         // Objects that are always required
         { 0x00000087, { "SCGTREES" }, 0 },      // Scenery: Trees
@@ -336,7 +336,7 @@ static bool sub_6CA2DF_get_track_element(uint8 *trackElement) {
 }
 
 /**
- * rct2: 0x006CA2DF
+ *  rct2: 0x006CA2DF
  *
  * @param[out] _trackType (dh)
  * @param[out] _trackDirection (bh)

@@ -128,7 +128,7 @@ enum
     SPR_WOODEN_WILD_MOUSE_QUARTER_TURN_3_SE_NE_PART_2        = 28632,
 };
 
-/** rct2: 0x008A5464 */
+/**  rct2: 0x008A5464 */
 static void wooden_wild_mouse_track_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -173,7 +173,7 @@ static void wooden_wild_mouse_track_station(paint_session * session, uint8 rideI
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x008A5474 */
+/**  rct2: 0x008A5474 */
 static void wooden_wild_mouse_track_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                               sint32 height, rct_tile_element * tileElement)
 {
@@ -211,7 +211,7 @@ static void wooden_wild_mouse_track_25_deg_up(paint_session * session, uint8 rid
     paint_util_set_general_support_height(session, height + 56, 0x20);
 }
 
-/** rct2: 0x008A5484 */
+/**  rct2: 0x008A5484 */
 static void wooden_wild_mouse_track_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                               sint32 height, rct_tile_element * tileElement)
 {
@@ -257,7 +257,7 @@ static void wooden_wild_mouse_track_60_deg_up(paint_session * session, uint8 rid
     paint_util_set_general_support_height(session, height + 104, 0x20);
 }
 
-/** rct2: 0x008A5494 */
+/**  rct2: 0x008A5494 */
 static void wooden_wild_mouse_track_flat_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -295,7 +295,7 @@ static void wooden_wild_mouse_track_flat_to_25_deg_up(paint_session * session, u
     paint_util_set_general_support_height(session, height + 48, 0x20);
 }
 
-/** rct2: 0x008A54A4 */
+/**  rct2: 0x008A54A4 */
 static void wooden_wild_mouse_track_25_deg_up_to_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -394,7 +394,7 @@ static void wooden_wild_mouse_track_60_deg_to_25_deg_up(paint_session * session,
     paint_util_set_general_support_height(session, height + 72, 0x20);
 }
 
-/** rct2: 0x008A54C4 */
+/**  rct2: 0x008A54C4 */
 static void wooden_wild_mouse_track_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -432,42 +432,42 @@ static void wooden_wild_mouse_track_25_deg_up_to_flat(paint_session * session, u
     paint_util_set_general_support_height(session, height + 40, 0x20);
 }
 
-/** rct2: 0x008A54D4 */
+/**  rct2: 0x008A54D4 */
 static void wooden_wild_mouse_track_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                 sint32 height, rct_tile_element * tileElement)
 {
     wooden_wild_mouse_track_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A54E4 */
+/**  rct2: 0x008A54E4 */
 static void wooden_wild_mouse_track_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                 sint32 height, rct_tile_element * tileElement)
 {
     wooden_wild_mouse_track_60_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A54F4 */
+/**  rct2: 0x008A54F4 */
 static void wooden_wild_mouse_track_flat_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     wooden_wild_mouse_track_25_deg_up_to_flat(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5504 */
+/**  rct2: 0x008A5504 */
 static void wooden_wild_mouse_track_25_deg_down_to_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     wooden_wild_mouse_track_60_deg_to_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5514 */
+/**  rct2: 0x008A5514 */
 static void wooden_wild_mouse_track_60_deg_down_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     wooden_wild_mouse_track_25_deg_up_to_60_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5524 */
+/**  rct2: 0x008A5524 */
 static void wooden_wild_mouse_track_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -570,14 +570,14 @@ static void wooden_wild_mouse_track_left_quarter_turn_1(paint_session * session,
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x008A55D4 */
+/**  rct2: 0x008A55D4 */
 static void wooden_wild_mouse_track_right_quarter_turn_1(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     wooden_wild_mouse_track_left_quarter_turn_1(session, rideIndex, trackSequence, (direction - 1) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A55E4 */
+/**  rct2: 0x008A55E4 */
 static void wooden_wild_mouse_track_flat_to_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -626,7 +626,7 @@ static void wooden_wild_mouse_track_flat_to_60_deg_up(paint_session * session, u
     paint_util_set_general_support_height(session, height + 64, 0x20);
 }
 
-/** rct2: 0x008A55F4 */
+/**  rct2: 0x008A55F4 */
 static void wooden_wild_mouse_track_60_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                       uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -675,14 +675,14 @@ static void wooden_wild_mouse_track_60_deg_up_to_flat(paint_session * session, u
     paint_util_set_general_support_height(session, height + 72, 0x20);
 }
 
-/** rct2: 0x008A5604 */
+/**  rct2: 0x008A5604 */
 static void wooden_wild_mouse_track_flat_to_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     wooden_wild_mouse_track_60_deg_up_to_flat(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x008A5614 */
+/**  rct2: 0x008A5614 */
 static void wooden_wild_mouse_track_60_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {

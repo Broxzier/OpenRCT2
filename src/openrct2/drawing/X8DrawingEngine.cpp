@@ -495,7 +495,7 @@ void X8DrawingContext::Clear(uint8 paletteIndex)
     }
 }
 
-/** rct2: 0x0097FF04 */
+/**  rct2: 0x0097FF04 */
 // clang-format off
 static constexpr const uint16 Pattern[] = {
     0b0111111110000000,
@@ -516,7 +516,7 @@ static constexpr const uint16 Pattern[] = {
     0b1111111100000000,
 };
 
-/** rct2: 0x0097FF14 */
+/**  rct2: 0x0097FF14 */
 static constexpr const uint16 PatternInverse[] = {
     0b1000000001111111,
     0b1100000000111111,
@@ -536,7 +536,7 @@ static constexpr const uint16 PatternInverse[] = {
     0b0000000011111111
 };
 
-/** rct2: 0x0097FEFC */
+/**  rct2: 0x0097FEFC */
 static constexpr const uint16 * Patterns[] = {
     Pattern,
     PatternInverse

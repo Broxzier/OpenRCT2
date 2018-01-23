@@ -1533,7 +1533,7 @@ void invalidate_scroll()
 }
 
 /**
- * rct2: 0x00406C96
+ *  rct2: 0x00406C96
  */
 void store_mouse_input(sint32 state, sint32 x, sint32 y)
 {

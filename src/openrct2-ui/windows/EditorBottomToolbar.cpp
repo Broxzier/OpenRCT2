@@ -127,7 +127,7 @@ static constexpr const rct_string_id EditorStepNames[] = {
 
 /**
 * Creates the main editor top toolbar window.
-* rct2: 0x0066F052 (part of 0x0066EF38)
+*  rct2: 0x0066F052 (part of 0x0066EF38)
 */
 rct_window * window_editor_bottom_toolbar_open()
 {
@@ -263,7 +263,7 @@ void window_editor_bottom_toolbar_jump_forward_to_invention_list_set_up()
 
 /**
 *
-*  rct2: 0x0066f790
+*  rct2: 0x0066F790
 */
 void window_editor_bottom_toolbar_jump_forward_to_options_selection()
 {
@@ -275,7 +275,7 @@ void window_editor_bottom_toolbar_jump_forward_to_options_selection()
 
 /**
 *
-*  rct2: 0x0066f7a8
+*  rct2: 0x0066F7A8
 */
 void window_editor_bottom_toolbar_jump_forward_to_objective_selection() {
     window_close_all();

@@ -63,7 +63,7 @@ const LocationXY16 TileDirectionDelta[] = {
     { -32, -32 }
 };
 
-/** rct2: 0x0097B8B8 */
+/**  rct2: 0x0097B8B8 */
 const money32 TerrainPricing[] = {
     300,    // TERRAIN_GRASS
     100,    // TERRAIN_SAND

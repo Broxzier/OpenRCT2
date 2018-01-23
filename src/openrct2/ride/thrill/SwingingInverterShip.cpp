@@ -20,10 +20,10 @@
 #include "../Track.h"
 #include "../TrackPaint.h"
 
-/** rct2: 0x01428010 */
+/**  rct2: 0x01428010 */
 static constexpr const uint32 swinging_inverter_ship_base_sprite_offset[] = { 0, 16, 0, 16 };
 
-/** rct2: 0x01428020 */
+/**  rct2: 0x01428020 */
 static constexpr const uint32 swinging_inverter_ship_animating_base_sprite_offset[] = { 32, 33, 32, 33 };
 
 typedef struct swinging_inverter_ship_bound_box
@@ -34,7 +34,7 @@ typedef struct swinging_inverter_ship_bound_box
     sint16 offset_y;
 } swinging_inverter_ship_bound_box;
 
-/** rct2: 0x01428020 */
+/**  rct2: 0x01428020 */
 static constexpr const swinging_inverter_ship_bound_box swinging_inverter_ship_bounds[] = {
     { 32, 16, 0, 8 }, { 16, 32, 8, 0 }, { 32, 16, 0, 8 }, { 16, 32, 8, 0 }
 };
@@ -122,7 +122,7 @@ static void paint_swinging_inverter_ship_structure(paint_session * session, Ride
     session->InteractionType    = VIEWPORT_INTERACTION_ITEM_RIDE;
 }
 
-/** rct2: 0x00760260 */
+/**  rct2: 0x00760260 */
 static void paint_swinging_inverter_ship(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                          sint32 height, rct_tile_element * tileElement)
 {
@@ -190,7 +190,7 @@ static void paint_swinging_inverter_ship(paint_session * session, uint8 rideInde
 }
 
 /**
- * rct2: 0x00760070
+ *  rct2: 0x00760070
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_swinging_inverter_ship(sint32 trackType, sint32 direction)
 {

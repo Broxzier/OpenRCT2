@@ -35,7 +35,7 @@ static constexpr const rct_crooked_house_bound_box crooked_house_data[] = { { 6,
                                                      { 0, 6, 24, 42 } };
 
 /**
- * rct2: 0x0088ABA4
+ *  rct2: 0x0088ABA4
  * @param (edi) direction
  * @param (al) al
  * @param (cl) cl

@@ -36,7 +36,7 @@ enum
     SPR_BOAT_HIRE_FLAT_QUARTER_TURN_1_TILE_BACK_SE_SW  = 28534,
 };
 
-/** rct2: 0x008B0E40 */
+/**  rct2: 0x008B0E40 */
 static void paint_boat_hire_track_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                        sint32 height, rct_tile_element * tileElement)
 {
@@ -64,7 +64,7 @@ static void paint_boat_hire_track_flat(paint_session * session, uint8 rideIndex,
     paint_util_set_general_support_height(session, height + 16, 0x20);
 }
 
-/** rct2: 0x008B0E50 */
+/**  rct2: 0x008B0E50 */
 static void paint_boat_hire_station(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                     sint32 height, rct_tile_element * tileElement)
 {
@@ -89,7 +89,7 @@ static void paint_boat_hire_station(paint_session * session, uint8 rideIndex, ui
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x008B0E80 */
+/**  rct2: 0x008B0E80 */
 static void paint_boat_hire_track_left_quarter_turn_1_tile(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -131,7 +131,7 @@ static void paint_boat_hire_track_left_quarter_turn_1_tile(paint_session * sessi
     paint_util_set_general_support_height(session, height + 16, 0x20);
 }
 
-/** rct2: 0x008B0E90 */
+/**  rct2: 0x008B0E90 */
 static void paint_boat_hire_track_right_quarter_turn_1_tile(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -139,7 +139,7 @@ static void paint_boat_hire_track_right_quarter_turn_1_tile(paint_session * sess
 }
 
 /**
- * rct2: 0x008B0D60
+ *  rct2: 0x008B0D60
  */
 TRACK_PAINT_FUNCTION get_track_paint_function_boat_hire(sint32 trackType, sint32 direction)
 {

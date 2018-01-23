@@ -21,19 +21,19 @@
 #include "../Paint.h"
 #include "../../localisation/StringIds.h"
 
-/** rct2: 0x0097EDA4 */
+/**  rct2: 0x0097EDA4 */
 static constexpr const sint8 money_wave[] = {
     0, 1, 2, 2, 3, 3, 3, 3, 2, 2, 1, 0, -1, -2, -2, -3, -3, -3, -3, -2, -2, -1,
     0, 1, 2, 2, 3, 3, 3, 3, 2, 2, 1, 0, -1, -2, -2, -3, -3, -3, -3, -2, -2, -1
 };
 
-/** rct2: 0x0097ED90 */
+/**  rct2: 0x0097ED90 */
 const uint32 vehicle_particle_base_sprites[] = {
     22577, 22589, 22601, 22613, 22625
 };
 
 /**
- * rct2: 0x00672AC9
+ *  rct2: 0x00672AC9
  */
 void misc_paint(paint_session * session, rct_sprite *misc, sint32 imageDirection)
 {

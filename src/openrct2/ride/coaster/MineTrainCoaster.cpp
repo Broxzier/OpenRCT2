@@ -26,7 +26,7 @@
 #include "../TrackData.h"
 #include "../TrackPaint.h"
 
-/** rct2: 0x0071BFA4 */
+/**  rct2: 0x0071BFA4 */
 static void mine_train_rc_track_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                      sint32 height, rct_tile_element * tileElement)
 {
@@ -79,7 +79,7 @@ static void mine_train_rc_track_flat(paint_session * session, uint8 rideIndex, u
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0071C154, 0x0071C164, 0x0071C174 */
+/**  rct2: 0x0071C154, 0x0071C164, 0x0071C174 */
 static void mine_train_rc_track_station(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                         sint32 height, rct_tile_element * tileElement)
 {
@@ -109,7 +109,7 @@ static void mine_train_rc_track_station(paint_session * session, uint8 rideIndex
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0071BFB4 */
+/**  rct2: 0x0071BFB4 */
 static void mine_train_rc_track_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                           sint32 height, rct_tile_element * tileElement)
 {
@@ -177,7 +177,7 @@ static void mine_train_rc_track_25_deg_up(paint_session * session, uint8 rideInd
     paint_util_set_general_support_height(session, height + 56, 0x20);
 }
 
-/** rct2: 0x0071BFC4 */
+/**  rct2: 0x0071BFC4 */
 static void mine_train_rc_track_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                           sint32 height, rct_tile_element * tileElement)
 {
@@ -216,7 +216,7 @@ static void mine_train_rc_track_60_deg_up(paint_session * session, uint8 rideInd
     paint_util_set_general_support_height(session, height + 104, 0x20);
 }
 
-/** rct2: 0x0071BFD4 */
+/**  rct2: 0x0071BFD4 */
 static void mine_train_rc_track_flat_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -284,7 +284,7 @@ static void mine_train_rc_track_flat_to_25_deg_up(paint_session * session, uint8
     paint_util_set_general_support_height(session, height + 48, 0x20);
 }
 
-/** rct2: 0x0071BFE4 */
+/**  rct2: 0x0071BFE4 */
 static void mine_train_rc_track_25_deg_up_to_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -327,7 +327,7 @@ static void mine_train_rc_track_25_deg_up_to_60_deg_up(paint_session * session, 
     paint_util_set_general_support_height(session, height + 72, 0x20);
 }
 
-/** rct2: 0x0071BFF4 */
+/**  rct2: 0x0071BFF4 */
 static void mine_train_rc_track_60_deg_up_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -370,7 +370,7 @@ static void mine_train_rc_track_60_deg_up_to_25_deg_up(paint_session * session, 
     paint_util_set_general_support_height(session, height + 72, 0x20);
 }
 
-/** rct2: 0x0071C004 */
+/**  rct2: 0x0071C004 */
 static void mine_train_rc_track_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -438,49 +438,49 @@ static void mine_train_rc_track_25_deg_up_to_flat(paint_session * session, uint8
     paint_util_set_general_support_height(session, height + 40, 0x20);
 }
 
-/** rct2: 0x0071C014 */
+/**  rct2: 0x0071C014 */
 static void mine_train_rc_track_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C024 */
+/**  rct2: 0x0071C024 */
 static void mine_train_rc_track_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_60_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C034 */
+/**  rct2: 0x0071C034 */
 static void mine_train_rc_track_flat_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_25_deg_up_to_flat(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C044 */
+/**  rct2: 0x0071C044 */
 static void mine_train_rc_track_25_deg_down_to_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_60_deg_up_to_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C054 */
+/**  rct2: 0x0071C054 */
 static void mine_train_rc_track_60_deg_down_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_25_deg_up_to_60_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C064 */
+/**  rct2: 0x0071C064 */
 static void mine_train_rc_track_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_flat_to_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C0B4 */
+/**  rct2: 0x0071C0B4 */
 static void mine_train_rc_track_left_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -652,7 +652,7 @@ static void mine_train_rc_track_left_quarter_turn_5(paint_session * session, uin
     }
 }
 
-/** rct2: 0x0071C0C4 */
+/**  rct2: 0x0071C0C4 */
 static void mine_train_rc_track_right_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -660,7 +660,7 @@ static void mine_train_rc_track_right_quarter_turn_5(paint_session * session, ui
     mine_train_rc_track_left_quarter_turn_5(session, rideIndex, trackSequence, (direction - 1) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C074 */
+/**  rct2: 0x0071C074 */
 static void mine_train_rc_track_flat_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -696,7 +696,7 @@ static void mine_train_rc_track_flat_to_left_bank(paint_session * session, uint8
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0071C084 */
+/**  rct2: 0x0071C084 */
 static void mine_train_rc_track_flat_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -732,7 +732,7 @@ static void mine_train_rc_track_flat_to_right_bank(paint_session * session, uint
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0071C094 */
+/**  rct2: 0x0071C094 */
 static void mine_train_rc_track_left_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -768,7 +768,7 @@ static void mine_train_rc_track_left_bank_to_flat(paint_session * session, uint8
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0071C0A4 */
+/**  rct2: 0x0071C0A4 */
 static void mine_train_rc_track_right_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                    uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -804,7 +804,7 @@ static void mine_train_rc_track_right_bank_to_flat(paint_session * session, uint
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0071C0D4 */
+/**  rct2: 0x0071C0D4 */
 static void mine_train_rc_track_banked_left_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -982,7 +982,7 @@ static void mine_train_rc_track_banked_left_quarter_turn_5(paint_session * sessi
     }
 }
 
-/** rct2: 0x0071C0E4 */
+/**  rct2: 0x0071C0E4 */
 static void mine_train_rc_track_banked_right_quarter_turn_5(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -990,7 +990,7 @@ static void mine_train_rc_track_banked_right_quarter_turn_5(paint_session * sess
     mine_train_rc_track_banked_left_quarter_turn_5(session, rideIndex, trackSequence, (direction - 1) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C204 */
+/**  rct2: 0x0071C204 */
 static void mine_train_rc_track_left_bank_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1033,7 +1033,7 @@ static void mine_train_rc_track_left_bank_to_25_deg_up(paint_session * session, 
     paint_util_set_general_support_height(session, height + 48, 0x20);
 }
 
-/** rct2: 0x0071C214 */
+/**  rct2: 0x0071C214 */
 static void mine_train_rc_track_right_bank_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1076,7 +1076,7 @@ static void mine_train_rc_track_right_bank_to_25_deg_up(paint_session * session,
     paint_util_set_general_support_height(session, height + 48, 0x20);
 }
 
-/** rct2: 0x0071C224 */
+/**  rct2: 0x0071C224 */
 static void mine_train_rc_track_25_deg_up_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1119,7 +1119,7 @@ static void mine_train_rc_track_25_deg_up_to_left_bank(paint_session * session, 
     paint_util_set_general_support_height(session, height + 40, 0x20);
 }
 
-/** rct2: 0x0071C234 */
+/**  rct2: 0x0071C234 */
 static void mine_train_rc_track_25_deg_up_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1162,35 +1162,35 @@ static void mine_train_rc_track_25_deg_up_to_right_bank(paint_session * session,
     paint_util_set_general_support_height(session, height + 40, 0x20);
 }
 
-/** rct2: 0x0071C244 */
+/**  rct2: 0x0071C244 */
 static void mine_train_rc_track_left_bank_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_25_deg_up_to_right_bank(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C254 */
+/**  rct2: 0x0071C254 */
 static void mine_train_rc_track_right_bank_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_25_deg_up_to_left_bank(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C264 */
+/**  rct2: 0x0071C264 */
 static void mine_train_rc_track_25_deg_down_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_right_bank_to_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C274 */
+/**  rct2: 0x0071C274 */
 static void mine_train_rc_track_25_deg_down_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_left_bank_to_25_deg_up(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C304 */
+/**  rct2: 0x0071C304 */
 static void mine_train_rc_track_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                           sint32 height, rct_tile_element * tileElement)
 {
@@ -1222,14 +1222,14 @@ static void mine_train_rc_track_left_bank(paint_session * session, uint8 rideInd
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0071C314 */
+/**  rct2: 0x0071C314 */
 static void mine_train_rc_track_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                            sint32 height, rct_tile_element * tileElement)
 {
     mine_train_rc_track_left_bank(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C0F4 */
+/**  rct2: 0x0071C0F4 */
 static void mine_train_rc_track_left_quarter_turn_5_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1406,7 +1406,7 @@ static void mine_train_rc_track_left_quarter_turn_5_25_deg_up(paint_session * se
     }
 }
 
-/** rct2: 0x0071C104 */
+/**  rct2: 0x0071C104 */
 static void mine_train_rc_track_right_quarter_turn_5_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1583,7 +1583,7 @@ static void mine_train_rc_track_right_quarter_turn_5_25_deg_up(paint_session * s
     }
 }
 
-/** rct2: 0x0071C114 */
+/**  rct2: 0x0071C114 */
 static void mine_train_rc_track_left_quarter_turn_5_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1592,7 +1592,7 @@ static void mine_train_rc_track_left_quarter_turn_5_25_deg_down(paint_session * 
                                                        tileElement);
 }
 
-/** rct2: 0x0071C124 */
+/**  rct2: 0x0071C124 */
 static void mine_train_rc_track_right_quarter_turn_5_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                  uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1601,7 +1601,7 @@ static void mine_train_rc_track_right_quarter_turn_5_25_deg_down(paint_session *
                                                       tileElement);
 }
 
-/** rct2: 0x0071C134 */
+/**  rct2: 0x0071C134 */
 static void mine_train_rc_track_s_bend_left(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                             sint32 height, rct_tile_element * tileElement)
 {
@@ -1733,7 +1733,7 @@ static void mine_train_rc_track_s_bend_left(paint_session * session, uint8 rideI
     }
 }
 
-/** rct2: 0x0071C144 */
+/**  rct2: 0x0071C144 */
 static void mine_train_rc_track_s_bend_right(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                              sint32 height, rct_tile_element * tileElement)
 {
@@ -1865,7 +1865,7 @@ static void mine_train_rc_track_s_bend_right(paint_session * session, uint8 ride
     }
 }
 
-/** rct2: 0x0071C184 */
+/**  rct2: 0x0071C184 */
 static void mine_train_rc_track_left_quarter_turn_3(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1982,7 +1982,7 @@ static void mine_train_rc_track_left_quarter_turn_3(paint_session * session, uin
     }
 }
 
-/** rct2: 0x0071C194 */
+/**  rct2: 0x0071C194 */
 static void mine_train_rc_track_right_quarter_turn_3(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -1990,7 +1990,7 @@ static void mine_train_rc_track_right_quarter_turn_3(paint_session * session, ui
     mine_train_rc_track_left_quarter_turn_3(session, rideIndex, trackSequence, (direction - 1) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C1A4 */
+/**  rct2: 0x0071C1A4 */
 static void mine_train_rc_track_left_quarter_turn_3_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2112,7 +2112,7 @@ static void mine_train_rc_track_left_quarter_turn_3_bank(paint_session * session
     }
 }
 
-/** rct2: 0x0071C1B4 */
+/**  rct2: 0x0071C1B4 */
 static void mine_train_rc_track_right_quarter_turn_3_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2120,7 +2120,7 @@ static void mine_train_rc_track_right_quarter_turn_3_bank(paint_session * sessio
     mine_train_rc_track_left_quarter_turn_3_bank(session, rideIndex, trackSequence, (direction - 1) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C1C4 */
+/**  rct2: 0x0071C1C4 */
 static void mine_train_rc_track_left_quarter_turn_3_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2211,7 +2211,7 @@ static void mine_train_rc_track_left_quarter_turn_3_25_deg_up(paint_session * se
     }
 }
 
-/** rct2: 0x0071C1D4 */
+/**  rct2: 0x0071C1D4 */
 static void mine_train_rc_track_right_quarter_turn_3_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2302,7 +2302,7 @@ static void mine_train_rc_track_right_quarter_turn_3_25_deg_up(paint_session * s
     }
 }
 
-/** rct2: 0x0071C1E4 */
+/**  rct2: 0x0071C1E4 */
 static void mine_train_rc_track_left_quarter_turn_3_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2311,7 +2311,7 @@ static void mine_train_rc_track_left_quarter_turn_3_25_deg_down(paint_session * 
                                                        tileElement);
 }
 
-/** rct2: 0x0071C1F4 */
+/**  rct2: 0x0071C1F4 */
 static void mine_train_rc_track_right_quarter_turn_3_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                  uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2320,7 +2320,7 @@ static void mine_train_rc_track_right_quarter_turn_3_25_deg_down(paint_session *
                                                       tileElement);
 }
 
-/** rct2: 0x0071C284 */
+/**  rct2: 0x0071C284 */
 static void mine_train_rc_track_left_half_banked_helix_up_small(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2571,7 +2571,7 @@ static void mine_train_rc_track_left_half_banked_helix_up_small(paint_session * 
     }
 }
 
-/** rct2: 0x0071C294 */
+/**  rct2: 0x0071C294 */
 static void mine_train_rc_track_right_half_banked_helix_up_small(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                  uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2822,7 +2822,7 @@ static void mine_train_rc_track_right_half_banked_helix_up_small(paint_session *
     }
 }
 
-/** rct2: 0x0071C2A4 */
+/**  rct2: 0x0071C2A4 */
 static void mine_train_rc_track_left_half_banked_helix_down_small(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -2836,7 +2836,7 @@ static void mine_train_rc_track_left_half_banked_helix_down_small(paint_session 
                                                          tileElement);
 }
 
-/** rct2: 0x0071C2B4 */
+/**  rct2: 0x0071C2B4 */
 static void mine_train_rc_track_right_half_banked_helix_down_small(paint_session * session, uint8 rideIndex,
                                                                    uint8 trackSequence, uint8 direction, sint32 height,
                                                                    rct_tile_element * tileElement)
@@ -2851,7 +2851,7 @@ static void mine_train_rc_track_right_half_banked_helix_down_small(paint_session
                                                         tileElement);
 }
 
-/** rct2: 0x0071C2C4 */
+/**  rct2: 0x0071C2C4 */
 static void mine_train_rc_track_left_half_banked_helix_up_large(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -3226,7 +3226,7 @@ static void mine_train_rc_track_left_half_banked_helix_up_large(paint_session * 
     }
 }
 
-/** rct2: 0x0071C2D4 */
+/**  rct2: 0x0071C2D4 */
 static void mine_train_rc_track_right_half_banked_helix_up_large(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                  uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -3593,7 +3593,7 @@ static void mine_train_rc_track_right_half_banked_helix_up_large(paint_session *
     }
 }
 
-/** rct2: 0x0071C2E4 */
+/**  rct2: 0x0071C2E4 */
 static void mine_train_rc_track_left_half_banked_helix_down_large(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                   uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -3607,7 +3607,7 @@ static void mine_train_rc_track_left_half_banked_helix_down_large(paint_session 
                                                          tileElement);
 }
 
-/** rct2: 0x0071C2F4 */
+/**  rct2: 0x0071C2F4 */
 static void mine_train_rc_track_right_half_banked_helix_down_large(paint_session * session, uint8 rideIndex,
                                                                    uint8 trackSequence, uint8 direction, sint32 height,
                                                                    rct_tile_element * tileElement)
@@ -3622,7 +3622,7 @@ static void mine_train_rc_track_right_half_banked_helix_down_large(paint_session
                                                         tileElement);
 }
 
-/** rct2: 0x0071C324 */
+/**  rct2: 0x0071C324 */
 static void mine_train_rc_track_brakes(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                        sint32 height, rct_tile_element * tileElement)
 {
@@ -3646,7 +3646,7 @@ static void mine_train_rc_track_brakes(paint_session * session, uint8 rideIndex,
     paint_util_set_general_support_height(session, height + 32, 0x20);
 }
 
-/** rct2: 0x0071C334 */
+/**  rct2: 0x0071C334 */
 static void mine_train_rc_track_on_ride_photo(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                               sint32 height, rct_tile_element * tileElement)
 {
@@ -3679,7 +3679,7 @@ static void mine_train_rc_track_on_ride_photo(paint_session * session, uint8 rid
     paint_util_set_general_support_height(session, height + 48, 0x20);
 }
 
-/** rct2: 0x0071C354 */
+/**  rct2: 0x0071C354 */
 static void mine_train_rc_track_left_eighth_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                     uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -3815,7 +3815,7 @@ static void mine_train_rc_track_left_eighth_to_diag(paint_session * session, uin
     }
 }
 
-/** rct2: 0x0071C364 */
+/**  rct2: 0x0071C364 */
 static void mine_train_rc_track_right_eighth_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                      uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -3951,7 +3951,7 @@ static void mine_train_rc_track_right_eighth_to_diag(paint_session * session, ui
     }
 }
 
-/** rct2: 0x0071C374 */
+/**  rct2: 0x0071C374 */
 static void mine_train_rc_track_left_eighth_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -3959,7 +3959,7 @@ static void mine_train_rc_track_left_eighth_to_orthogonal(paint_session * sessio
     mine_train_rc_track_right_eighth_to_diag(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C384 */
+/**  rct2: 0x0071C384 */
 static void mine_train_rc_track_right_eighth_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                            uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -3967,7 +3967,7 @@ static void mine_train_rc_track_right_eighth_to_orthogonal(paint_session * sessi
     mine_train_rc_track_left_eighth_to_diag(session, rideIndex, trackSequence, (direction + 3) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C394 */
+/**  rct2: 0x0071C394 */
 static void mine_train_rc_track_left_eighth_bank_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -4103,7 +4103,7 @@ static void mine_train_rc_track_left_eighth_bank_to_diag(paint_session * session
     }
 }
 
-/** rct2: 0x0071C3A4 */
+/**  rct2: 0x0071C3A4 */
 static void mine_train_rc_track_right_eighth_bank_to_diag(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                           uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -4239,7 +4239,7 @@ static void mine_train_rc_track_right_eighth_bank_to_diag(paint_session * sessio
     }
 }
 
-/** rct2: 0x0071C3B4 */
+/**  rct2: 0x0071C3B4 */
 static void mine_train_rc_track_left_eighth_bank_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -4247,7 +4247,7 @@ static void mine_train_rc_track_left_eighth_bank_to_orthogonal(paint_session * s
     mine_train_rc_track_right_eighth_bank_to_diag(session, rideIndex, trackSequence, (direction + 2) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C3C4 */
+/**  rct2: 0x0071C3C4 */
 static void mine_train_rc_track_right_eighth_bank_to_orthogonal(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -4255,7 +4255,7 @@ static void mine_train_rc_track_right_eighth_bank_to_orthogonal(paint_session * 
     mine_train_rc_track_left_eighth_bank_to_diag(session, rideIndex, trackSequence, (direction + 3) & 3, height, tileElement);
 }
 
-/** rct2: 0x0071C344 */
+/**  rct2: 0x0071C344 */
 static void mine_train_rc_track_diag_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                           sint32 height, rct_tile_element * tileElement)
 {
@@ -4400,7 +4400,7 @@ static void mine_train_rc_track_diag_flat(paint_session * session, uint8 rideInd
     }
 }
 
-/** rct2: 0x0071C414 */
+/**  rct2: 0x0071C414 */
 static void mine_train_rc_track_diag_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -4545,7 +4545,7 @@ static void mine_train_rc_track_diag_25_deg_up(paint_session * session, uint8 ri
     }
 }
 
-/** rct2: 0x0071C474 */
+/**  rct2: 0x0071C474 */
 static void mine_train_rc_track_diag_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -4618,7 +4618,7 @@ static void mine_train_rc_track_diag_60_deg_up(paint_session * session, uint8 ri
     }
 }
 
-/** rct2: 0x0071C3F4 */
+/**  rct2: 0x0071C3F4 */
 static void mine_train_rc_track_diag_flat_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -4763,7 +4763,7 @@ static void mine_train_rc_track_diag_flat_to_25_deg_up(paint_session * session, 
     }
 }
 
-/** rct2: 0x0071C454 */
+/**  rct2: 0x0071C454 */
 static void mine_train_rc_track_diag_25_deg_up_to_60_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -4836,7 +4836,7 @@ static void mine_train_rc_track_diag_25_deg_up_to_60_deg_up(paint_session * sess
     }
 }
 
-/** rct2: 0x0071C464 */
+/**  rct2: 0x0071C464 */
 static void mine_train_rc_track_diag_60_deg_up_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -4909,7 +4909,7 @@ static void mine_train_rc_track_diag_60_deg_up_to_25_deg_up(paint_session * sess
     }
 }
 
-/** rct2: 0x0071C404 */
+/**  rct2: 0x0071C404 */
 static void mine_train_rc_track_diag_25_deg_up_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -5054,7 +5054,7 @@ static void mine_train_rc_track_diag_25_deg_up_to_flat(paint_session * session, 
     }
 }
 
-/** rct2: 0x0071C444 */
+/**  rct2: 0x0071C444 */
 static void mine_train_rc_track_diag_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -5199,7 +5199,7 @@ static void mine_train_rc_track_diag_25_deg_down(paint_session * session, uint8 
     }
 }
 
-/** rct2: 0x0071C4A4 */
+/**  rct2: 0x0071C4A4 */
 static void mine_train_rc_track_diag_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                  sint32 height, rct_tile_element * tileElement)
 {
@@ -5272,7 +5272,7 @@ static void mine_train_rc_track_diag_60_deg_down(paint_session * session, uint8 
     }
 }
 
-/** rct2: 0x0071C424 */
+/**  rct2: 0x0071C424 */
 static void mine_train_rc_track_diag_flat_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -5415,7 +5415,7 @@ static void mine_train_rc_track_diag_flat_to_25_deg_down(paint_session * session
     paint_util_set_general_support_height(session, height + 56, 0x20);
 }
 
-/** rct2: 0x0071C484 */
+/**  rct2: 0x0071C484 */
 static void mine_train_rc_track_diag_25_deg_down_to_60_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -5488,7 +5488,7 @@ static void mine_train_rc_track_diag_25_deg_down_to_60_deg_down(paint_session * 
     }
 }
 
-/** rct2: 0x0071C494 */
+/**  rct2: 0x0071C494 */
 static void mine_train_rc_track_diag_60_deg_down_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                 uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -5561,7 +5561,7 @@ static void mine_train_rc_track_diag_60_deg_down_to_25_deg_down(paint_session * 
     }
 }
 
-/** rct2: 0x0071C434 */
+/**  rct2: 0x0071C434 */
 static void mine_train_rc_track_diag_25_deg_down_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                          uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -5706,7 +5706,7 @@ static void mine_train_rc_track_diag_25_deg_down_to_flat(paint_session * session
     }
 }
 
-/** rct2: 0x0071C4D4 */
+/**  rct2: 0x0071C4D4 */
 static void mine_train_rc_track_diag_flat_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -5781,7 +5781,7 @@ static void mine_train_rc_track_diag_flat_to_left_bank(paint_session * session, 
     }
 }
 
-/** rct2: 0x0071C4B4 */
+/**  rct2: 0x0071C4B4 */
 static void mine_train_rc_track_diag_flat_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -5856,7 +5856,7 @@ static void mine_train_rc_track_diag_flat_to_right_bank(paint_session * session,
     }
 }
 
-/** rct2: 0x0071C4C4 */
+/**  rct2: 0x0071C4C4 */
 static void mine_train_rc_track_diag_left_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                        uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -5931,7 +5931,7 @@ static void mine_train_rc_track_diag_left_bank_to_flat(paint_session * session, 
     }
 }
 
-/** rct2: 0x0071C4E4 */
+/**  rct2: 0x0071C4E4 */
 static void mine_train_rc_track_diag_right_bank_to_flat(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                         uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6006,7 +6006,7 @@ static void mine_train_rc_track_diag_right_bank_to_flat(paint_session * session,
     }
 }
 
-/** rct2: 0x0071C514 */
+/**  rct2: 0x0071C514 */
 static void mine_train_rc_track_diag_left_bank_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6081,7 +6081,7 @@ static void mine_train_rc_track_diag_left_bank_to_25_deg_up(paint_session * sess
     }
 }
 
-/** rct2: 0x0071C524 */
+/**  rct2: 0x0071C524 */
 static void mine_train_rc_track_diag_right_bank_to_25_deg_up(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6156,7 +6156,7 @@ static void mine_train_rc_track_diag_right_bank_to_25_deg_up(paint_session * ses
     }
 }
 
-/** rct2: 0x0071C4F4 */
+/**  rct2: 0x0071C4F4 */
 static void mine_train_rc_track_diag_25_deg_up_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                             uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6231,7 +6231,7 @@ static void mine_train_rc_track_diag_25_deg_up_to_left_bank(paint_session * sess
     }
 }
 
-/** rct2: 0x0071C504 */
+/**  rct2: 0x0071C504 */
 static void mine_train_rc_track_diag_25_deg_up_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                              uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6306,7 +6306,7 @@ static void mine_train_rc_track_diag_25_deg_up_to_right_bank(paint_session * ses
     }
 }
 
-/** rct2: 0x0071C534 */
+/**  rct2: 0x0071C534 */
 static void mine_train_rc_track_diag_left_bank_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6376,7 +6376,7 @@ static void mine_train_rc_track_diag_left_bank_to_25_deg_down(paint_session * se
     paint_util_set_general_support_height(session, height + 56, 0x20);
 }
 
-/** rct2: 0x0071C544 */
+/**  rct2: 0x0071C544 */
 static void mine_train_rc_track_diag_right_bank_to_25_deg_down(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6446,7 +6446,7 @@ static void mine_train_rc_track_diag_right_bank_to_25_deg_down(paint_session * s
     paint_util_set_general_support_height(session, height + 56, 0x20);
 }
 
-/** rct2: 0x0071C554 */
+/**  rct2: 0x0071C554 */
 static void mine_train_rc_track_diag_25_deg_down_to_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                               uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6521,7 +6521,7 @@ static void mine_train_rc_track_diag_25_deg_down_to_left_bank(paint_session * se
     }
 }
 
-/** rct2: 0x0071C564 */
+/**  rct2: 0x0071C564 */
 static void mine_train_rc_track_diag_25_deg_down_to_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence,
                                                                uint8 direction, sint32 height, rct_tile_element * tileElement)
 {
@@ -6596,7 +6596,7 @@ static void mine_train_rc_track_diag_25_deg_down_to_right_bank(paint_session * s
     }
 }
 
-/** rct2: 0x0071C3D4 */
+/**  rct2: 0x0071C3D4 */
 static void mine_train_rc_track_diag_left_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                sint32 height, rct_tile_element * tileElement)
 {
@@ -6673,7 +6673,7 @@ static void mine_train_rc_track_diag_left_bank(paint_session * session, uint8 ri
     }
 }
 
-/** rct2: 0x0071C3E4 */
+/**  rct2: 0x0071C3E4 */
 static void mine_train_rc_track_diag_right_bank(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                                 sint32 height, rct_tile_element * tileElement)
 {
@@ -6750,7 +6750,7 @@ static void mine_train_rc_track_diag_right_bank(paint_session * session, uint8 r
     }
 }
 
-/** rct2: 0x0071C574 */
+/**  rct2: 0x0071C574 */
 static void mine_train_rc_track_block_brakes(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction,
                                              sint32 height, rct_tile_element * tileElement)
 {

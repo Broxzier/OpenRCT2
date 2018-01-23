@@ -108,7 +108,7 @@ static constexpr const LocationXY16 MiniMapOffsets[] = {
     {   0 - 8, 256 }
 };
 
-/** rct2: 0x00981BCC */
+/**  rct2: 0x00981BCC */
 static constexpr const uint16 RideKeyColours[] = {
     MAP_COLOUR(PALETTE_INDEX_61),   // COLOUR_KEY_RIDE
     MAP_COLOUR(PALETTE_INDEX_42),   // COLOUR_KEY_FOOD
@@ -168,13 +168,13 @@ static rct_window_event_list window_map_events = {
     window_map_scrollpaint
 };
 
-/** rct2: 0x00F1AD61 */
+/**  rct2: 0x00F1AD61 */
 static uint8 _activeTool;
 
-/** rct2: 0x00F1AD6C */
+/**  rct2: 0x00F1AD6C */
 static uint32 _currentLine;
 
-/** rct2: 0x00F1AD68 */
+/**  rct2: 0x00F1AD68 */
 static uint8 (*_mapImageData)[MAP_WINDOW_MAP_SIZE][MAP_WINDOW_MAP_SIZE];
 
 static sint32 _nextPeepSpawnIndex = 0;

@@ -777,7 +777,7 @@ void       peep_update_sprite_type(rct_peep * peep);
 void peep_window_state_update(rct_peep * peep);
 void peep_decrement_num_riders(rct_peep * peep);
 /**
- * rct2: 0x699F5A
+ *  rct2: 0x00699F5A
  * al:thought_type
  * ah:thought_arguments
  * esi: peep

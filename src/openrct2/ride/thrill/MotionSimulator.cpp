@@ -132,7 +132,7 @@ static void paint_motionsimulator_vehicle(paint_session * session, sint8 offsetX
     session->InteractionType    = VIEWPORT_INTERACTION_ITEM_RIDE;
 }
 
-/** rct2: 0x008A85C4 */
+/**  rct2: 0x008A85C4 */
 static void paint_motionsimulator(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                                   rct_tile_element * tileElement)
 {

@@ -261,7 +261,7 @@ enum EDGE_SLOPE
     EDGE_SLOPE_DOWNWARDS_ELEVATED   = EDGE_SLOPE_DOWNWARDS | EDGE_SLOPE_ELEVATED,
 };
 
-/** rct2: 0x009A3FEC */
+/**  rct2: 0x009A3FEC */
 static constexpr const uint8 EdgeSlopes[][4] = {
 //  Top right                        Bottom right                   Bottom left                       Top left
     { 0,                             0,                             0,                             0                             },

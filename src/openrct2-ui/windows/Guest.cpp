@@ -634,7 +634,7 @@ void window_guest_overview_mouse_up(rct_window *w, rct_widgetindex widgetIndex)
 
 /**
  *
- *  rct2: 0x696AA0
+ *  rct2: 0x00696AA0
  */
 void window_guest_set_page(rct_window* w, sint32 page){
     if (input_test_flag(INPUT_FLAG_TOOL_ACTIVE))
@@ -790,7 +790,7 @@ void window_guest_viewport_init(rct_window* w){
 
 /**
  *
- *  rct2: 0x6983dd
+ *  rct2: 0x006983DD
  * used by window_staff as well
  */
 static void window_guest_overview_tab_paint(rct_window* w, rct_drawpixelinfo* dpi){
@@ -854,7 +854,7 @@ static void window_guest_overview_tab_paint(rct_window* w, rct_drawpixelinfo* dp
 
 /**
  *
- *  rct2: 0x69869b
+ *  rct2: 0x0069869B
  */
 static void window_guest_stats_tab_paint(rct_window* w, rct_drawpixelinfo* dpi){
     if (w->disabled_widgets & (1 << WIDX_TAB_2))
@@ -886,7 +886,7 @@ static void window_guest_stats_tab_paint(rct_window* w, rct_drawpixelinfo* dpi){
 
 /**
  *
- *  rct2: 0x69861F
+ *  rct2: 0x0069861F
  */
 static void window_guest_rides_tab_paint(rct_window* w, rct_drawpixelinfo* dpi){
     if (w->disabled_widgets & (1 << WIDX_TAB_3)) return;
@@ -906,7 +906,7 @@ static void window_guest_rides_tab_paint(rct_window* w, rct_drawpixelinfo* dpi){
 
 /**
  *
- *  rct2: 0x698597
+ *  rct2: 0x00698597
  */
 static void window_guest_finance_tab_paint(rct_window* w, rct_drawpixelinfo* dpi){
     if (w->disabled_widgets & (1 << WIDX_TAB_4)) return;
@@ -926,7 +926,7 @@ static void window_guest_finance_tab_paint(rct_window* w, rct_drawpixelinfo* dpi
 
 /**
  *
- *  rct2: 0x6985D8
+ *  rct2: 0x006985D8
  */
 static void window_guest_thoughts_tab_paint(rct_window* w, rct_drawpixelinfo* dpi){
     if (w->disabled_widgets & (1 << WIDX_TAB_5)) return;
@@ -946,7 +946,7 @@ static void window_guest_thoughts_tab_paint(rct_window* w, rct_drawpixelinfo* dp
 
 /**
  *
- *  rct2: 0x698661
+ *  rct2: 0x00698661
  */
 static void window_guest_inventory_tab_paint(rct_window* w, rct_drawpixelinfo* dpi){
     if (w->disabled_widgets & (1 << WIDX_TAB_6)) return;
@@ -962,7 +962,7 @@ static void window_guest_inventory_tab_paint(rct_window* w, rct_drawpixelinfo* d
 
 /**
  *
- *  rct2: 0x696887
+ *  rct2: 0x00696887
  */
 void window_guest_overview_paint(rct_window *w, rct_drawpixelinfo *dpi)
 {
@@ -1028,7 +1028,7 @@ void window_guest_overview_paint(rct_window *w, rct_drawpixelinfo *dpi)
 
 /**
  *
- *  rct2: 0x696749
+ *  rct2: 0x00696749
  */
 void window_guest_overview_invalidate(rct_window *w)
 {
@@ -1091,7 +1091,7 @@ void window_guest_overview_invalidate(rct_window *w)
 
 /**
  *
- *  rct2: 0x696F45
+ *  rct2: 0x00696F45
  */
 void window_guest_overview_update(rct_window* w){
     sint32 var_496 = w->var_496;
@@ -1124,7 +1124,7 @@ void window_guest_overview_update(rct_window* w){
     }
 }
 
-/* rct2: 0x696A6A */
+/*  rct2: 0x00696A6A */
 void window_guest_overview_text_input(rct_window *w, rct_widgetindex widgetIndex, char *text)
 {
     if (widgetIndex != WIDX_RENAME)
@@ -1137,7 +1137,7 @@ void window_guest_overview_text_input(rct_window *w, rct_widgetindex widgetIndex
 
 /**
  *
- *  rct2: 0x696A5F
+ *  rct2: 0x00696A5F
  */
 void window_guest_overview_tool_update(rct_window* w, rct_widgetindex widgetIndex, sint32 x, sint32 y)
 {
@@ -1188,7 +1188,7 @@ void window_guest_overview_tool_update(rct_window* w, rct_widgetindex widgetInde
 
 /**
  *
- *  rct2: 0x696A54
+ *  rct2: 0x00696A54
  */
 void window_guest_overview_tool_down(rct_window* w, rct_widgetindex widgetIndex, sint32 x, sint32 y)
 {
@@ -1208,7 +1208,7 @@ void window_guest_overview_tool_down(rct_window* w, rct_widgetindex widgetIndex,
 
 /**
  *
- *  rct2: 0x696A49
+ *  rct2: 0x00696A49
  */
 void window_guest_overview_tool_abort(rct_window *w, rct_widgetindex widgetIndex)
 {
@@ -1220,7 +1220,7 @@ void window_guest_overview_tool_abort(rct_window *w, rct_widgetindex widgetIndex
 
 /**
  * This is a combination of 5 functions that were identical
- *  rct2: 0x69744F, 0x697795, 0x697BDD, 0x697E18, 0x698279
+ *  rct2: 0x0069744F, 0x697795, 0x697BDD, 0x697E18, 0x698279
  */
 void window_guest_mouse_up(rct_window *w, rct_widgetindex widgetIndex)
 {
@@ -1241,7 +1241,7 @@ void window_guest_mouse_up(rct_window *w, rct_widgetindex widgetIndex)
 
 /**
  *
- *  rct2: 0x697488
+ *  rct2: 0x00697488
  */
 void window_guest_stats_resize(rct_window *w)
 {
@@ -1250,7 +1250,7 @@ void window_guest_stats_resize(rct_window *w)
 
 /**
  * This is a combination of 5 functions that were identical
- *  rct2: 0x6974ED, 0x00697959, 0x00697C7B, 0x00697ED2, 0x00698333
+ *  rct2: 0x006974ED, 0x00697959, 0x00697C7B, 0x00697ED2, 0x00698333
  */
 void window_guest_unknown_05(rct_window *w)
 {
@@ -1259,7 +1259,7 @@ void window_guest_unknown_05(rct_window *w)
 
 /**
  *
- *  rct2: 0x69746A
+ *  rct2: 0x0069746A
  */
 void window_guest_stats_update(rct_window *w)
 {
@@ -1272,7 +1272,7 @@ void window_guest_stats_update(rct_window *w)
 
 /**
  *
- *  rct2: 0x69707D
+ *  rct2: 0x0069707D
  */
 void window_guest_stats_invalidate(rct_window *w)
 {
@@ -1503,7 +1503,7 @@ void window_guest_rides_resize(rct_window *w)
 
 /**
  *
- *  rct2: 0x6977B0
+ *  rct2: 0x006977B0
  */
 void window_guest_rides_update(rct_window *w)
 {
@@ -1540,7 +1540,7 @@ void window_guest_rides_update(rct_window *w)
 
 /**
  *
- *  rct2: 0x697844
+ *  rct2: 0x00697844
  */
 void window_guest_rides_tooltip(rct_window* w, rct_widgetindex widgetIndex, rct_string_id *stringId)
 {
@@ -1549,7 +1549,7 @@ void window_guest_rides_tooltip(rct_window* w, rct_widgetindex widgetIndex, rct_
 
 /**
  *
- *  rct2: 0x69784E
+ *  rct2: 0x0069784E
  */
 void window_guest_rides_scroll_get_size(rct_window *w, sint32 scrollIndex, sint32 *width, sint32 *height)
 {

@@ -1301,7 +1301,7 @@ rct_window *window_get_main()
 
 /**
  * Based on
- *  rct2: 0x696ee9, 0x66842F, 0x006AF3B3
+ *  rct2: 0x00696EE9, 0x66842F, 0x006AF3B3
  */
 void window_scroll_to_viewport(rct_window *w)
 {
@@ -2130,7 +2130,7 @@ void window_relocate_windows(sint32 width, sint32 height){
 }
 
 /**
-* rct2: 0x0066B905
+*  rct2: 0x0066B905
 */
 void window_resize_gui(sint32 width, sint32 height)
 {
@@ -2185,7 +2185,7 @@ void window_resize_gui(sint32 width, sint32 height)
 }
 
 /**
-* rct2: 0x0066F0DD
+*  rct2: 0x0066F0DD
 */
 void window_resize_gui_scenario_editor(sint32 width, sint32 height)
 {
@@ -2217,7 +2217,7 @@ void window_resize_gui_scenario_editor(sint32 width, sint32 height)
 
 }
 
-/* Based on rct2: 0x6987ED and another version from window_park */
+/* Based on rct2: 0x006987ED and another version from window_park */
 void window_align_tabs(rct_window *w, rct_widgetindex start_tab_id, rct_widgetindex end_tab_id)
 {
     sint32 i, x = w->widgets[start_tab_id].left;

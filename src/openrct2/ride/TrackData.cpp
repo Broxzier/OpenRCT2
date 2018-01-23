@@ -535,7 +535,7 @@ const rct_track_coordinates TrackCoordinates[256] = {
         { 0, 2, 0, 128, 64, 0 }
 };
 
-/** rct2: 0x0099BA64 */
+/**  rct2: 0x0099BA64 */
 const uint8 TrackSequenceProperties[][16] = {
     { 0 },
     /* TRACK_ELEM_END_STATION */    { TRACK_SEQUENCE_FLAG_DIRECTION_1 | TRACK_SEQUENCE_FLAG_DIRECTION_3 | TRACK_SEQUENCE_FLAG_ORIGIN | TRACK_SEQUENCE_FLAG_DISALLOW_DOORS, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -795,7 +795,7 @@ const uint8 TrackSequenceProperties[][16] = {
     { 0 },
 };
 
-/** rct2: 0x0099CA64 */
+/**  rct2: 0x0099CA64 */
 const uint8 FlatRideTrackSequenceProperties[][16] = {
     { 0 },
     /* 1 */ { TRACK_SEQUENCE_FLAG_DIRECTION_1 | TRACK_SEQUENCE_FLAG_DIRECTION_3 | TRACK_SEQUENCE_FLAG_ORIGIN, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -29723,7 +29723,7 @@ const rct_vehicle_info_list **gTrackVehicleInfo[17] = {
     TrackVehicleInfoList_8BAD28,
 };
 
-/** rct2: 0x00993D1C */
+/**  rct2: 0x00993D1C */
 const sint16 AlternativeTrackTypes[256] = {
     TRACK_ELEM_FLAT_COVERED,                        // TRACK_ELEM_FLAT
     -1,
@@ -29983,7 +29983,7 @@ const sint16 AlternativeTrackTypes[256] = {
     -1,
 };
 
-/** rct2: 0x0099DA34 */
+/**  rct2: 0x0099DA34 */
 const money32 TrackPricing[] = {
     65536,  // TRACK_ELEM_FLAT
     98304,  // TRACK_ELEM_END_STATION
@@ -30243,7 +30243,7 @@ const money32 TrackPricing[] = {
     360448, //
 };
 
-/** rct2: 0x0099DE34 */
+/**  rct2: 0x0099DE34 */
 const money32 FlatRideTrackPricing[] = {
     65536,
     98304,
@@ -30500,7 +30500,7 @@ const money32 FlatRideTrackPricing[] = {
     151552,
 };
 
-/** rct2: 0x0099E228, 0x0099E229, 0x0099E22A, 0x0099E22B */
+/**  rct2: 0x0099E228, 0x0099E229, 0x0099E22A, 0x0099E22B */
 const dodgems_track_size DodgemsTrackSize[] = {
     { 0,    0,  0,      0 },
     { 0,    0,  0,      0 },
@@ -30757,7 +30757,7 @@ const dodgems_track_size DodgemsTrackSize[] = {
     { 0,    0,  0,      0 },
 };
 
-/** rct2: 0x0099EA1C */
+/**  rct2: 0x0099EA1C */
 const uint8 TrackElementMirrorMap[] = {
     TRACK_ELEM_FLAT,
     TRACK_ELEM_END_STATION,
@@ -31017,7 +31017,7 @@ const uint8 TrackElementMirrorMap[] = {
     255,
 };
 
-/** rct2: 0x00999694 */
+/**  rct2: 0x00999694 */
 const uint32 TrackHeightMarkerPositions[256] = {
     (1 << 0), // TRACK_ELEM_FLAT
     (1 << 0), // TRACK_ELEM_END_STATION
@@ -31277,7 +31277,7 @@ const uint32 TrackHeightMarkerPositions[256] = {
     (1 << 0) | (1 << 2), // 255
 };
 
-/** rct2: 0x00999A94 */
+/**  rct2: 0x00999A94 */
 const uint8 TrackSequenceElementAllowedWallEdges[][16] = {
     { 0b1010,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0 }, // TRACK_ELEM_FLAT
     {      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0 }, // TRACK_ELEM_END_STATION
@@ -31537,7 +31537,7 @@ const uint8 TrackSequenceElementAllowedWallEdges[][16] = {
     { 0b1010, 0b1010, 0b1010,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0 }, // 255
 };
 
-/** rct2: 0x0099AA94 */
+/**  rct2: 0x0099AA94 */
 const uint8 FlatRideTrackSequenceElementAllowedWallEdges[][16] = {
     { 0b1010,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0 },
     {      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0 },
@@ -31794,7 +31794,7 @@ const uint8 FlatRideTrackSequenceElementAllowedWallEdges[][16] = {
     { 0b1111,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0,      0 },
 };
 
-/** rct2: 0x0099443C */
+/**  rct2: 0x0099443C */
 const uint16 FlatTrackFlags[] = {
     /*                                                                 */   TRACK_ELEM_FLAG_ALLOW_LIFT_HILL,
     /*                                                                 */   0,
@@ -32052,7 +32052,7 @@ const uint16 FlatTrackFlags[] = {
     /* ???                                                             */   0,
 };
 
-/** rct2: 0x0099423C */
+/**  rct2: 0x0099423C */
 const uint16 TrackFlags[] = {
     /* TRACK_ELEM_FLAT                                                 */   TRACK_ELEM_FLAG_ALLOW_LIFT_HILL,
     /* TRACK_ELEM_END_STATION                                          */   0,

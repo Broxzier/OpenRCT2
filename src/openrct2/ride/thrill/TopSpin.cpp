@@ -26,7 +26,7 @@
 #include "../TrackData.h"
 #include "../TrackPaint.h"
 
-/** rct2: 0x014280BC */
+/**  rct2: 0x014280BC */
 static sint16 TopSpinSeatHeightOffset[] = {
     -10, -10, -9, -7, -4, -1, 2,  6,  11, 16, 21, 26, 31, 37, 42, 47, 52, 57, 61, 64, 67, 70, 72, 73,
     73,  73,  72, 70, 67, 64, 61, 57, 52, 47, 42, 37, 31, 26, 21, 16, 11, 6,  2,  -1, -4, -7, -9, -10,
@@ -245,7 +245,7 @@ static void top_spin_paint_vehicle(paint_session * session, sint8 al, sint8 cl, 
 }
 
 /**
- * rct2: 0x0076679C
+ *  rct2: 0x0076679C
  */
 static void paint_top_spin(paint_session * session, uint8 rideIndex, uint8 trackSequence, uint8 direction, sint32 height,
                            rct_tile_element * tileElement)

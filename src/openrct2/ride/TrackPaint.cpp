@@ -30,7 +30,7 @@
 #include "TrackPaint.h"
 
 // clang-format off
-/* rct2: 0x007667AC */
+/*  rct2: 0x007667AC */
 static LocationXY16 loc_7667AC[] = {
     { -1, 0 },
     { 0,  -1 },
@@ -38,7 +38,7 @@ static LocationXY16 loc_7667AC[] = {
     { 0,  1 },
 };
 
-/* rct2: 0x007667AE */
+/*  rct2: 0x007667AE */
 static LocationXY16 loc_7667AE[] = {
     { 0, -1 },
     { 1, 0 },

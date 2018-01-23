@@ -48,7 +48,7 @@ uint8 gFootpathGroundFlags;
 static uint8 *_footpathQueueChainNext;
 static uint8 _footpathQueueChain[64];
 
-/** rct2: 0x00981D6C, 0x00981D6E */
+/**  rct2: 0x00981D6C, 0x00981D6E */
 const LocationXY16 word_981D6C[4] = {
     { -1,  0 },
     {  0,  1 },
@@ -63,7 +63,7 @@ static constexpr const uint16 EntranceDirections[] = {
     (4 | 1), 0, 0, 0, 0, 0, 0, 0,   // ENTRANCE_TYPE_PARK_ENTRANCE
 };
 
-/** rct2: 0x0098D7F0 */
+/**  rct2: 0x0098D7F0 */
 static constexpr const uint8 connected_path_count[] = {
     0, // 0b0000
     1, // 0b0001
@@ -171,7 +171,7 @@ static void loc_6A6620(sint32 flags, sint32 x, sint32 y, rct_tile_element *tileE
     map_invalidate_tile_full(x, y);
 }
 
-/** rct2: 0x0098D7EC */
+/**  rct2: 0x0098D7EC */
 static constexpr const uint8 byte_98D7EC[] = {
     207, 159, 63, 111
 };
