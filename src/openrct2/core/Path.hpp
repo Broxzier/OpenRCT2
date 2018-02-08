@@ -19,6 +19,10 @@
 #include <string>
 #include "../common.h"
 
+#ifdef CreateDirectory
+#undef CreateDirectory
+#endif
+
 namespace Path
 {
     utf8 * Append(utf8 * buffer, size_t bufferSize, const utf8 * src);

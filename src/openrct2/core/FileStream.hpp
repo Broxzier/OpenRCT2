@@ -19,6 +19,7 @@
 #include "../common.h"
 #include "IStream.hpp"
 #include "Math.hpp"
+#include "Path.hpp"
 #include "String.hpp"
 
 #include "../localisation/Language.h"
@@ -70,6 +71,17 @@ public:
             break;
         default:
             throw;
+        }
+
+        // Make sure the directory exists before writing to a file inside it
+        if (_canWrite)
+        {
+            utf8 * directory = Path::GetDirectory(path);
+            if (!Path::DirectoryExists(directory))
+            {
+                Path::CreateDirectory(directory);
+            }
+            Memory::Free(directory);
         }
 
 #ifdef _WIN32
