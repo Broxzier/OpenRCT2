@@ -588,4 +588,6 @@ uint8 tile_element_get_ride_index(const rct_tile_element * tileElement);
 void FixLandOwnershipTiles(std::initializer_list<TileCoordsXY> tiles);
 void FixLandOwnershipTilesWithOwnership(std::initializer_list<TileCoordsXY> tiles, uint8 ownership);
 
+uint8 entrance_element_get_type(const rct_tile_element * tileElement);
+
 #endif
