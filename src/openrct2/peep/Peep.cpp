@@ -3600,14 +3600,15 @@ static void peep_update_ride_sub_state_7(rct_peep * peep)
  */
 static void peep_update_ride_prepare_for_state_9(rct_peep * peep)
 {
-    Ride * ride = get_ride(peep->current_ride);
+    uint8  rideIndex = peep->current_ride;
+    Ride * ride      = get_ride(rideIndex);
 
     Guard::Assert(peep->current_ride_station < Util::CountOf(ride->exits), GUARD_LINE);
     sint16 x = ride->exits[peep->current_ride_station].x;
     sint16 y = ride->exits[peep->current_ride_station].y;
     sint16 z = ride->station_heights[peep->current_ride_station];
 
-    rct_tile_element * tile_element = ride_get_station_exit_element(ride, x, y, z);
+    rct_tile_element * tile_element = ride_get_station_exit_element(rideIndex, x, y, z);
 
     uint8 exit_direction = (tile_element == nullptr ? 0 : tile_element_get_direction(tile_element));
 
@@ -3784,7 +3785,8 @@ static void peep_update_ride_sub_state_12(rct_peep * peep)
 static void peep_update_ride_sub_state_13(rct_peep * peep)
 {
     sint16 x, y, xy_distance;
-    Ride * ride = get_ride(peep->current_ride);
+    uint8  rideIndex = peep->current_ride;
+    Ride * ride      = get_ride(rideIndex);
 
     if (peep_update_action(&x, &y, &xy_distance, peep))
     {
@@ -3854,7 +3856,7 @@ static void peep_update_ride_sub_state_13(rct_peep * peep)
     y        = ride->exits[peep->current_ride_station].y;
     sint16 z = ride->station_heights[peep->current_ride_station];
 
-    rct_tile_element * tile_element = ride_get_station_exit_element(ride, x, y, z);
+    rct_tile_element * tile_element = ride_get_station_exit_element(rideIndex, x, y, z);
 
     uint8 exit_direction = (tile_element == nullptr ? 0 : tile_element_get_direction(tile_element));
     exit_direction ^= (1 << 1);
@@ -3893,7 +3895,8 @@ static void peep_update_ride_sub_state_13(rct_peep * peep)
 static void peep_update_ride_sub_state_14(rct_peep * peep)
 {
     sint16 x, y, xy_distance;
-    Ride * ride = get_ride(peep->current_ride);
+    uint8  rideIndex = peep->current_ride;
+    Ride * ride      = get_ride(rideIndex);
 
     if (peep_update_action(&x, &y, &xy_distance, peep))
     {
@@ -3931,7 +3934,7 @@ static void peep_update_ride_sub_state_14(rct_peep * peep)
             y        = ride->exits[peep->current_ride_station].y;
             sint16 z = ride->station_heights[peep->current_ride_station];
 
-            rct_tile_element * tile_element = ride_get_station_exit_element(ride, x, y, z);
+            rct_tile_element * tile_element = ride_get_station_exit_element(rideIndex, x, y, z);
 
             uint8 exit_direction = (tile_element == nullptr ? 0 : tile_element_get_direction(tile_element));
 
@@ -4096,7 +4099,8 @@ static void peep_update_ride_sub_state_16(rct_peep * peep)
         return;
     }
 
-    Ride * ride = get_ride(peep->current_ride);
+    uint8  rideIndex = peep->current_ride;
+    Ride * ride      = get_ride(rideIndex);
 
     if ((peep->var_37 & 0x3) != 0)
     {
@@ -4130,7 +4134,7 @@ static void peep_update_ride_sub_state_16(rct_peep * peep)
     y        = ride->exits[peep->current_ride_station].y;
     sint16 z = ride->station_heights[peep->current_ride_station];
 
-    rct_tile_element * tile_element = ride_get_station_exit_element(ride, x, y, z);
+    rct_tile_element * tile_element = ride_get_station_exit_element(rideIndex, x, y, z);
 
     uint8 exit_direction = (tile_element == nullptr ? 0 : tile_element_get_direction(tile_element));
     exit_direction ^= (1 << 1);

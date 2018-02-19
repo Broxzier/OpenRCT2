@@ -1130,29 +1130,12 @@ void ride_remove_peeps(sint32 rideIndex)
     sint8 stationIndex = ride_get_first_valid_station_start(ride);
 
     // Get exit position and direction
-    sint32 exitX = 0;
-    sint32 exitY = 0;
-    sint32 exitZ = 0;
-    sint32 exitDirection = 255;
-    if (stationIndex != -1) {
-        LocationXY8 location = ride->exits[stationIndex];
-        if (location.xy != RCT_XY8_UNDEFINED) {
-            exitX = location.x;
-            exitY = location.y;
-            exitZ = ride->station_heights[stationIndex];
-            rct_tile_element *tileElement = ride_get_station_exit_element(ride, exitX, exitY, exitZ);
+    TileCoordsXYZD exit = ride_get_exit_location_of_station(rideIndex, stationIndex);
 
-            exitDirection = (tileElement == nullptr ? 0 : tile_element_get_direction(tileElement));
-            exitX = (exitX * 32) - (word_981D6C[exitDirection].x * 20) + 16;
-            exitY = (exitY * 32) - (word_981D6C[exitDirection].y * 20) + 16;
-            exitZ = (exitZ * 8) + 2;
-
-            // Reverse direction
-            exitDirection ^= 2;
-
-            exitDirection *= 8;
-        }
-    }
+    // This is the location where the peep sprites will be moved to (if there is an exit)
+    uint8         direction    = exit.direction;
+    LocationXYZ16 moveLocation = { (sint16)((exit.x * 32) - (word_981D6C[direction].x * 20) + 16),
+                                   (sint16)((exit.y * 32) - (word_981D6C[direction].y * 20) + 16), (sint16)((exit.z * 8) + 2) };
 
     // Place all the peeps at exit
     uint16 spriteIndex;
@@ -1173,18 +1156,20 @@ void ride_remove_peeps(sint32 rideIndex)
 
             invalidate_sprite_2((rct_sprite*)peep);
 
-            if (exitDirection == 255) {
-                sint32 x = peep->next_x + 16;
-                sint32 y = peep->next_y + 16;
-                sint32 z = peep->next_z * 8;
+            if (exit.x == LOCATION_NULL)
+            {
+                // Move to next_x/y/z instead when there is no exit at the station
+                moveLocation = { peep->next_x + 16, peep->next_y + 16, peep->next_z * 8 + 1 };
+                direction    = peep->direction;
                 if (peep->next_var_29 & 4)
-                    z += 8;
-                z++;
-                sprite_move(x, y, z, (rct_sprite*)peep);
-            } else {
-                sprite_move(exitX, exitY, exitZ, (rct_sprite*)peep);
-                peep->sprite_direction = exitDirection;
+                    moveLocation.z += 8;
             }
+            else
+            {
+                peep->sprite_direction = direction ^ 2;
+            }
+
+            sprite_move(moveLocation.x, moveLocation.y, moveLocation.z, (rct_sprite*)peep);
 
             invalidate_sprite_2((rct_sprite*)peep);
             peep->state = PEEP_STATE_FALLING;
@@ -2648,40 +2633,33 @@ static void ride_call_closest_mechanic(sint32 rideIndex)
     ride = get_ride(rideIndex);
     forInspection = (ride->lifecycle_flags & (RIDE_LIFECYCLE_BREAKDOWN_PENDING | RIDE_LIFECYCLE_BROKEN_DOWN)) == 0;
 
-    mechanic = ride_find_closest_mechanic(ride, forInspection);
+    mechanic = ride_find_closest_mechanic(rideIndex, forInspection);
     if (mechanic != nullptr)
         ride_call_mechanic(rideIndex, mechanic, forInspection);
 }
 
-rct_peep *ride_find_closest_mechanic(Ride *ride, sint32 forInspection)
+rct_peep *ride_find_closest_mechanic(sint32 rideIndex, sint32 forInspection)
 {
-    sint32 x, y, z, stationIndex;
-    LocationXY8 location;
+    const Ride * ride = get_ride(rideIndex);
     rct_tile_element *tileElement;
 
     // Get either exit position or entrance position if there is no exit
-    stationIndex = ride->inspection_station;
-    location = ride->exits[stationIndex];
-    if (location.xy == RCT_XY8_UNDEFINED) {
-        location = ride->entrances[stationIndex];
-        if (location.xy == RCT_XY8_UNDEFINED)
+    sint32 stationIndex = ride->inspection_station;
+    TileCoordsXYZD entranceCoord = ride_get_exit_location_of_station(rideIndex, stationIndex);
+    if (entranceCoord.x == LOCATION_NULL) {
+        entranceCoord = ride_get_entrance_location_of_station(rideIndex, stationIndex);
+        if (entranceCoord.x == LOCATION_NULL)
             return nullptr;
     }
 
     // Get station start track element and position
-    x = location.x;
-    y = location.y;
-    z = ride->station_heights[stationIndex];
-    tileElement = ride_get_station_exit_element(ride, x, y, z);
+    tileElement = ride_get_station_exit_element(rideIndex, entranceCoord.x, entranceCoord.y, entranceCoord.z);
     if (tileElement == nullptr)
         return nullptr;
 
-    x *= 32;
-    y *= 32;
-
     // Set x,y to centre of the station exit for the mechanic search.
-    x += 16;
-    y += 16;
+    sint32 x = entranceCoord.x * 32 + 16;
+    sint32 y = entranceCoord.y * 32 + 16;
 
     return find_closest_mechanic(x, y, forInspection);
 }

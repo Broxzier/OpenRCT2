@@ -3620,14 +3620,15 @@ static void window_ride_locate_mechanic(rct_window *w)
     Ride *ride;
     rct_peep *mechanic;
 
-    ride = get_ride(w->number);
+    uint8 rideIndex = w->number;
+    ride            = get_ride(rideIndex);
 
     // First check if there is a mechanic assigned
     mechanic = ride_get_assigned_mechanic(ride);
 
     // Otherwise find the closest mechanic
     if (mechanic == nullptr)
-        mechanic = ride_find_closest_mechanic(ride, 1);
+        mechanic = ride_find_closest_mechanic(rideIndex, 1);
 
     if (mechanic == nullptr)
         context_show_error(STR_UNABLE_TO_LOCATE_MECHANIC, STR_NONE);

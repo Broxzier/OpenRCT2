@@ -309,33 +309,45 @@ static void ride_invalidate_station_start(Ride * ride, sint32 stationIndex, bool
     map_invalidate_tile_zoom1(x, y, tileElement->base_height * 8, tileElement->clearance_height * 8);
 }
 
-rct_tile_element * ride_get_station_start_track_element(Ride * ride, sint32 stationIndex)
+rct_tile_element * ride_get_station_start_track_element(uint8 rideIndex, sint32 stationIndex)
 {
+    Ride * ride = get_ride(rideIndex);
     sint32 x = ride->station_starts[stationIndex].x;
     sint32 y = ride->station_starts[stationIndex].y;
-    sint32 z = ride->station_heights[stationIndex];
+    //sint32 z = ride->station_heights[stationIndex];
 
     // Find the station track element
     rct_tile_element * tileElement = map_get_first_element_at(x, y);
     do
     {
-        if (tile_element_get_type(tileElement) == TILE_ELEMENT_TYPE_TRACK && z == tileElement->base_height)
-            return tileElement;
+        if (tile_element_get_type(tileElement) != TILE_ELEMENT_TYPE_TRACK)
+            continue;
+        if (tileElement->properties.track.ride_index != rideIndex) // Not checking for ride index here allows for track merges to happen
+            continue;
+        if (tileElement->properties.track.type != 2)
+            continue;
 
+        return tileElement;
     }
     while (!tile_element_is_last_for_tile(tileElement++));
 
     return nullptr;
 }
 
-rct_tile_element * ride_get_station_exit_element(Ride * ride, sint32 x, sint32 y, sint32 z)
+rct_tile_element * ride_get_station_exit_element(sint32 rideIndex, sint32 x, sint32 y, sint32 z)
 {
     // Find the station track element
     rct_tile_element * tileElement = map_get_first_element_at(x, y);
     do
     {
-        if (tile_element_get_type(tileElement) == TILE_ELEMENT_TYPE_ENTRANCE && z == tileElement->base_height)
-            return tileElement;
+        if (tile_element_get_type(tileElement) != TILE_ELEMENT_TYPE_ENTRANCE)
+            continue;
+        if (tileElement->base_height != z)
+            continue;
+        if (tileElement->properties.entrance.ride_index != rideIndex)
+            continue;
+
+        return tileElement;
     }
     while (!tile_element_is_last_for_tile(tileElement++));
 
@@ -428,4 +440,14 @@ TileCoordsXYZD ride_get_entrance_location_of_station(const uint8 rideIndex, cons
 TileCoordsXYZD ride_get_exit_location_of_station(const uint8 rideIndex, const uint8 stationIndex)
 {
     return ride_get_entrance_or_exit_location_of_station(rideIndex, stationIndex, ENTRANCE_TYPE_RIDE_EXIT);
+}
+
+rct_tile_element * ride_get_entrance_element_of_station(const uint8 rideIndex, const uint8 stationIndex)
+{
+
+}
+
+rct_tile_element * ride_get_exit_element_of_station(const uint8 rideIndex, const uint8 stationIndex)
+{
+
 }
