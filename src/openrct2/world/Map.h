@@ -541,6 +541,8 @@ bool sign_set_colour(sint32 x, sint32 y, sint32 z, sint32 direction, sint32 sequ
 void wall_remove_at(sint32 x, sint32 y, sint32 z0, sint32 z1);
 void wall_remove_at_z(sint32 x, sint32 y, sint32 z);
 
+void remove_unused_corrupt_elements();
+
 void map_invalidate_tile(sint32 x, sint32 y, sint32 z0, sint32 z1);
 void map_invalidate_tile_zoom1(sint32 x, sint32 y, sint32 z0, sint32 z1);
 void map_invalidate_tile_zoom0(sint32 x, sint32 y, sint32 z0, sint32 z1);

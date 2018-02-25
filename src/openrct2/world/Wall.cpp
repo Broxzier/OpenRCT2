@@ -776,6 +776,40 @@ void wall_remove_at_z(sint32 x, sint32 y, sint32 z)
     wall_remove_at(x, y, z, z + 48);
 }
 
+// In vanilla RCT2, corrupt elements skips the painting of elements later in the list. In OpenRCT2 only the next element will be
+// skipped. In both cases, they serve no purpose when there are no elements after it, and will only cause objects to seemingly
+// randomly not appear when built. This function loops over all tiles on the map and removes corrupt elements at the end of the
+// list.
+void remove_unused_corrupt_elements()
+{
+    rct_tile_element * tileElement;
+    for (sint32 y = 1; y < gMapSize - 1; y++)
+    {
+        for (sint32 x = 1; x < gMapSize - 1; x++)
+        {
+            tileElement = map_get_first_element_at(x, y);
+            while (!tile_element_is_last_for_tile(tileElement))
+            {
+                tileElement++;
+            }
+
+            size_t elementsRemoved = 0;
+            while (tile_element_get_type(tileElement) == TILE_ELEMENT_TYPE_CORRUPT)
+            {
+                tile_element_remove(tileElement);
+                tileElement--;
+                elementsRemoved++;
+            }
+
+            if (elementsRemoved > 0)
+            {
+                log_info("Removed %d corrupt elements from tile at x=%d, y=%d", elementsRemoved, x, y);
+            }
+        }
+    }
+}
+
+
 /**
  *
  *  rct2: 0x006E5935

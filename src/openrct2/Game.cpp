@@ -1288,6 +1288,9 @@ void game_fix_save_vars()
 
     research_fix();
 
+    // Remove unused corrupt elements
+    remove_unused_corrupt_elements();
+
     // Fix banner list pointing to NULL map elements
     banner_reset_broken_index();
 
