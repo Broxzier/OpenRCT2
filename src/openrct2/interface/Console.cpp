@@ -1444,7 +1444,8 @@ static constexpr const console_command console_command_table[] = {
     { "rides", cc_rides, "Ride management.", "rides <subcommand>" },
     { "staff", cc_staff, "Staff management.", "staff <subcommand>"},
     { "remove_unused_objects", cc_remove_unused_objects, "Removes all the unused objects from the object selection.", "remove_unused_objects" },
-    { "remove_park_fences", cc_remove_park_fences, "Removes all park fences from the surface", "remove_park_fences"},
+    { "remove_park_fences", cc_remove_park_fences, "Removes all park fences from the surface", "remove_park_fences" },
+    { "fix_corrupt_elements", cc_remove_park_fences, "Clamps corrupt elements to the next element in the list, and removes corrupt elements at the end of a tile.", "fix_corrupt_elements" },
     { "show_limits", cc_show_limits, "Shows the map data counts and limits.", "show_limits" },
     { "date", cc_for_date, "Sets the date to a given date.", "Format <year>[ <month>[ <day>]]."}
 };
