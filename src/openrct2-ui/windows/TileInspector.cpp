@@ -2072,12 +2072,12 @@ static void window_tile_inspector_scrollpaint(rct_window *w, rct_drawpixelinfo *
         const bool broken = (tileElement->flags & TILE_ELEMENT_FLAG_BROKEN) != 0;
         const bool last = (tileElement->flags & TILE_ELEMENT_FLAG_LAST_TILE) != 0;
         gfx_clip_string(buffer, w->widgets[WIDX_COLUMN_TYPE].right - w->widgets[WIDX_COLUMN_TYPE].left - COL_X_TYPE);
-        gfx_draw_string(dpi, (char *)typeName, COLOUR_DARK_GREEN, x + COL_X_TYPE + 3, y); // 3px padding
+        gfx_draw_string(dpi, typeName, COLOUR_DARK_GREEN, x + COL_X_TYPE + 3, y); // 3px padding
         gfx_draw_string_left(dpi, STR_FORMAT_INTEGER, &baseHeight, COLOUR_DARK_GREEN, x + COL_X_BH, y);
         gfx_draw_string_left(dpi, STR_FORMAT_INTEGER, &clearanceHeight, COLOUR_DARK_GREEN, x + COL_X_CH, y);
-        if (ghost) gfx_draw_string(dpi, (char*)CheckBoxMarkString, w->colours[1], x + COL_X_GF, y);
-        if (broken) gfx_draw_string(dpi, (char*)CheckBoxMarkString, w->colours[1], x + COL_X_BF, y);
-        if (last) gfx_draw_string(dpi, (char*)CheckBoxMarkString, w->colours[1], x + COL_X_LF, y);
+        if (ghost) gfx_draw_string(dpi, CheckBoxMarkString, w->colours[1], x + COL_X_GF, y);
+        if (broken) gfx_draw_string(dpi, CheckBoxMarkString, w->colours[1], x + COL_X_BF, y);
+        if (last) gfx_draw_string(dpi, CheckBoxMarkString, w->colours[1], x + COL_X_LF, y);
 
         y -= LIST_ITEM_HEIGHT;
         i++;
