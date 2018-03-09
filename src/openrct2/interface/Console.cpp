@@ -1368,6 +1368,30 @@ static sint32 cc_for_date(const utf8 **argv, sint32 argc)
     return 1;
 }
 
+static sint32 cc_count_tiles(const utf8 **argv, sint32 argc)
+{
+    if (argc != 1)
+        return -1;
+
+    sint32 baseHeight = atoi(argv[0]);
+    if (baseHeight < MINIMUM_LAND_HEIGHT || baseHeight > MAXIMUM_LAND_HEIGHT)
+        return -1;
+
+    uint32 tilesAboveBaseheight = 0;
+    for (sint32 y = 1; y < gMapSize; y++)
+    {
+        for (sint32 x = 1; x < gMapSize; x++)
+        {
+            rct_tile_element * surface = map_get_surface_element_at(x, y);
+            if (surface != nullptr && surface->base_height >= baseHeight)
+                tilesAboveBaseheight++;
+        }
+    }
+
+    console_printf("There are %d surface elements with a base height of at least %d.", tilesAboveBaseheight, baseHeight);
+    return 1;
+}
+
 using console_command_func = sint32 (*)(const utf8 ** argv, sint32 argc);
 struct console_command {
     const utf8 * command;
@@ -1446,7 +1470,8 @@ static constexpr const console_command console_command_table[] = {
     { "remove_unused_objects", cc_remove_unused_objects, "Removes all the unused objects from the object selection.", "remove_unused_objects" },
     { "remove_park_fences", cc_remove_park_fences, "Removes all park fences from the surface", "remove_park_fences"},
     { "show_limits", cc_show_limits, "Shows the map data counts and limits.", "show_limits" },
-    { "date", cc_for_date, "Sets the date to a given date.", "Format <year>[ <month>[ <day>]]."}
+    { "date", cc_for_date, "Sets the date to a given date.", "Format <year>[ <month>[ <day>]]."},
+    { "count_tiles", cc_count_tiles, "Count number of tiles above the given base height.", "count_tiles <base_height>" }
 };
 
 static sint32 cc_windows(const utf8 **argv, sint32 argc) {
