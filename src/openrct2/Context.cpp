@@ -627,7 +627,11 @@ namespace OpenRCT2
             }
 #endif // DISABLE_NETWORK
 
-            _stdInOutConsole.Start();
+            // For now, only allow interactive console in headless mode
+            if (gOpenRCT2Headless)
+            {
+                _stdInOutConsole.Start();
+            }
             RunGameLoop();
         }
 
