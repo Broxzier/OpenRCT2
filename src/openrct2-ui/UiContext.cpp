@@ -44,6 +44,8 @@
 #include <openrct2/interface/Console.h>
 #include <openrct2-ui/interface/Window.h>
 
+#include "interface/InGameConsole.h"
+
 using namespace OpenRCT2;
 using namespace OpenRCT2::Drawing;
 using namespace OpenRCT2::Input;
@@ -86,7 +88,11 @@ private:
     uint32              _lastGestureTimestamp   = 0;
     float               _gestureRadius          = 0;
 
+    InGameConsole       _inGameConsole;
+
 public:
+    InGameConsole& GetInGameConsole() { return _inGameConsole; }
+
     explicit UiContext(IPlatformEnvironment * env)
         : _platformUiContext(CreatePlatformUiContext()),
           _windowManager(CreateWindowManager()),
@@ -107,6 +113,16 @@ public:
         delete _windowManager;
         SDL_QuitSubSystem(SDL_INIT_VIDEO);
         delete _platformUiContext;
+    }
+
+    void Update() override
+    {
+        _inGameConsole.Update();
+    }
+
+    void Draw(rct_drawpixelinfo * dpi) override
+    {
+        _inGameConsole.Draw(dpi);
     }
 
     // Window
@@ -349,9 +365,9 @@ public:
                 _cursorState.y = (sint32)(e.motion.y / gConfigGeneral.window_scale);
                 break;
             case SDL_MOUSEWHEEL:
-                if (console_is_open())
+                if (_inGameConsole.IsOpen())
                 {
-                    console_scroll(e.wheel.y * 3); // Scroll 3 lines at a time
+                    _inGameConsole.Scroll(e.wheel.y * 3); // Scroll 3 lines at a time
                     break;
                 }
                 _cursorState.wheel -= e.wheel.y;
@@ -797,4 +813,10 @@ private:
 IUiContext * OpenRCT2::Ui::CreateUiContext(IPlatformEnvironment * env)
 {
     return new UiContext(env);
+}
+
+InGameConsole& OpenRCT2::Ui::GetInGameConsole()
+{
+    auto uiContext = static_cast<UiContext *>(GetContext()->GetUiContext());
+    return uiContext->GetInGameConsole();
 }
