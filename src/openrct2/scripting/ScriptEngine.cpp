@@ -14,6 +14,7 @@
 #include <stdexcept>
 
 #include "ScConsole.hpp"
+#include "ScPark.hpp"
 
 using namespace OpenRCT2::Scripting;
 
@@ -40,9 +41,10 @@ void ScriptEngine::Initialise()
 
     auto ctx = _context;
     ScConsole::Register(ctx);
+    ScPark::Register(ctx);
 
-    auto scConsole = std::make_shared<ScConsole>(_console);
-    dukglue_register_global(ctx, scConsole, "console");
+    dukglue_register_global(ctx, std::make_shared<ScConsole>(_console), "console");
+    dukglue_register_global(ctx, std::make_shared<ScPark>(), "park");
 }
 
 void ScriptEngine::Update()
