@@ -24,6 +24,7 @@
 
 namespace OpenRCT2::Scripting
 {
+    class ScriptExecutionInfo;
     class Plugin;
 
     enum class HOOK_TYPE
@@ -31,17 +32,19 @@ namespace OpenRCT2::Scripting
         INTERVAL_TICK,
         INTERVAL_DAY,
         COUNT,
+        UNDEFINED = -1,
     };
     constexpr size_t NUM_HOOK_TYPES = static_cast<size_t>(HOOK_TYPE::COUNT);
+    HOOK_TYPE GetHookType(const std::string &name);
 
     struct Hook
     {
         uint32 Cookie;
-        const Plugin * Owner;
+        Plugin * Owner;
         DukValue Function;
 
         Hook();
-        Hook(uint32 cookie, const Plugin& owner, const DukValue &function)
+        Hook(uint32 cookie, Plugin& owner, const DukValue &function)
             : Cookie(cookie),
               Owner(&owner),
               Function(function)
@@ -53,19 +56,30 @@ namespace OpenRCT2::Scripting
     {
         HOOK_TYPE Type;
         std::vector<Hook> Hooks;
+
+        HookList() {}
+        HookList(const HookList&) = delete;
+        HookList(HookList&& src)
+            : Type(std::move(src.Type)),
+              Hooks(std::move(src.Hooks))
+        {
+        }
     };
 
     class HookEngine
     {
     private:
+        ScriptExecutionInfo& _execInfo;
         std::vector<HookList> _hookMap;
         size_t _numHooks{};
         uint32_t _nextCookie = 1;
 
     public:
-        HookEngine();
-        uint32 Subscribe(HOOK_TYPE type, const Plugin& plugin, const DukValue &function);
+        HookEngine(ScriptExecutionInfo& execInfo);
+        HookEngine(const HookEngine&) = delete;
+        uint32 Subscribe(HOOK_TYPE type, Plugin& owner, const DukValue &function);
         void Unsubscribe(HOOK_TYPE type, uint32 cookie);
+        void UnsubscribeAll(const Plugin& owner);
         void Call(HOOK_TYPE type);
 
     private:

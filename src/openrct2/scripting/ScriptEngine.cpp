@@ -29,7 +29,8 @@ static std::string Stringify(duk_context * ctx, duk_idx_t idx);
 
 ScriptEngine::ScriptEngine(InteractiveConsole& console, IPlatformEnvironment& env) :
     _console(console),
-    _env(env)
+    _env(env),
+    _hookEngine(_execInfo)
 {
 }
 
@@ -53,7 +54,7 @@ void ScriptEngine::Initialise()
     ScPark::Register(ctx);
 
     dukglue_register_global(ctx, std::make_shared<ScConsole>(_console), "console");
-    dukglue_register_global(ctx, std::make_shared<ScContext>(), "context");
+    dukglue_register_global(ctx, std::make_shared<ScContext>(_execInfo, _hookEngine), "context");
     dukglue_register_global(ctx, std::make_shared<ScPark>(), "park");
 
     LoadPlugins();
@@ -71,6 +72,7 @@ void ScriptEngine::LoadPlugins()
         try
         {
             Plugin p(_context, path);
+            _execInfo.SetCurrentPlugin(&p);
             p.Load();
             p.EnableHotReload();
             _plugins.push_back(std::move(p));
@@ -80,6 +82,7 @@ void ScriptEngine::LoadPlugins()
             _console.WriteLineError(e.what());
         }
     }
+    _execInfo.SetCurrentPlugin(nullptr);
 }
 
 void ScriptEngine::AutoReloadPlugins()
@@ -90,6 +93,8 @@ void ScriptEngine::AutoReloadPlugins()
         {
             try
             {
+                _hookEngine.UnsubscribeAll(plugin);
+                _execInfo.SetCurrentPlugin(&plugin);
                 plugin.Load();
                 plugin.Start();
             }
@@ -99,14 +104,24 @@ void ScriptEngine::AutoReloadPlugins()
             }
         }
     }
+    _execInfo.SetCurrentPlugin(nullptr);
 }
 
 void ScriptEngine::StartPlugins()
 {
     for (auto& plugin : _plugins)
     {
-        plugin.Start();
+        _execInfo.SetCurrentPlugin(&plugin);
+        try
+        {
+            plugin.Start();
+        }
+        catch (const std::exception &e)
+        {
+            _console.WriteLineError(e.what());
+        }
     }
+    _execInfo.SetCurrentPlugin(nullptr);
 }
 
 void ScriptEngine::Update()

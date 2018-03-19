@@ -67,6 +67,7 @@
 #include "network/network.h"
 #include "network/twitch.h"
 #include "platform/platform.h"
+#include "scripting/HookEngine.h"
 #include "scripting/ScriptEngine.h"
 #include "util/Util.h"
 
