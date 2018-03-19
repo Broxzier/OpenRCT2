@@ -20,6 +20,7 @@
 #include <string>
 
 #include "common.h"
+#include "Context.h"
 
 struct ParkLoadResult;
 struct rct_s6_data;
@@ -182,7 +183,7 @@ void pause_toggle();
 bool game_is_paused();
 bool game_is_not_paused();
 void save_game();
-void * create_save_game_as_intent();
+Intent * create_save_game_as_intent();
 void save_game_as();
 void handle_park_load_failure_with_title_opt(const ParkLoadResult * result, const std::string & path, bool loadTitleFirst);
 void handle_park_load_failure(const ParkLoadResult * result, const std::string & path);

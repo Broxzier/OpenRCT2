@@ -244,7 +244,7 @@ static void window_save_prompt_mouseup(rct_window *w, rct_widgetindex widgetInde
             }
             else
             {
-                intent = (Intent *) create_save_game_as_intent();
+                intent = create_save_game_as_intent();
             }
             window_close(w);
             intent->putExtra(INTENT_EXTRA_CALLBACK, (void *) window_save_prompt_callback);

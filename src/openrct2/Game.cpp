@@ -1455,7 +1455,7 @@ void save_game()
     }
 }
 
-void * create_save_game_as_intent()
+Intent * create_save_game_as_intent()
 {
     char name[MAX_PATH];
     safe_strcpy(name, path_get_filename(gScenarioSavePath), MAX_PATH);
@@ -1470,7 +1470,7 @@ void * create_save_game_as_intent()
 
 void save_game_as()
 {
-    auto * intent = (Intent *) create_save_game_as_intent();
+    Intent * intent = create_save_game_as_intent();
     context_open_intent(intent);
     delete intent;
 }
