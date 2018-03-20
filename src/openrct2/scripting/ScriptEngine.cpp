@@ -23,6 +23,7 @@
 #include "ScDisposable.hpp"
 #include "ScMap.hpp"
 #include "ScPark.hpp"
+#include "ScTile.hpp"
 #include "ScThing.hpp"
 
 using namespace OpenRCT2::Scripting;
@@ -55,6 +56,8 @@ void ScriptEngine::Initialise()
     ScDisposable::Register(ctx);
     ScMap::Register(ctx);
     ScPark::Register(ctx);
+    ScTile::Register(ctx);
+    ScTileElement::Register(ctx);
     ScThing::Register(ctx);
 
     dukglue_register_global(ctx, std::make_shared<ScConsole>(_console), "console");
