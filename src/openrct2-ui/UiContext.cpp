@@ -24,6 +24,7 @@
 #include <openrct2/localisation/StringIds.h>
 #include <openrct2/interface/Chat.h>
 #include <openrct2/platform/Platform2.h>
+#include <openrct2/scripting/ScriptEngine.h>
 #include <openrct2/title/TitleSequencePlayer.h>
 #include <openrct2/ui/UiContext.h>
 #include <openrct2/ui/WindowManager.h>
@@ -32,6 +33,7 @@
 #include "drawing/engines/DrawingEngineFactory.hpp"
 #include "input/KeyboardShortcuts.h"
 #include "interface/Theme.h"
+#include "scripting/UiExtensions.h"
 #include "SDLException.h"
 #include "TextComposition.h"
 #include "UiContext.h"
@@ -47,6 +49,7 @@
 using namespace OpenRCT2;
 using namespace OpenRCT2::Drawing;
 using namespace OpenRCT2::Input;
+using namespace OpenRCT2::Scripting;
 using namespace OpenRCT2::Ui;
 
 #ifdef __MACOSX__
@@ -112,6 +115,12 @@ public:
         delete _windowManager;
         SDL_QuitSubSystem(SDL_INIT_VIDEO);
         delete _platformUiContext;
+    }
+
+    void Initialise() override
+    {
+        auto& scriptEngine = GetContext()->GetScriptEngine();
+        UiScriptExtensions::Extend(scriptEngine);
     }
 
     void Update() override

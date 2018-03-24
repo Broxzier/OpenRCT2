@@ -449,6 +449,8 @@ namespace OpenRCT2
             _gameState->InitAll(150);
 
             _titleScreen = std::make_unique<TitleScreen>(*_gameState);
+            _park = std::make_unique<Park>();
+            _uiContext->Initialise();
             return true;
         }
 
