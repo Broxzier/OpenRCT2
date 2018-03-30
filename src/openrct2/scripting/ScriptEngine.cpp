@@ -26,6 +26,7 @@
 #include "ScTile.hpp"
 #include "ScThing.hpp"
 
+using namespace OpenRCT2;
 using namespace OpenRCT2::Scripting;
 
 static std::string Stringify(duk_context * ctx, duk_idx_t idx);

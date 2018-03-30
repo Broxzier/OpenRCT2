@@ -80,7 +80,7 @@ namespace OpenRCT2::Scripting
     private:
         uint8 GetParkMessageType(const std::string& key)
         {
-            static constexpr auto keys = {
+            static auto keys = {
                 "attraction",
                 "peep_on_attraction",
                 "peep",

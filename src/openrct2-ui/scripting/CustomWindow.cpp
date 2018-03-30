@@ -523,7 +523,7 @@ namespace OpenRCT2::Ui::Windows
                 {
                     arg.push();
                 }
-                duk_pcall(dukHandler.context(), args.size());
+                duk_pcall(dukHandler.context(), (duk_idx_t)args.size());
                 duk_pop(dukHandler.context());
             }
         }

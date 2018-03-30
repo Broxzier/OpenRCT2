@@ -7,10 +7,8 @@
  * OpenRCT2 is licensed under the GNU General Public License version 3.
  *****************************************************************************/
 
-// Needs to be first, because it includes a windows header that redefines 'interface' without checking properly
-#include "../thirdparty/linenoise.hpp"
+#include <linenoise.hpp>
 
-// Other includes
 #include "../Context.h"
 #include "../OpenRCT2.h"
 #include "../platform/Platform2.h"
