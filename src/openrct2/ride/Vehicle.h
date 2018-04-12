@@ -466,6 +466,7 @@ enum
 
 rct_vehicle* try_get_vehicle(uint16_t spriteIndex);
 void vehicle_update_all();
+void vehicle_update_all_with_test_status();
 void vehicle_sounds_update();
 void vehicle_get_g_forces(const rct_vehicle* vehicle, int32_t* verticalG, int32_t* lateralG);
 void vehicle_set_map_toolbar(const rct_vehicle* vehicle);

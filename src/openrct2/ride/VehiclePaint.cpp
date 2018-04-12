@@ -13,6 +13,7 @@
 #include "../drawing/Drawing.h"
 #include "../drawing/LightFX.h"
 #include "../interface/Viewport.h"
+#include "../interface/Window_internal.h"
 #include "../paint/Paint.h"
 #include "../ride/RideData.h"
 #include "../world/Sprite.h"
@@ -909,6 +910,30 @@ static void vehicle_sprite_paint(
     }
     int32_t image_id = baseImage_id | (vehicle->colours.body_colour << 19) | (vehicle->colours.trim_colour << 24)
         | IMAGE_TYPE_REMAP_2_PLUS;
+
+    // Remap vehicle sprites to appear as ghost for
+    bool drawAsGhost = true;
+
+    // check if vehicle belongs to ride that the ride construction is opened for
+    rct_window* const constructionWindow = window_find_by_class(WC_RIDE_CONSTRUCTION);
+    if (constructionWindow == nullptr || constructionWindow->number != vehicle->ride)
+        drawAsGhost = false;
+
+    // Ride is not in test mode
+    Ride* ride = get_ride(vehicle->ride);
+    if (ride->status != RIDE_STATUS_TESTING)
+        drawAsGhost = false;
+
+    // Ride is already in use
+    if (ride->num_riders > 0)
+        drawAsGhost = false;
+
+    if (drawAsGhost)
+    {
+        image_id &= 0x7FFFF;
+        image_id |= CONSTRUCTION_MARKER;
+    }
+
     paint_struct* ps = sub_98197C(
         session, image_id, 0, 0, bb.length_x, bb.length_y, bb.length_z, z, bb.offset_x, bb.offset_y, bb.offset_z + z);
     if (ps != nullptr)

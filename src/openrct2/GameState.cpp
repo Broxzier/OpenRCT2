@@ -129,7 +129,6 @@ void GameState::Update()
         }
         else
         {
-            numUpdates = 0;
             // Update the animation list. Note this does not
             // increment the map animation.
             map_animation_invalidate_all();
@@ -138,6 +137,13 @@ void GameState::Update()
             network_update();
 
             network_process_pending();
+
+            // Still update any vehicles that are in test mode
+            // TODO: Make this an option?
+            do
+            {
+                vehicle_update_all_with_test_status();
+            } while (--numUpdates > 0);
         }
     }
 

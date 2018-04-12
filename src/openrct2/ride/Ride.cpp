@@ -5710,7 +5710,7 @@ int32_t ride_is_valid_for_test(int32_t rideIndex, int32_t goingToBeOpen, int32_t
         return 0;
     }
 
-    window_close_by_number(WC_RIDE_CONSTRUCTION, rideIndex);
+    //window_close_by_number(WC_RIDE_CONSTRUCTION, rideIndex);
 
     stationIndex = ride_mode_check_station_present(ride);
     if (stationIndex == -1)

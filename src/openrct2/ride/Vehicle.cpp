@@ -18,6 +18,7 @@
 #include "../config/Config.h"
 #include "../core/Memory.hpp"
 #include "../interface/Viewport.h"
+#include "../interface/Window_internal.h"
 #include "../localisation/Localisation.h"
 #include "../management/NewsItem.h"
 #include "../platform/platform.h"
@@ -1341,6 +1342,39 @@ void vehicle_update_all()
     {
         vehicle = GET_VEHICLE(sprite_index);
         sprite_index = vehicle->next;
+
+        vehicle_update(vehicle);
+    }
+}
+
+// Only update vehicles that belong to the currently being constructed ride
+void vehicle_update_all_with_test_status() // TODO: Rename to vehicle_update_ride_construction_ghost
+{
+    if (gScreenFlags & SCREEN_FLAGS_SCENARIO_EDITOR)
+        return;
+
+    if ((gScreenFlags & SCREEN_FLAGS_TRACK_DESIGNER) && gS6Info.editor_step != EDITOR_STEP_ROLLERCOASTER_DESIGNER)
+        return;
+
+    // Ride construction window is not open
+    const rct_window * const constructionWindow = window_find_by_class(WC_RIDE_CONSTRUCTION);
+    if (constructionWindow == nullptr)
+        return;
+
+    uint16_t sprite_index = gSpriteListHead[SPRITE_LIST_TRAIN];
+    while (sprite_index != SPRITE_INDEX_NULL)
+    {
+        rct_vehicle * vehicle = GET_VEHICLE(sprite_index);
+        sprite_index          = vehicle->next;
+
+        // Vehicle doesn't belong to the ride that's being constructed
+        if (vehicle->ride != constructionWindow->number)
+            continue;
+
+        // Some asserts to make sure only the correct vehicles gets updated
+        Ride * ride = get_ride(vehicle->ride);
+        Guard::Assert(ride->status == RIDE_STATUS_TESTING);
+        Guard::Assert(ride->num_riders == 0);
 
         vehicle_update(vehicle);
     }

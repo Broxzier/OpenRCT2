@@ -149,11 +149,13 @@ public:
 
                 // Fix #3183: Make sure we close the construction window so the ride finishes any editing code before opening
                 //            otherwise vehicles get added to the ride incorrectly (such as to a ghost station)
-                rct_window* constructionWindow = window_find_by_number(WC_RIDE_CONSTRUCTION, _rideIndex);
-                if (constructionWindow != nullptr)
-                {
-                    window_close(constructionWindow);
-                }
+                //rct_window* constructionWindow = window_find_by_number(WC_RIDE_CONSTRUCTION, _rideIndex);
+                //if (constructionWindow != nullptr)
+                //{
+                //    window_close(constructionWindow); // TODO: Call function to finish things up instead
+                //}
+                auto intent = new Intent(WC_RIDE_CONSTRUCTION);
+                intent->putExtra(INTENT_EXTRA_RIDE_CONSTRUCTION_ENABLE, false);
 
                 if (_status == RIDE_STATUS_TESTING)
                 {
