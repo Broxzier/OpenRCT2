@@ -17,13 +17,13 @@
 #pragma once
 
 #include <atomic>
-#include <cassert>
 #include <condition_variable>
 #include <deque>
 #include <functional>
 #include <mutex>
 #include <thread>
 #include <vector>
+#include "Guard.hpp"
 
 class JobPool
 {
@@ -70,7 +70,7 @@ public:
 
         for (auto&& th : _threads)
         {
-            assert(th.joinable() != false);
+            Guard::Assert(th.joinable() != false);
             th.join();
         }
     }
@@ -145,7 +145,7 @@ private:
         unique_lock lock(_mutex);
         do
         {
-            // Wait for work or cancelation.
+            // Wait for work or cancellation.
             _condPending.wait(lock,
                 [this]()
                 {
