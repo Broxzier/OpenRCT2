@@ -24,6 +24,12 @@ static constexpr size_t CountOf(T const (&)[N]) noexcept
     return N;
 }
 
+template<typename... Args, typename R, typename T>
+static auto Overload(R(T::*memberFunction)(Args...))
+{
+    return memberFunction;
+}
+
 } // namespace Util
 
 #endif // _UTIL_HPP_

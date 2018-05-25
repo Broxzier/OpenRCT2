@@ -9,7 +9,12 @@
 
 #pragma once
 
+#include "../common.h"
+
 #include <algorithm>
+#include <limits>
+#include <cmath>
+#include <type_traits>
 
 /**
  * Common mathematical functions.
@@ -40,5 +45,16 @@ namespace Math
         if (x < 0) return -1;
         if (x > 0) return 1;
         return 0;
+    }
+
+    // Taken from http://en.cppreference.com/w/cpp/types/numeric_limits/epsilon
+    template<class T>
+    typename std::enable_if<!std::numeric_limits<T>::is_integer, bool>::type AlmostEqual(T x, T y, sint32 ulp = 20)
+    {
+        // the machine epsilon has to be scaled to the magnitude of the values used
+        // and multiplied by the desired precision in ULPs (units in the last place)
+        return std::abs(x - y) <= std::numeric_limits<T>::epsilon() * std::abs(x + y) * ulp
+            // unless the result is subnormal
+            || std::abs(x - y) < (std::numeric_limits<T>::min)(); // TODO: Remove parentheses around min once the macro is removed
     }
 } // namespace Math
