@@ -129,7 +129,7 @@ GAME_COMMAND_CALLBACK_POINTER* game_command_callback_get_callback(uint32_t index
 
 void game_increase_game_speed()
 {
-    if (gGameSpeed < (gConfigGeneral.debugging_tools ? GAMESPEED_HYPER : GAMESPEED_TURBO))
+    if (gGameSpeed < (gConfigGeneral.debugging_tools ? GAMESPEED_HYPER : (GAMESPEED_HYPER-1)))
         gGameSpeed++;
 
     if (game_is_paused())

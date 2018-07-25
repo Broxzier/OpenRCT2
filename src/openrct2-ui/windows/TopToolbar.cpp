@@ -884,13 +884,13 @@ static void window_top_toolbar_paint(rct_window* w, rct_drawpixelinfo* dpi)
         imgId = SPR_G2_FASTFORWARD;
         gfx_draw_sprite(dpi, imgId, x + 6, y + 3, 0);
 
-        if (gGameSpeed == GAMESPEED_SLOW)
+        if (gGameSpeed == GAMESPEED_PAUSED)
         {
-            gfx_draw_sprite(dpi, SPR_G2_RCT1_TEST_BUTTON_2, x+3 , y + 12, 0);
+            gfx_draw_sprite(dpi, SPR_G2_RCT1_CLOSE_BUTTON_2, x + 3, y + 12, 0);
         }
-        else if (gGameSpeed == GAMESPEED_PAUSED)
+        else if (gGameSpeed < GAMESPEED_NORMAL)
         {
-            gfx_draw_sprite(dpi, SPR_G2_RCT1_CLOSE_BUTTON_2, x+3 , y + 12, 0);
+            gfx_draw_sprite(dpi, SPR_G2_RCT1_TEST_BUTTON_2, x + 3, y + 12, 0);
         }
         else if (gGameSpeed == GAMESPEED_HYPER)
         {
@@ -3078,7 +3078,7 @@ static void top_toolbar_init_fastforward_menu(rct_window* w, rct_widget* widget)
     int32_t num_menu;
     extern const rct_string_id SpeedNames[];
 
-    for (num_menu = 0; num_menu < GAMESPEED_TURBO; num_menu++)
+    for (num_menu = 0; num_menu < GAMESPEED_HYPER-1; num_menu++)
     {
         gDropdownItemsFormat[num_menu] = STR_TOGGLE_OPTION;
         gDropdownItemsArgs[num_menu] = SpeedNames[num_menu];
@@ -3107,8 +3107,10 @@ static void top_toolbar_fastforward_menu_dropdown(int16_t dropdownIndex)
     rct_window* w = window_get_main();
     if (w && dropdownIndex >= 0 && dropdownIndex <= 6)
     {
-        gGameSpeed = (dropdownIndex == 6) ? GAMESPEED_HYPER : (dropdownIndex + 1);
-            window_invalidate(w);
+        gGameSpeed = dropdownIndex + 1;
+        if (gGameSpeed > GAMESPEED_HYPER)
+            gGameSpeed = GAMESPEED_HYPER;
+        window_invalidate(w);
     }
 }
 
