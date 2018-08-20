@@ -670,8 +670,7 @@ int32_t tile_inspector_entrance_make_usable(int32_t x, int32_t y, int32_t elemen
 
     if (flags & GAME_COMMAND_FLAG_APPLY)
     {
-        uint8_t stationIndex = entranceElement->properties.entrance.index >> 6;
-
+        uint8_t stationIndex = (entranceElement->properties.entrance.index & 0x30) >> 4;
         switch (entranceElement->properties.entrance.type)
         {
             case ENTRANCE_TYPE_RIDE_ENTRANCE:

@@ -1933,8 +1933,8 @@ static void window_tile_inspector_paint(rct_window* w, rct_drawpixelinfo* dpi)
                 }
                 else
                 {
-                    int16_t rideEntranceIndex = (tileElement->properties.entrance.index & 0x30)
-                        >> 4; // TODO: use mask or function
+                    // TODO: use mask or function
+                    int16_t rideEntranceIndex = (tileElement->properties.entrance.index & 0x30) >> 4;
                     if (tileElement->properties.entrance.type == ENTRANCE_TYPE_RIDE_ENTRANCE)
                     {
                         // Ride entrance ID
