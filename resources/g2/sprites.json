@@ -1655,5 +1655,17 @@
         "y_offset": -1,
         "palette": "keep",
         "forceBmp": true
+    },
+    {
+        "path": "icons/compass_ne.png"
+    },
+    {
+        "path": "icons/compass_se.png"
+    },
+    {
+        "path": "icons/compass_sw.png"
+    },
+    {
+        "path": "icons/compass_nw.png"
     }
 ]

@@ -932,10 +932,10 @@ enum
     SPR_G2_CHAR_END = SPR_G2_E_CARON_LOWER,
     SPR_G2_GLYPH_COUNT = (SPR_G2_CHAR_END - SPR_G2_CHAR_BEGIN) + 1,
 
-    SPR_G2_COMPASS_NE = SPR_G2_BEGIN + 194,
-    SPR_G2_COMPASS_SE = SPR_G2_BEGIN + 195,
-    SPR_G2_COMPASS_SW = SPR_G2_BEGIN + 196,
-    SPR_G2_COMPASS_NW = SPR_G2_BEGIN + 197,
+    SPR_G2_COMPASS_NE = SPR_G2_BEGIN + 346,
+    SPR_G2_COMPASS_SE = SPR_G2_BEGIN + 347,
+    SPR_G2_COMPASS_SW = SPR_G2_BEGIN + 348,
+    SPR_G2_COMPASS_NW = SPR_G2_BEGIN + 349,
 
     // 0x60000, chosen because it's a round hex number
     // of the last possible range of image ID values that is large enough to fit all csg1 sprites.
