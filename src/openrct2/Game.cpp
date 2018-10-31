@@ -799,8 +799,14 @@ void game_log_multiplayer_command(int command, const int* eax, const int* ebx, c
     }
     else if (command == GAME_COMMAND_REMOVE_TRACK)
     {
-        char* args[1] = {
+        // Get ride name
+        Ride* ride = get_ride(*edx);
+        char ride_name[128];
+        format_string(ride_name, 128, ride->name, &ride->name_arguments);
+
+        char* args[2] = {
             (char*)player_name,
+            ride_name,
         };
         format_string(log_msg, 256, STR_LOG_REMOVE_TRACK, args);
         network_append_server_log(log_msg);
