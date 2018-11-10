@@ -63,12 +63,6 @@ static rct_widget window_about_rct2_widgets[] = {
     { WWT_BUTTON,           1,  100,            299,            WH - 50,    WH - 39,    STR_MUSIC_ACKNOWLEDGEMENTS_ELLIPSIS,    STR_NONE },             // music credits button
     { WIDGETS_END },
 };
-
-static rct_widget *window_about_page_widgets[] = {
-    window_about_openrct2_widgets,
-    window_about_rct2_widgets,
-};
-
 #define DEFAULT_ENABLED_WIDGETS \
     (1ULL << WIDX_CLOSE) | (1ULL << WIDX_TAB_ABOUT_OPENRCT2) | (1ULL << WIDX_TAB_ABOUT_RCT2)
 
@@ -76,6 +70,7 @@ static uint64_t window_about_page_enabled_widgets[] = {
     DEFAULT_ENABLED_WIDGETS | (1ULL << WIDX_CHANGELOG),
     DEFAULT_ENABLED_WIDGETS | (1ULL << WIDX_MUSIC_CREDITS),
 };
+// clang-format on
 
 static void window_about_openrct2_mouseup(rct_window *w, rct_widgetindex widgetIndex);
 static void window_about_openrct2_paint(rct_window *w, rct_drawpixelinfo *dpi);
@@ -83,6 +78,11 @@ static void window_about_openrct2_paint(rct_window *w, rct_drawpixelinfo *dpi);
 static void window_about_rct2_mouseup(rct_window *w, rct_widgetindex widgetIndex);
 static void window_about_rct2_paint(rct_window *w, rct_drawpixelinfo *dpi);
 static void window_about_openrct2_common_paint(rct_window *w, rct_drawpixelinfo *dpi);
+
+static rct_widget* window_about_page_widgets[] = {
+    window_about_openrct2_widgets,
+    window_about_rct2_widgets,
+};
 
 static rct_window_event_list window_about_openrct2_events = {
     nullptr,
@@ -112,7 +112,7 @@ static rct_window_event_list window_about_openrct2_events = {
     nullptr,
     nullptr,
     window_about_openrct2_paint,
-    nullptr
+    nullptr,
 };
 
 static rct_window_event_list window_about_rct2_events = {
@@ -143,14 +143,13 @@ static rct_window_event_list window_about_rct2_events = {
     nullptr,
     nullptr,
     window_about_rct2_paint,
-    nullptr
+    nullptr,
 };
 
 static rct_window_event_list *window_about_page_events[] = {
     &window_about_openrct2_events,
     &window_about_rct2_events,
 };
-// clang-format on
 
 static void window_about_set_page(rct_window* w, int32_t page);
 
