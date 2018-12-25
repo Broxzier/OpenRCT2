@@ -1185,8 +1185,7 @@ void map_reorganise_elements()
 {
     context_setcurrentcursor(CURSOR_ZZZ);
 
-    TileElement* new_tile_elements = (TileElement*)malloc(
-        3 * (MAXIMUM_MAP_SIZE_TECHNICAL * MAXIMUM_MAP_SIZE_TECHNICAL) * sizeof(TileElement));
+    TileElement* new_tile_elements = (TileElement*)malloc(MAX_TILE_ELEMENTS * sizeof(TileElement));
     TileElement* new_elements_pointer = new_tile_elements;
 
     if (new_tile_elements == nullptr)
