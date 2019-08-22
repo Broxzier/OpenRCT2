@@ -466,6 +466,7 @@ static void window_tile_inspector_scrollmouseover(rct_window* w, int32_t scrollI
 static void window_tile_inspector_invalidate(rct_window* w);
 static void window_tile_inspector_paint(rct_window* w, rct_drawpixelinfo* dpi);
 static void window_tile_inspector_scrollpaint(rct_window* w, rct_drawpixelinfo* dpi, int32_t scrollIndex);
+static bool window_tile_inspector_key_down(rct_window* w, int32_t key);
 static void window_tile_inspector_set_page(rct_window* w, const TILE_INSPECTOR_PAGE page);
 
 // clang-format off
@@ -497,7 +498,8 @@ static rct_window_event_list TileInspectorWindowEvents = {
     nullptr,
     window_tile_inspector_invalidate,
     window_tile_inspector_paint,
-    window_tile_inspector_scrollpaint
+    window_tile_inspector_scrollpaint,
+    window_tile_inspector_key_down,
 };
 
 static uint64_t PageEnabledWidgets[] = {
@@ -2264,4 +2266,57 @@ static void window_tile_inspector_scrollpaint(rct_window* w, rct_drawpixelinfo* 
         y -= SCROLLABLE_ROW_HEIGHT;
         i++;
     } while (!(tileElement++)->IsLastForTile());
+}
+
+#include "../input/KeyboardShortcuts.h"
+#include <SDL2/SDL.h>
+static bool window_tile_inspector_key_down(rct_window* w, int32_t key)
+{
+    // TODO: Register scancodes and actions instead of handling them like this
+    switch (key)
+    {
+        case SDL_Scancode::SDL_SCANCODE_DELETE:
+            if (widget_is_enabled(w, WIDX_BUTTON_REMOVE))
+            {
+                window_tile_inspector_mouseup(w, WIDX_BUTTON_REMOVE);
+            }
+            return true;
+
+        case CTRL + SDL_Scancode::SDL_SCANCODE_UP:
+            if (widget_is_enabled(w, WIDX_BUTTON_MOVE_UP))
+            {
+                window_tile_inspector_mouseup(w, WIDX_BUTTON_MOVE_UP);
+            }
+            return true;
+
+        case CTRL + SDL_Scancode::SDL_SCANCODE_DOWN:
+            if (widget_is_enabled(w, WIDX_BUTTON_MOVE_DOWN))
+            {
+                window_tile_inspector_mouseup(w, WIDX_BUTTON_MOVE_DOWN);
+            }
+            return true;
+
+        case CTRL + SDL_Scancode::SDL_SCANCODE_C:
+            if (widget_is_enabled(w, WIDX_BUTTON_COPY))
+            {
+                window_tile_inspector_mouseup(w, WIDX_BUTTON_COPY);
+            }
+            return true;
+
+        case CTRL + SDL_Scancode::SDL_SCANCODE_V:
+            if (widget_is_enabled(w, WIDX_BUTTON_PASTE))
+            {
+                window_tile_inspector_mouseup(w, WIDX_BUTTON_PASTE);
+            }
+            return true;
+
+        case SDL_Scancode::SDL_SCANCODE_Z:
+            if (widget_is_enabled(w, WIDX_BUTTON_ROTATE))
+            {
+                window_tile_inspector_mouseup(w, WIDX_BUTTON_ROTATE);
+            }
+            return true;
+    }
+
+    return false;
 }

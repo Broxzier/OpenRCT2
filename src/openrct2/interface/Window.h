@@ -198,6 +198,7 @@ struct rct_window_event_list
     void (*invalidate)(struct rct_window*);
     void (*paint)(struct rct_window*, rct_drawpixelinfo*);
     void (*scroll_paint)(struct rct_window*, rct_drawpixelinfo*, int32_t);
+    bool (*key_down)(struct rct_window*, int32_t key);
 };
 
 struct campaign_variables
