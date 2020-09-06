@@ -219,23 +219,23 @@ constexpr int32_t BUTTONH = 17;
       SPINNER_WIDGETS  (1,  20,             70,                 23,             34,         STR_NONE,                   STR_NONE),  /* Spinner X (3 widgets) */ \
       SPINNER_WIDGETS  (1,  90,             140,                23,             34,         STR_NONE,                   STR_NONE),  /* Spinner Y (3 widgets) */ \
     /* Top buttons */                                                                                                                                           \
-    MakeWidget({BX, BY},            {24, 24},   WWT_FLATBTN,    1,  SPR_MAP,            STR_INSERT_CORRUPT_TIP),                    /* Insert corrupt button */ \
-    MakeWidget({BX - 24, BY},       {24, 24},   WWT_FLATBTN,    1,  SPR_DEMOLISH,       STR_REMOVE_SELECTED_ELEMENT_TIP ),          /* Remove button */         \
-    MakeWidget({BX - 48, BY},       {24, 12},   WWT_BUTTON,     1,  STR_UP,             STR_MOVE_SELECTED_ELEMENT_UP_TIP),          /* Move up */               \
-    MakeWidget({BX - 48, BY + 12},  {24, 12},   WWT_BUTTON,     1,  STR_DOWN,           STR_MOVE_SELECTED_ELEMENT_DOWN_TIP),        /* Move down */             \
-    MakeWidget({BX - 72, BY},       {24, 24},   WWT_FLATBTN,    1,  SPR_ROTATE_ARROW,   STR_ROTATE_SELECTED_ELEMENT_TIP),           /* Rotate button */         \
-    MakeWidget({BX - 96, BY},       {24, 24},   WWT_FLATBTN,    1,  SPR_G2_SORT,        STR_TILE_INSPECTOR_SORT_TIP),               /* Sort button */           \
-    MakeWidget({BX - 120, BY},      {24, 24},   WWT_FLATBTN,    1,  SPR_G2_PASTE,       STR_TILE_INSPECTOR_PASTE_TIP),              /* Paste button */          \
-    MakeWidget({BX - 144, BY},      {24, 24},   WWT_FLATBTN,    1,  SPR_G2_COPY,        STR_TILE_INSPECTOR_COPY_TIP),               /* Copy button */           \
+    MakeWidget({BX, BY},            {24, 24},   WWT_FLATBTN,    WindowColour::Secondary,  SPR_MAP,            STR_INSERT_CORRUPT_TIP),                    /* Insert corrupt button */ \
+    MakeWidget({BX - 24, BY},       {24, 24},   WWT_FLATBTN,    WindowColour::Secondary,  SPR_DEMOLISH,       STR_REMOVE_SELECTED_ELEMENT_TIP ),          /* Remove button */         \
+    MakeWidget({BX - 48, BY},       {24, 12},   WWT_BUTTON,     WindowColour::Secondary,  STR_UP,             STR_MOVE_SELECTED_ELEMENT_UP_TIP),          /* Move up */               \
+    MakeWidget({BX - 48, BY + 12},  {24, 12},   WWT_BUTTON,     WindowColour::Secondary,  STR_DOWN,           STR_MOVE_SELECTED_ELEMENT_DOWN_TIP),        /* Move down */             \
+    MakeWidget({BX - 72, BY},       {24, 24},   WWT_FLATBTN,    WindowColour::Secondary,  SPR_ROTATE_ARROW,   STR_ROTATE_SELECTED_ELEMENT_TIP),           /* Rotate button */         \
+    MakeWidget({BX - 96, BY},       {24, 24},   WWT_FLATBTN,    WindowColour::Secondary,  SPR_G2_SORT,        STR_TILE_INSPECTOR_SORT_TIP),               /* Sort button */           \
+    MakeWidget({BX - 120, BY},      {24, 24},   WWT_FLATBTN,    WindowColour::Secondary,  SPR_G2_PASTE,       STR_TILE_INSPECTOR_PASTE_TIP),              /* Paste button */          \
+    MakeWidget({BX - 144, BY},      {24, 24},   WWT_FLATBTN,    WindowColour::Secondary,  SPR_G2_COPY,        STR_TILE_INSPECTOR_COPY_TIP),               /* Copy button */           \
     /* Column headers */                                                                                                                                                            \
-    MakeWidget({COL_X_TYPE, 42},    {312, 14},  WWT_TABLE_HEADER,   1,  STR_TILE_INSPECTOR_ELEMENT_TYPE),                                                 /* Type */                \
-    MakeWidget({COL_X_BH,   42},    {20, 14},   WWT_TABLE_HEADER,   1,  STR_TILE_INSPECTOR_BASE_HEIGHT_SHORT,       STR_TILE_INSPECTOR_BASE_HEIGHT),      /* Base height */         \
-    MakeWidget({COL_X_CH,   42},    {20, 14},   WWT_TABLE_HEADER,   1,  STR_TILE_INSPECTOR_CLEARANGE_HEIGHT_SHORT,  STR_TILE_INSPECTOR_CLEARANCE_HEIGHT), /* Clearance height */    \
-    MakeWidget({COL_X_GF,   42},    {12, 14},   WWT_TABLE_HEADER,   1,  STR_TILE_INSPECTOR_FLAG_GHOST_SHORT,        STR_TILE_INSPECTOR_FLAG_GHOST),       /* Ghost flag */          \
-    MakeWidget({COL_X_LF,   42},    {30, 14},   WWT_TABLE_HEADER,   1,  STR_TILE_INSPECTOR_FLAG_LAST_SHORT,         STR_TILE_INSPECTOR_FLAG_LAST),        /* Last of tile flag */   \
+    MakeWidget({COL_X_TYPE, 42},    {312, 14},  WWT_TABLE_HEADER,   WindowColour::Secondary,  STR_TILE_INSPECTOR_ELEMENT_TYPE),                                                 /* Type */                \
+    MakeWidget({COL_X_BH,   42},    {20, 14},   WWT_TABLE_HEADER,   WindowColour::Secondary,  STR_TILE_INSPECTOR_BASE_HEIGHT_SHORT,       STR_TILE_INSPECTOR_BASE_HEIGHT),      /* Base height */         \
+    MakeWidget({COL_X_CH,   42},    {20, 14},   WWT_TABLE_HEADER,   WindowColour::Secondary,  STR_TILE_INSPECTOR_CLEARANGE_HEIGHT_SHORT,  STR_TILE_INSPECTOR_CLEARANCE_HEIGHT), /* Clearance height */    \
+    MakeWidget({COL_X_GF,   42},    {12, 14},   WWT_TABLE_HEADER,   WindowColour::Secondary,  STR_TILE_INSPECTOR_FLAG_GHOST_SHORT,        STR_TILE_INSPECTOR_FLAG_GHOST),       /* Ghost flag */          \
+    MakeWidget({COL_X_LF,   42},    {30, 14},   WWT_TABLE_HEADER,   WindowColour::Secondary,  STR_TILE_INSPECTOR_FLAG_LAST_SHORT,         STR_TILE_INSPECTOR_FLAG_LAST),        /* Last of tile flag */   \
     /* Group boxes */                                                                                                               \
-    MakeWidget({6, 0},    {WW - 12, 0},   WWT_GROUPBOX,     1),                                         /* Details group box */     \
-    MakeWidget({6, 0},    {WW - 12, 0},   WWT_GROUPBOX,     1, STR_TILE_INSPECTOR_GROUPBOX_PROPERTIES)  /* Properties group box */
+    MakeWidget({6, 0},    {WW - 12, 0},   WWT_GROUPBOX,     WindowColour::Secondary),                                         /* Details group box */     \
+    MakeWidget({6, 0},    {WW - 12, 0},   WWT_GROUPBOX,     WindowColour::Secondary, STR_TILE_INSPECTOR_GROUPBOX_PROPERTIES)  /* Properties group box */
 
 static rct_widget DefaultWidgets[] = {
     MAIN_TILE_INSPECTOR_WIDGETS,
