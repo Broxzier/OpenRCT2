@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  pull_request:
+    types: closed
+    branches: develop
+
+jobs:
+  after-merge:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Milestone setter
+        uses: iyu/actions-milestone@v1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/milestone.yml
