@@ -313,6 +313,22 @@ namespace OpenRCT2::Scripting
         return value ? ToDuk(ctx, *value) : ToDuk(ctx, nullptr);
     }
 
+    template<> TileCoordsXY inline FromDuk(const DukValue& d)
+    {
+        TileCoordsXY result;
+        result.x = AsOrDefault(d["x"], 0);
+        result.y = AsOrDefault(d["y"], 0);
+        return result;
+    }
+
+    template<> DukValue inline ToDuk(duk_context* ctx, const TileCoordsXY& coords)
+    {
+        DukObject dukCoords(ctx);
+        dukCoords.Set("x", coords.x);
+        dukCoords.Set("y", coords.y);
+        return dukCoords.Take();
+    }
+
     template<> CoordsXY inline FromDuk(const DukValue& d)
     {
         CoordsXY result;

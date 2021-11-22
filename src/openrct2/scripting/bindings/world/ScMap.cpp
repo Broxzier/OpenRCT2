@@ -168,10 +168,11 @@ namespace OpenRCT2::Scripting
     }
 
     std::vector<DukValue> OpenRCT2::Scripting::ScMap::getAllEntitiesOnTile(
-        const std::string& type, const DukValue& tilePos) const
+        const std::string& type, const DukValue& tilePosObj) const
     {
         // Get the tile position
-        const auto pos = FromDuk<CoordsXY>(tilePos);
+        const auto tilePos = FromDuk<TileCoordsXY>(tilePosObj);
+        auto pos = tilePos.ToCoordsXY();
 
         // Declare a vector that will hold the result to return
         std::vector<DukValue> result;
