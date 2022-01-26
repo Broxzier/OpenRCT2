@@ -16,7 +16,7 @@ class RideEntranceExitRemoveAction final : public GameActionBase<GameCommand::Re
 private:
     CoordsXY _loc;
     NetworkRideId_t _rideIndex{ RIDE_ID_NULL };
-    StationIndex _stationNum{ STATION_INDEX_NULL };
+    StationIndex _stationNum{ StationIndex::GetNull() };
     bool _isExit{};
 
 public:

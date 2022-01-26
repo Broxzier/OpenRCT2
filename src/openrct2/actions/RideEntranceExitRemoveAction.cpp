@@ -46,7 +46,7 @@ void RideEntranceExitRemoveAction::Serialise(DataSerialiser& stream)
 }
 
 static TileElement* FindEntranceElement(
-    const CoordsXY& loc, ride_id_t rideIndex, int32_t stationNum, int32_t entranceType, uint32_t flags)
+    const CoordsXY& loc, ride_id_t rideIndex, StationIndex stationNum, int32_t entranceType, uint32_t flags)
 {
     const bool isGhost = flags & GAME_COMMAND_FLAG_GHOST;
     for (auto* entranceElement : TileElementsView<EntranceElement>(loc))
@@ -100,7 +100,7 @@ GameActions::Result RideEntranceExitRemoveAction::Query() const
     {
         log_warning(
             "Track Element not found. x = %d, y = %d, ride = %d, station = %d", _loc.x, _loc.y, EnumValue(_rideIndex),
-            _stationNum);
+            _stationNum.ToUnderlying());
         return GameActions::Result(GameActions::Status::InvalidParameters, STR_NONE, STR_NONE);
     }
 

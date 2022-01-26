@@ -1943,7 +1943,7 @@ static StationIndex guest_pathfinding_select_random_station(
     int32_t select = guest->GuestNumRides % numEntranceStations;
     while (select > 0)
     {
-        for (StationIndex i = 0; i < MAX_STATIONS; i++)
+        for (StationIndex::UnderlyingType i = 0; i < MAX_STATIONS; i++)
         {
             if (entranceStations[i])
             {
@@ -1953,15 +1953,15 @@ static StationIndex guest_pathfinding_select_random_station(
             }
         }
     }
-    for (StationIndex i = 0; i < MAX_STATIONS; i++)
+    for (StationIndex::UnderlyingType i = 0; i < MAX_STATIONS; i++)
     {
         if (entranceStations[i])
         {
-            return i;
+            return StationIndex::FromUnderlying(i);
         }
     }
 
-    return 0;
+    return StationIndex::FromUnderlying(0);
 }
 /**
  *
@@ -2173,33 +2173,35 @@ int32_t guest_path_finding(Guest* peep)
      * At the same time, count how many entrance stations there are and
      * which stations are entrance stations. */
     auto bestScore = std::numeric_limits<int32_t>::max();
-    StationIndex closestStationNum = 0;
+    StationIndex closestStationNum = StationIndex::FromUnderlying(0);
 
     int32_t numEntranceStations = 0;
     BitSet<MAX_STATIONS> entranceStations = {};
 
-    for (StationIndex stationNum = 0; stationNum < MAX_STATIONS; ++stationNum)
+    for (StationIndex::UnderlyingType stationNum = 0; stationNum < MAX_STATIONS; ++stationNum)
     {
+        const auto stationIndex = StationIndex::FromUnderlying(stationNum);
+
         // Skip if stationNum has no entrance (so presumably an exit only station)
-        if (ride_get_entrance_location(ride, stationNum).IsNull())
+        if (ride_get_entrance_location(ride, stationIndex).IsNull())
             continue;
 
         numEntranceStations++;
         entranceStations[stationNum] = true;
 
-        TileCoordsXYZD entranceLocation = ride_get_entrance_location(ride, stationNum);
+        TileCoordsXYZD entranceLocation = ride_get_entrance_location(ride, stationIndex);
         auto score = CalculateHeuristicPathingScore(entranceLocation, TileCoordsXYZ{ peep->NextLoc });
         if (score < bestScore)
         {
             bestScore = score;
-            closestStationNum = stationNum;
+            closestStationNum = stationIndex;
             continue;
         }
     }
 
     // Ride has no stations with an entrance, so head to station 0.
     if (numEntranceStations == 0)
-        closestStationNum = 0;
+        closestStationNum = StationIndex::FromUnderlying(0);
 
     if (numEntranceStations > 1 && (ride->depart_flags & RIDE_DEPART_SYNCHRONISE_WITH_ADJACENT_STATIONS))
     {
@@ -2209,10 +2211,10 @@ int32_t guest_path_finding(Guest* peep)
     if (numEntranceStations == 0)
     {
         // closestStationNum is always 0 here.
-        auto entranceXY = TileCoordsXY(ride->stations[closestStationNum].Start);
+        auto entranceXY = TileCoordsXY(ride->stations[closestStationNum.ToUnderlying()].Start);
         loc.x = entranceXY.x;
         loc.y = entranceXY.y;
-        loc.z = ride->stations[closestStationNum].Height;
+        loc.z = ride->stations[closestStationNum.ToUnderlying()].Height;
     }
     else
     {

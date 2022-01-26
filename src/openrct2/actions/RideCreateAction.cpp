@@ -135,11 +135,11 @@ GameActions::Result RideCreateAction::Execute() const
     ride->overall_view.SetNull();
     ride->SetNameToDefault();
 
-    for (int32_t i = 0; i < MAX_STATIONS; i++)
+    for (StationIndex::UnderlyingType i = 0; i < MAX_STATIONS; i++)
     {
         ride->stations[i].Start.SetNull();
-        ride_clear_entrance_location(ride, i);
-        ride_clear_exit_location(ride, i);
+        ride_clear_entrance_location(ride, StationIndex::FromUnderlying(i));
+        ride_clear_exit_location(ride, StationIndex::FromUnderlying(i));
         ride->stations[i].TrainAtStation = RideStation::NO_TRAIN;
         ride->stations[i].QueueTime = 0;
     }
