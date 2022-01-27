@@ -19,6 +19,7 @@
 #include "RideTypes.h"
 #include "VehicleColour.h"
 
+#include <array>
 #include <limits>
 #include <string_view>
 
@@ -284,7 +285,28 @@ struct Ride
     uint8_t current_issues;
     uint32_t last_issue_time;
 
-    RideStation stations[MAX_STATIONS];
+private:
+    std::array<RideStation, MAX_STATIONS> stations;
+
+public:
+    RideStation& GetStation(StationIndex stationIndex = StationIndex::FromUnderlying(0))
+    {
+        return stations[stationIndex.ToUnderlying()];
+    }
+    const RideStation& GetStation(StationIndex stationIndex = StationIndex::FromUnderlying(0)) const
+    {
+        return stations[stationIndex.ToUnderlying()];
+    }
+    std::array<RideStation, MAX_STATIONS>& GetStations()
+    {
+        return stations;
+    }
+    const std::array<RideStation, MAX_STATIONS>& GetStations() const
+    {
+        return stations;
+    }
+
+public:
     uint16_t inversions;
     uint16_t holes;
     uint8_t sheltered_eighths;

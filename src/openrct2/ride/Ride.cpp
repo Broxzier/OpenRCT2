@@ -279,7 +279,7 @@ Guest* Ride::GetQueueHeadGuest(StationIndex stationIndex) const
 {
     Guest* peep;
     Guest* result = nullptr;
-    uint16_t spriteIndex = stations[stationIndex.ToUnderlying()].LastPeepInQueue;
+    uint16_t spriteIndex = GetStation(stationIndex).LastPeepInQueue;
     while ((peep = TryGetEntity<Guest>(spriteIndex)) != nullptr)
     {
         spriteIndex = peep->GuestNextInQueue;
@@ -292,13 +292,14 @@ void Ride::UpdateQueueLength(StationIndex stationIndex)
 {
     uint16_t count = 0;
     Guest* peep;
-    uint16_t spriteIndex = stations[stationIndex.ToUnderlying()].LastPeepInQueue;
+    auto& station = GetStation(stationIndex);
+    uint16_t spriteIndex = station.LastPeepInQueue;
     while ((peep = TryGetEntity<Guest>(spriteIndex)) != nullptr)
     {
         spriteIndex = peep->GuestNextInQueue;
         count++;
     }
-    stations[stationIndex.ToUnderlying()].QueueLength = count;
+    station.QueueLength = count;
 }
 
 void Ride::QueueInsertGuestAtFront(StationIndex stationIndex, Guest* peep)
@@ -310,7 +311,7 @@ void Ride::QueueInsertGuestAtFront(StationIndex stationIndex, Guest* peep)
     auto* queueHeadGuest = GetQueueHeadGuest(peep->CurrentRideStation);
     if (queueHeadGuest == nullptr)
     {
-        stations[peep->CurrentRideStation.ToUnderlying()].LastPeepInQueue = peep->sprite_index;
+        GetStation(peep->CurrentRideStation).LastPeepInQueue = peep->sprite_index;
     }
     else
     {
@@ -1840,7 +1841,7 @@ static void CircusMusicUpdate(Ride* ride)
         return;
     }
 
-    CoordsXYZ rideCoords = ride->stations[0].GetStart().ToTileCentre();
+    CoordsXYZ rideCoords = ride->GetStation().GetStart().ToTileCentre();
 
     const auto sampleRate = RideMusicSampleRate(ride);
 
@@ -1890,7 +1891,7 @@ static void ride_music_update(Ride* ride)
         return;
     }
 
-    CoordsXYZ rideCoords = ride->stations[0].GetStart().ToTileCentre();
+    CoordsXYZ rideCoords = ride->GetStation().GetStart().ToTileCentre();
 
     int32_t sampleRate = RideMusicSampleRate(ride);
 
@@ -2221,11 +2222,11 @@ static bool ride_entrance_exit_is_reachable(const TileCoordsXYZD& coordinates)
 
 static void ride_entrance_exit_connected(Ride* ride)
 {
-    for (int32_t i = 0; i < MAX_STATIONS; ++i)
+    for (auto& station : ride->GetStations())
     {
-        auto station_start = ride->stations[i].Start;
-        auto entrance = ride_get_entrance_location(ride, StationIndex::FromUnderlying(i));
-        auto exit = ride_get_exit_location(ride, StationIndex::FromUnderlying(i));
+        auto station_start = station.Start;
+        auto entrance = station.Entrance;
+        auto exit = station.Exit;
 
         if (station_start.IsNull())
             continue;
@@ -2257,7 +2258,7 @@ static void ride_entrance_exit_connected(Ride* ride)
 
 static void ride_shop_connected(Ride* ride)
 {
-    auto shopLoc = TileCoordsXY(ride->stations[0].Start);
+    auto shopLoc = TileCoordsXY(ride->GetStation().Start);
     if (shopLoc.IsNull())
         return;
 
@@ -2367,7 +2368,7 @@ static void ride_station_set_map_tooltip(TileElement* tileElement)
     {
         auto stationIndex = tileElement->AsTrack()->GetStationIndex();
         for (int32_t i = stationIndex.ToUnderlying(); i >= 0; i--)
-            if (ride->stations[i].Start.IsNull())
+            if (ride->GetStations()[i].Start.IsNull())
                 stationIndex = StationIndex::FromUnderlying(stationIndex.ToUnderlying() - 1);
 
         auto ft = Formatter();
@@ -2392,7 +2393,7 @@ static void ride_entrance_set_map_tooltip(TileElement* tileElement)
         // Get the station
         auto stationIndex = tileElement->AsEntrance()->GetStationIndex();
         for (int32_t i = stationIndex.ToUnderlying(); i >= 0; i--)
-            if (ride->stations[i].Start.IsNull())
+            if (ride->GetStations()[i].Start.IsNull())
                 stationIndex = StationIndex::FromUnderlying(stationIndex.ToUnderlying() - 1);
 
         if (tileElement->AsEntrance()->GetEntranceType() == ENTRANCE_TYPE_RIDE_ENTRANCE)
@@ -2400,7 +2401,7 @@ static void ride_entrance_set_map_tooltip(TileElement* tileElement)
             // Get the queue length
             int32_t queueLength = 0;
             if (!ride_get_entrance_location(ride, stationIndex).IsNull())
-                queueLength = ride->stations[stationIndex.ToUnderlying()].QueueLength;
+                queueLength = ride->GetStation(stationIndex).QueueLength;
 
             auto ft = Formatter();
             ft.Add<rct_string_id>(STR_RIDE_MAP_TIP);
@@ -2433,7 +2434,7 @@ static void ride_entrance_set_map_tooltip(TileElement* tileElement)
             // Get the station
             stationIndex = tileElement->AsEntrance()->GetStationIndex();
             for (int32_t i = stationIndex.ToUnderlying(); i >= 0; i--)
-                if (ride->stations[i].Start.IsNull())
+                if (ride->GetStations()[i].Start.IsNull())
                     stationIndex = StationIndex::FromUnderlying(stationIndex.ToUnderlying() - 1);
 
             auto ft = Formatter();
@@ -2483,9 +2484,9 @@ void ride_set_map_tooltip(TileElement* tileElement)
 static StationIndex ride_mode_check_valid_station_numbers(Ride* ride)
 {
     uint16_t numStations = 0;
-    for (StationIndex::UnderlyingType stationIndex = 0; stationIndex < MAX_STATIONS; ++stationIndex)
+    for (const auto& station : ride->GetStations())
     {
-        if (!ride->stations[stationIndex].Start.IsNull())
+        if (!station.Start.IsNull())
         {
             numStations++;
         }
@@ -2563,25 +2564,24 @@ static int32_t ride_check_for_entrance_exit(ride_id_t rideIndex)
 
     uint8_t entrance = 0;
     uint8_t exit = 0;
-    for (int32_t i = 0; i < MAX_STATIONS; i++)
+    for (const auto& station : ride->GetStations())
     {
-        if (ride->stations[i].Start.IsNull())
+        if (station.Start.IsNull())
             continue;
 
-        if (!ride_get_entrance_location(ride, StationIndex::FromUnderlying(i)).IsNull())
+        if (!station.Entrance.IsNull())
         {
             entrance = 1;
         }
 
-        if (!ride_get_exit_location(ride, StationIndex::FromUnderlying(i)).IsNull())
+        if (!station.Exit.IsNull())
         {
             exit = 1;
         }
 
         // If station start and no entrance/exit
         // Sets same error message as no entrance
-        if (ride_get_exit_location(ride, StationIndex::FromUnderlying(i)).IsNull()
-            && ride_get_entrance_location(ride, StationIndex::FromUnderlying(i)).IsNull())
+        if (station.Exit.IsNull() && station.Entrance.IsNull())
         {
             entrance = 0;
             break;
@@ -3586,16 +3586,17 @@ void Ride::MoveTrainsToBlockBrakes(TrackElement* firstBlock)
 static bool ride_initialise_cable_lift_track(Ride* ride, bool isApplying)
 {
     CoordsXYZ location;
-    for (StationIndex::UnderlyingType stationIndex = 0; stationIndex < MAX_STATIONS; stationIndex++)
+    for (const auto& station : ride->GetStations())
     {
-        location = ride->stations[stationIndex].GetStart();
+        location = station.GetStart();
         if (!location.IsNull())
             break;
-        if (stationIndex == (MAX_STATIONS - 1))
-        {
-            gGameCommandErrorText = STR_CABLE_LIFT_HILL_MUST_START_IMMEDIATELY_AFTER_STATION;
-            return false;
-        }
+    }
+
+    if (location.IsNull())
+    {
+        gGameCommandErrorText = STR_CABLE_LIFT_HILL_MUST_START_IMMEDIATELY_AFTER_STATION;
+        return false;
     }
 
     bool success = false;
@@ -3832,7 +3833,7 @@ static void ride_scroll_to_track_error(CoordsXYE* trackElement)
  */
 TrackElement* Ride::GetOriginElement(StationIndex stationIndex) const
 {
-    auto stationLoc = stations[stationIndex.ToUnderlying()].Start;
+    auto stationLoc = GetStation(stationIndex).Start;
     TileElement* tileElement = map_get_first_element_at(stationLoc);
     if (tileElement == nullptr)
         return nullptr;
@@ -3882,7 +3883,7 @@ bool Ride::Test(RideStatus newStatus, bool isApplying)
     }
 
     // z = ride->stations[i].GetBaseZ();
-    auto startLoc = stations[stationIndex.ToUnderlying()].Start;
+    auto startLoc = GetStation(stationIndex).Start;
     trackElement.x = startLoc.x;
     trackElement.y = startLoc.y;
     trackElement.element = reinterpret_cast<TileElement*>(GetOriginElement(stationIndex));
@@ -4018,7 +4019,7 @@ bool Ride::Open(bool isApplying)
     }
 
     // z = ride->stations[i].GetBaseZ();
-    auto startLoc = stations[stationIndex.ToUnderlying()].Start;
+    auto startLoc = GetStation(stationIndex).Start;
     trackElement.x = startLoc.x;
     trackElement.y = startLoc.y;
     trackElement.element = reinterpret_cast<TileElement*>(GetOriginElement(stationIndex));
@@ -4895,7 +4896,7 @@ uint64_t ride_entry_get_supported_track_pieces(const rct_ride_entry* rideEntry)
 static std::optional<int32_t> ride_get_smallest_station_length(Ride* ride)
 {
     std::optional<int32_t> result;
-    for (const auto& station : ride->stations)
+    for (const auto& station : ride->GetStations())
     {
         if (!station.Start.IsNull())
         {
@@ -4919,9 +4920,9 @@ static int32_t ride_get_track_length(Ride* ride)
     CoordsXYZ trackStart;
     bool foundTrack = false;
 
-    for (int32_t i = 0; i < MAX_STATIONS && !foundTrack; i++)
+    for (const auto& station : ride->GetStations())
     {
-        trackStart = ride->stations[i].GetStart();
+        trackStart = station.GetStart();
         if (trackStart.IsNull())
             continue;
 
@@ -4943,6 +4944,9 @@ static int32_t ride_get_track_length(Ride* ride)
 
             foundTrack = true;
         } while (!foundTrack && !(tileElement++)->IsLastForTile());
+
+        if (foundTrack)
+            break;
     }
 
     if (!foundTrack)
@@ -5380,9 +5384,9 @@ bool ride_has_adjacent_station(Ride* ride)
 
     /* Loop through all of the ride stations, checking for an
      * adjacent station on either side. */
-    for (StationIndex::UnderlyingType stationNum = 0; stationNum < MAX_STATIONS; stationNum++)
+    for (const auto& station : ride->GetStations())
     {
-        auto stationStart = ride->stations[stationNum].GetStart();
+        auto stationStart = station.GetStart();
         if (!stationStart.IsNull())
         {
             /* Get the map element for the station start. */
@@ -5551,8 +5555,9 @@ void determine_ride_entrance_and_exit_locations()
     {
         for (StationIndex::UnderlyingType stationIndex = 0; stationIndex < MAX_STATIONS; stationIndex++)
         {
-            TileCoordsXYZD entranceLoc = ride.stations[stationIndex].Entrance;
-            TileCoordsXYZD exitLoc = ride.stations[stationIndex].Exit;
+            auto& station = ride.GetStation(StationIndex::FromUnderlying(stationIndex));
+            TileCoordsXYZD entranceLoc = station.Entrance;
+            TileCoordsXYZD exitLoc = station.Exit;
             bool fixEntrance = false;
             bool fixExit = false;
 
@@ -5568,7 +5573,7 @@ void determine_ride_entrance_and_exit_locations()
                 }
                 else
                 {
-                    ride.stations[stationIndex].Entrance.direction = static_cast<uint8_t>(entranceElement->GetDirection());
+                    station.Entrance.direction = static_cast<uint8_t>(entranceElement->GetDirection());
                 }
             }
 
@@ -5583,7 +5588,7 @@ void determine_ride_entrance_and_exit_locations()
                 }
                 else
                 {
-                    ride.stations[stationIndex].Exit.direction = static_cast<uint8_t>(entranceElement->GetDirection());
+                    station.Exit.direction = static_cast<uint8_t>(entranceElement->GetDirection());
                 }
             }
 
@@ -5621,15 +5626,15 @@ void determine_ride_entrance_and_exit_locations()
                             }
 
                             // The expected height is where entrances and exit reside in non-hacked parks.
-                            const uint8_t expectedHeight = ride.stations[stationIndex].Height;
+                            const uint8_t expectedHeight = station.Height;
 
                             if (fixEntrance && entranceElement->GetEntranceType() == ENTRANCE_TYPE_RIDE_ENTRANCE)
                             {
                                 if (alreadyFoundEntrance)
                                 {
-                                    if (ride.stations[stationIndex].Entrance.z == expectedHeight)
+                                    if (station.Entrance.z == expectedHeight)
                                         continue;
-                                    if (ride.stations[stationIndex].Entrance.z > entranceElement->base_height)
+                                    if (station.Entrance.z > entranceElement->base_height)
                                         continue;
                                 }
 
@@ -5651,9 +5656,9 @@ void determine_ride_entrance_and_exit_locations()
                             {
                                 if (alreadyFoundExit)
                                 {
-                                    if (ride.stations[stationIndex].Exit.z == expectedHeight)
+                                    if (station.Exit.z == expectedHeight)
                                         continue;
-                                    if (ride.stations[stationIndex].Exit.z > entranceElement->base_height)
+                                    if (station.Exit.z > entranceElement->base_height)
                                         continue;
                                 }
 
