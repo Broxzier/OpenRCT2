@@ -2366,7 +2366,7 @@ static void ride_station_set_map_tooltip(TileElement* tileElement)
     if (ride != nullptr)
     {
         auto stationIndex = tileElement->AsTrack()->GetStationIndex();
-        for (StationIndex::UnderlyingType i = stationIndex.ToUnderlying(); i >= 0; i--)
+        for (int32_t i = stationIndex.ToUnderlying(); i >= 0; i--)
             if (ride->stations[i].Start.IsNull())
                 stationIndex = StationIndex::FromUnderlying(stationIndex.ToUnderlying() - 1);
 
@@ -2391,7 +2391,7 @@ static void ride_entrance_set_map_tooltip(TileElement* tileElement)
     {
         // Get the station
         auto stationIndex = tileElement->AsEntrance()->GetStationIndex();
-        for (StationIndex::UnderlyingType i = stationIndex.ToUnderlying(); i >= 0; i--)
+        for (int32_t i = stationIndex.ToUnderlying(); i >= 0; i--)
             if (ride->stations[i].Start.IsNull())
                 stationIndex = StationIndex::FromUnderlying(stationIndex.ToUnderlying() - 1);
 
@@ -2432,7 +2432,7 @@ static void ride_entrance_set_map_tooltip(TileElement* tileElement)
         {
             // Get the station
             stationIndex = tileElement->AsEntrance()->GetStationIndex();
-            for (StationIndex::UnderlyingType i = stationIndex.ToUnderlying(); i >= 0; i--)
+            for (int32_t i = stationIndex.ToUnderlying(); i >= 0; i--)
                 if (ride->stations[i].Start.IsNull())
                     stationIndex = StationIndex::FromUnderlying(stationIndex.ToUnderlying() - 1);
 
