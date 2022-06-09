@@ -215,11 +215,11 @@ enum class EdgeType
     BOTTOM
 };
 
-static CoordsXY GetEdgeTile(TileCoordsXY mapSize, int32_t rotation, EdgeType edgeType, bool visible)
+static CoordsXY GetEdgeTile(int32_t rotation, EdgeType edgeType, bool visible)
 {
     int32_t lower = (visible ? 1 : 0) * COORDS_XY_STEP;
-    int32_t upperX = (visible ? mapSize.x - 2 : mapSize.x - 1) * COORDS_XY_STEP;
-    int32_t upperY = (visible ? mapSize.y - 2 : mapSize.y - 1) * COORDS_XY_STEP;
+    int32_t upperX = (visible ? gMapSize.x - 2 : gMapSize.x - 1) * COORDS_XY_STEP;
+    int32_t upperY = (visible ? gMapSize.y - 2 : gMapSize.y - 1) * COORDS_XY_STEP;
     switch (edgeType)
     {
         default:
@@ -337,12 +337,12 @@ static void ReleaseDPI(rct_drawpixelinfo& dpi)
     dpi.height = 0;
 }
 
-static rct_viewport GetGiantViewport(const TileCoordsXY& mapSize, int32_t rotation, ZoomLevel zoom)
+static rct_viewport GetGiantViewport(int32_t rotation, ZoomLevel zoom)
 {
     // Get the tile coordinates of each corner
-    auto leftTileCoords = GetEdgeTile(mapSize, rotation, EdgeType::LEFT, false);
-    auto rightTileCoords = GetEdgeTile(mapSize, rotation, EdgeType::RIGHT, false);
-    auto bottomTileCoords = GetEdgeTile(mapSize, rotation, EdgeType::BOTTOM, false);
+    auto leftTileCoords = GetEdgeTile(rotation, EdgeType::LEFT);
+    auto rightTileCoords = GetEdgeTile(rotation, EdgeType::RIGHT);
+    auto bottomTileCoords = GetEdgeTile(rotation, EdgeType::BOTTOM);
 
     // Centre the coordinates so we don't have a hard crop at the edge of the visible tile
     leftTileCoords += CoordsXY(16, 16);
@@ -351,7 +351,7 @@ static rct_viewport GetGiantViewport(const TileCoordsXY& mapSize, int32_t rotati
 
     // Calculate the viewport bounds
     int32_t left = translate_3d_to_2d_with_z(rotation, CoordsXYZ(leftTileCoords, 0)).x;
-    int32_t top = GetTallestVisibleTileTop(mapSize, rotation);
+    int32_t top = GetTallestVisibleTileTop(rotation);
     int32_t right = translate_3d_to_2d_with_z(rotation, CoordsXYZ(rightTileCoords, 0)).x;
     int32_t bottom = translate_3d_to_2d_with_z(rotation, CoordsXYZ(bottomTileCoords, 0)).y;
 
@@ -400,7 +400,7 @@ void screenshot_giant()
             zoom = vp->zoom;
         }
 
-        auto viewport = GetGiantViewport(gMapSize, rotation, zoom);
+        auto viewport = GetGiantViewport(rotation, zoom);
         if (vp != nullptr)
         {
             viewport.flags = vp->flags;
@@ -465,7 +465,7 @@ static void benchgfx_render_screenshots(const char* inputPath, std::unique_ptr<I
         {
             auto& viewport = viewports[zoomIndex * NUM_ZOOM_LEVELS + rotation];
             auto& dpi = dpis[zoomIndex * NUM_ZOOM_LEVELS + rotation];
-            viewport = GetGiantViewport(gMapSize, rotation, zoom);
+            viewport = GetGiantViewport(rotation, zoom);
             dpi = CreateDPI(viewport);
         }
     }
@@ -659,7 +659,7 @@ int32_t cmdline_for_screenshot(const char** argv, int32_t argc, ScreenshotOption
             auto customZoom = static_cast<int8_t>(std::atoi(argv[3]));
             auto zoom = ZoomLevel{ customZoom };
             auto rotation = std::atoi(argv[4]) & 3;
-            viewport = GetGiantViewport(gMapSize, rotation, zoom);
+            viewport = GetGiantViewport(rotation, zoom);
             gCurrentRotation = rotation;
         }
         else
@@ -813,7 +813,7 @@ void CaptureImage(const CaptureOptions& options)
     }
     else
     {
-        viewport = GetGiantViewport(gMapSize, options.Rotation, options.Zoom);
+        viewport = GetGiantViewport(options.Rotation, options.Zoom);
     }
 
     auto backupRotation = gCurrentRotation;
