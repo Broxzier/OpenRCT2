@@ -44,6 +44,9 @@ using namespace std::literals::string_literals;
 using namespace OpenRCT2;
 using namespace OpenRCT2::Drawing;
 
+extern CoordsXY gClipSelectionA;
+extern CoordsXY gClipSelectionB;
+
 uint8_t gScreenshotCountdown = 0;
 
 static bool WriteDpiToFile(std::string_view path, const rct_drawpixelinfo* dpi, const GamePalette& palette)
@@ -215,11 +218,17 @@ enum class EdgeType
     BOTTOM
 };
 
-static CoordsXY GetEdgeTile(int32_t rotation, EdgeType edgeType, bool visible)
+static CoordsXY GetEdgeTile(int32_t rotation, EdgeType edgeType)
 {
-    int32_t lower = (visible ? 1 : 0) * COORDS_XY_STEP;
-    int32_t upperX = (visible ? gMapSize.x - 2 : gMapSize.x - 1) * COORDS_XY_STEP;
-    int32_t upperY = (visible ? gMapSize.y - 2 : gMapSize.y - 1) * COORDS_XY_STEP;
+    auto* const mainWindow = window_get_main();
+    const auto* const mainViewport = window_get_viewport(mainWindow);
+    const bool useViewClipping = (mainWindow != nullptr && mainViewport->flags & VIEWPORT_FLAG_CLIP_VIEW);
+
+    const auto lowerX = useViewClipping ? gClipSelectionA.x : 0;
+    const auto lowerY = useViewClipping ? gClipSelectionA.y : 0;
+    const auto upperX = useViewClipping ? gClipSelectionB.x : ((gMapSize.x - 1) * COORDS_XY_STEP);
+    const auto upperY = useViewClipping ? gClipSelectionB.y : ((gMapSize.y - 1) * COORDS_XY_STEP);
+
     switch (edgeType)
     {
         default:
@@ -228,37 +237,37 @@ static CoordsXY GetEdgeTile(int32_t rotation, EdgeType edgeType, bool visible)
             {
                 default:
                 case 0:
-                    return { upperX, lower };
+                    return { upperX, lowerY };
                 case 1:
                     return { upperX, upperY };
                 case 2:
-                    return { lower, upperY };
+                    return { lowerX, upperY };
                 case 3:
-                    return { lower, lower };
+                    return { lowerX, lowerY };
             }
         case EdgeType::TOP:
             switch (rotation)
             {
                 default:
                 case 0:
-                    return { lower, lower };
+                    return { lowerX, lowerY };
                 case 1:
-                    return { upperX, lower };
+                    return { upperX, lowerY };
                 case 2:
                     return { upperX, upperY };
                 case 3:
-                    return { lower, upperY };
+                    return { lowerX, upperY };
             }
         case EdgeType::RIGHT:
             switch (rotation)
             {
                 default:
                 case 0:
-                    return { lower, upperY };
+                    return { lowerX, upperY };
                 case 1:
-                    return { lower, lower };
+                    return { lowerX, lowerY };
                 case 2:
-                    return { upperX, lower };
+                    return { upperX, lowerY };
                 case 3:
                     return { upperX, upperY };
             }
@@ -269,11 +278,11 @@ static CoordsXY GetEdgeTile(int32_t rotation, EdgeType edgeType, bool visible)
                 case 0:
                     return { upperX, upperY };
                 case 1:
-                    return { lower, upperY };
+                    return { lowerX, upperY };
                 case 2:
-                    return { lower, lower };
+                    return { lowerX, lowerY };
                 case 3:
-                    return { upperY, lower };
+                    return { upperY, lowerY };
             }
     }
 }
@@ -293,12 +302,19 @@ static int32_t GetHighestBaseClearanceZ(const CoordsXY& location)
     return z;
 }
 
-static int32_t GetTallestVisibleTileTop(const TileCoordsXY& mapSize, int32_t rotation)
+static int32_t GetTallestVisibleTileTop(int32_t rotation)
 {
+    auto* const mainWindow = window_get_main();
+    const auto* const mainViewport = window_get_viewport(mainWindow);
+    const bool useViewClipping = (mainWindow != nullptr && mainViewport->flags & VIEWPORT_FLAG_CLIP_VIEW);
+
+    TileCoordsXY startCoords = useViewClipping ? TileCoordsXY(gClipSelectionA) : TileCoordsXY{ 1, 1 };
+    TileCoordsXY endCoords = useViewClipping ? TileCoordsXY(gClipSelectionB) : TileCoordsXY{ gMapSize.x - 2, gMapSize.y - 2 };
+
     int32_t minViewY = 0;
-    for (int32_t y = 1; y < mapSize.y - 1; y++)
+    for (int32_t y = startCoords.y; y <= endCoords.y; y++)
     {
-        for (int32_t x = 1; x < mapSize.x - 1; x++)
+        for (int32_t x = startCoords.x; x <= endCoords.x; x++)
         {
             auto location = TileCoordsXY(x, y).ToCoordsXY();
             int32_t z = GetHighestBaseClearanceZ(location);
@@ -345,9 +361,9 @@ static rct_viewport GetGiantViewport(int32_t rotation, ZoomLevel zoom)
     auto bottomTileCoords = GetEdgeTile(rotation, EdgeType::BOTTOM);
 
     // Centre the coordinates so we don't have a hard crop at the edge of the visible tile
-    leftTileCoords += CoordsXY(16, 16);
-    rightTileCoords += CoordsXY(16, 16);
-    bottomTileCoords += CoordsXY(16, 16);
+    leftTileCoords = leftTileCoords.ToTileCentre();
+    rightTileCoords = rightTileCoords.ToTileCentre();
+    bottomTileCoords = bottomTileCoords.ToTileCentre();
 
     // Calculate the viewport bounds
     int32_t left = translate_3d_to_2d_with_z(rotation, CoordsXYZ(leftTileCoords, 0)).x;
