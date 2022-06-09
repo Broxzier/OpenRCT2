@@ -33,6 +33,7 @@
 #include "../world/Surface.h"
 #include "Viewport.h"
 
+#include <algorithm>
 #include <cctype>
 #include <chrono>
 #include <cstdlib>
@@ -210,83 +211,6 @@ std::string screenshot_dump_png_32bpp(int32_t width, int32_t height, const void*
     }
 }
 
-enum class EdgeType
-{
-    LEFT,
-    TOP,
-    RIGHT,
-    BOTTOM
-};
-
-static CoordsXY GetEdgeTile(int32_t rotation, EdgeType edgeType)
-{
-    auto* const mainWindow = window_get_main();
-    const auto* const mainViewport = window_get_viewport(mainWindow);
-    const bool useViewClipping = (mainWindow != nullptr && mainViewport->flags & VIEWPORT_FLAG_CLIP_VIEW);
-
-    const auto lowerX = useViewClipping ? gClipSelectionA.x : 0;
-    const auto lowerY = useViewClipping ? gClipSelectionA.y : 0;
-    const auto upperX = useViewClipping ? gClipSelectionB.x : ((gMapSize.x - 1) * COORDS_XY_STEP);
-    const auto upperY = useViewClipping ? gClipSelectionB.y : ((gMapSize.y - 1) * COORDS_XY_STEP);
-
-    switch (edgeType)
-    {
-        default:
-        case EdgeType::LEFT:
-            switch (rotation)
-            {
-                default:
-                case 0:
-                    return { upperX, lowerY };
-                case 1:
-                    return { upperX, upperY };
-                case 2:
-                    return { lowerX, upperY };
-                case 3:
-                    return { lowerX, lowerY };
-            }
-        case EdgeType::TOP:
-            switch (rotation)
-            {
-                default:
-                case 0:
-                    return { lowerX, lowerY };
-                case 1:
-                    return { upperX, lowerY };
-                case 2:
-                    return { upperX, upperY };
-                case 3:
-                    return { lowerX, upperY };
-            }
-        case EdgeType::RIGHT:
-            switch (rotation)
-            {
-                default:
-                case 0:
-                    return { lowerX, upperY };
-                case 1:
-                    return { lowerX, lowerY };
-                case 2:
-                    return { upperX, lowerY };
-                case 3:
-                    return { upperX, upperY };
-            }
-        case EdgeType::BOTTOM:
-            switch (rotation)
-            {
-                default:
-                case 0:
-                    return { upperX, upperY };
-                case 1:
-                    return { lowerX, upperY };
-                case 2:
-                    return { lowerX, lowerY };
-                case 3:
-                    return { upperY, lowerY };
-            }
-    }
-}
-
 static int32_t GetHighestBaseClearanceZ(const CoordsXY& location)
 {
     int32_t z = 0;
@@ -302,15 +226,8 @@ static int32_t GetHighestBaseClearanceZ(const CoordsXY& location)
     return z;
 }
 
-static int32_t GetTallestVisibleTileTop(int32_t rotation)
+static int32_t GetTallestVisibleTileTop(int32_t rotation, TileCoordsXY startCoords, TileCoordsXY endCoords)
 {
-    auto* const mainWindow = window_get_main();
-    const auto* const mainViewport = window_get_viewport(mainWindow);
-    const bool useViewClipping = (mainWindow != nullptr && mainViewport->flags & VIEWPORT_FLAG_CLIP_VIEW);
-
-    TileCoordsXY startCoords = useViewClipping ? TileCoordsXY(gClipSelectionA) : TileCoordsXY{ 1, 1 };
-    TileCoordsXY endCoords = useViewClipping ? TileCoordsXY(gClipSelectionB) : TileCoordsXY{ gMapSize.x - 2, gMapSize.y - 2 };
-
     int32_t minViewY = 0;
     for (int32_t y = startCoords.y; y <= endCoords.y; y++)
     {
@@ -322,7 +239,7 @@ static int32_t GetTallestVisibleTileTop(int32_t rotation)
             minViewY = std::min(minViewY, viewY);
         }
     }
-    return minViewY - 256;
+    return minViewY;
 }
 
 static rct_drawpixelinfo CreateDPI(const rct_viewport& viewport)
@@ -356,21 +273,38 @@ static void ReleaseDPI(rct_drawpixelinfo& dpi)
 static rct_viewport GetGiantViewport(int32_t rotation, ZoomLevel zoom)
 {
     // Get the tile coordinates of each corner
-    auto leftTileCoords = GetEdgeTile(rotation, EdgeType::LEFT);
-    auto rightTileCoords = GetEdgeTile(rotation, EdgeType::RIGHT);
-    auto bottomTileCoords = GetEdgeTile(rotation, EdgeType::BOTTOM);
+    const TileCoordsXY cornerCoords[2][4] = {
+        { // Map corners
+            { 1, 1 },
+            { gMapSize.x - 2, gMapSize.y - 2 },
+            { 1, gMapSize.y - 2 },
+            { gMapSize.x - 2, 1 },
+        },
+        { // Horizontal view clipping corners
+            TileCoordsXY{ gClipSelectionA },
+            TileCoordsXY{ gClipSelectionB },
+            TileCoordsXY{ CoordsXY{ gClipSelectionA.x, gClipSelectionB.y } },
+            TileCoordsXY{ CoordsXY{ gClipSelectionB.x, gClipSelectionA.y } },
+        },
+    };
 
-    // Centre the coordinates so we don't have a hard crop at the edge of the visible tile
-    leftTileCoords = leftTileCoords.ToTileCentre();
-    rightTileCoords = rightTileCoords.ToTileCentre();
-    bottomTileCoords = bottomTileCoords.ToTileCentre();
+    auto* const mainWindow = window_get_main();
+    const auto* const mainViewport = window_get_viewport(mainWindow);
+    const bool useViewClipping = (mainViewport != nullptr && mainViewport->flags & VIEWPORT_FLAG_CLIP_VIEW);
 
     // Calculate the viewport bounds
-    int32_t left = translate_3d_to_2d_with_z(rotation, CoordsXYZ(leftTileCoords, 0)).x;
-    int32_t top = GetTallestVisibleTileTop(rotation);
-    int32_t right = translate_3d_to_2d_with_z(rotation, CoordsXYZ(rightTileCoords, 0)).x;
-    int32_t bottom = translate_3d_to_2d_with_z(rotation, CoordsXYZ(bottomTileCoords, 0)).y;
+    auto corners = cornerCoords[useViewClipping ? 1 : 0];
+    auto screenCoords1 = translate_3d_to_2d_with_z(rotation, { corners[0].ToCoordsXY().ToTileCentre(), 0 });
+    auto screenCoords2 = translate_3d_to_2d_with_z(rotation, { corners[1].ToCoordsXY().ToTileCentre(), 0 });
+    auto screenCoords3 = translate_3d_to_2d_with_z(rotation, { corners[2].ToCoordsXY().ToTileCentre(), 0 });
+    auto screenCoords4 = translate_3d_to_2d_with_z(rotation, { corners[3].ToCoordsXY().ToTileCentre(), 0 });
 
+    auto left = std::min({ screenCoords1.x, screenCoords2.x, screenCoords3.x, screenCoords4.x }) - 32;
+    auto top = GetTallestVisibleTileTop(rotation, corners[0], corners[1]);
+    auto bottom = std::max({ screenCoords1.y, screenCoords2.y, screenCoords3.y, screenCoords4.y });
+    auto right = std::max({ screenCoords1.x, screenCoords2.x, screenCoords3.x, screenCoords4.x }) + 32;
+
+    // Create the viewport
     rct_viewport viewport{};
     viewport.viewPos = { left, top };
     viewport.view_width = right - left;
