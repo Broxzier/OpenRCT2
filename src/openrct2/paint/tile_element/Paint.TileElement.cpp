@@ -49,7 +49,9 @@ void TileElementPaintSetup(PaintSession& session, const CoordsXY& mapCoords, boo
 {
     PROFILED_FUNCTION();
 
-    if (!MapIsEdge(mapCoords))
+    bool hasPseudoTiles = (session.ViewFlags & VIEWPORT_FLAG_GRIDLINES) != 0;
+    bool isVoidTile = MapIsEdge(mapCoords);
+    if (hasPseudoTiles || !isVoidTile)
     {
         PaintUtilSetSegmentSupportHeight(session, SEGMENTS_ALL, 0xFFFF, 0);
         PaintUtilForceSetGeneralSupportHeight(session, -1, 0);
@@ -135,11 +137,6 @@ static void PaintTileElementBase(PaintSession& session, const CoordsXY& origCoor
     session.MapPosition.x = coords.x;
     session.MapPosition.y = coords.y;
 
-    auto* tile_element = MapGetFirstElementAt(session.MapPosition);
-    if (tile_element == nullptr)
-        return;
-    uint8_t rotation = session.CurrentRotation;
-
     bool partOfVirtualFloor = false;
 
     if (gConfigGeneral.VirtualFloorStyle != VirtualFloorStyles::Off)
@@ -147,7 +144,7 @@ static void PaintTileElementBase(PaintSession& session, const CoordsXY& origCoor
         partOfVirtualFloor = VirtualFloorTileIsFloor(session.MapPosition);
     }
 
-    switch (rotation)
+    switch (session.CurrentRotation)
     {
         case 0:
             break;
@@ -163,13 +160,13 @@ static void PaintTileElementBase(PaintSession& session, const CoordsXY& origCoor
             break;
     }
 
-    int32_t screenMinY = Translate3DTo2DWithZ(rotation, { coords, 0 }).y;
+    int32_t screenMinY = Translate3DTo2DWithZ(session.CurrentRotation, { coords, 0 }).y;
 
     // Display little yellow arrow when building footpaths?
     if ((gMapSelectFlags & MAP_SELECT_FLAG_ENABLE_ARROW) && session.MapPosition.x == gMapSelectArrowPosition.x
         && session.MapPosition.y == gMapSelectArrowPosition.y)
     {
-        uint8_t arrowRotation = (rotation + (gMapSelectArrowDirection & 3)) & 3;
+        uint8_t arrowRotation = (session.CurrentRotation + (gMapSelectArrowDirection & 3)) & 3;
 
         uint32_t imageIndex = arrowRotation + (gMapSelectArrowDirection & 0xFC) + PEEP_SPAWN_ARROW_0;
         ImageId imageId = ImageId(imageIndex, COLOUR_YELLOW);
@@ -185,19 +182,23 @@ static void PaintTileElementBase(PaintSession& session, const CoordsXY& origCoor
     if (screenMinY + 52 <= session.DPI.y)
         return;
 
-    const TileElement* element = tile_element; // push tile_element
-
-    uint16_t max_height = 0;
-    do
+    uint16_t max_height = 6; // Hardcoded void tile height - should check for flag first
+    auto* tile_element = MapGetFirstElementAt(session.MapPosition);
+    if (tile_element != nullptr)
     {
-        max_height = std::max(max_height, static_cast<uint16_t>(element->GetClearanceZ()));
-    } while (!(element++)->IsLastForTile());
+        const TileElement* element = tile_element; // push tile_element
 
-    element--;
+        do
+        {
+            max_height = std::max(max_height, static_cast<uint16_t>(element->GetClearanceZ()));
+        } while (!(element++)->IsLastForTile());
 
-    if (element->GetType() == TileElementType::Surface && (element->AsSurface()->GetWaterHeight() > 0))
-    {
-        max_height = element->AsSurface()->GetWaterHeight();
+        element--;
+
+        if (element->GetType() == TileElementType::Surface && (element->AsSurface()->GetWaterHeight() > 0))
+        {
+            max_height = element->AsSurface()->GetWaterHeight();
+        }
     }
 
     if (partOfVirtualFloor)
@@ -214,7 +215,7 @@ static void PaintTileElementBase(PaintSession& session, const CoordsXY& origCoor
     session.Flags &= ~PaintSessionFlags::PassedSurface;
 
     int32_t previousBaseZ = 0;
-    do
+    if (tile_element != nullptr) do
     {
         if (tile_element->IsInvisible())
         {
@@ -225,7 +226,7 @@ static void PaintTileElementBase(PaintSession& session, const CoordsXY& origCoor
         if ((session.ViewFlags & VIEWPORT_FLAG_CLIP_VIEW) && (tile_element->GetBaseZ() > gClipHeight * COORDS_Z_STEP))
             continue;
 
-        Direction direction = tile_element->GetDirectionWithOffset(rotation);
+        Direction direction = tile_element->GetDirectionWithOffset(session.CurrentRotation);
         int32_t baseZ = tile_element->GetBaseZ();
 
         // If we are on a new baseZ level, look through elements on the
@@ -298,7 +299,7 @@ static void PaintTileElementBase(PaintSession& session, const CoordsXY& origCoor
         return;
     }
 
-    if ((tile_element - 1)->GetType() == TileElementType::Surface)
+    if (tile_element != nullptr && (tile_element - 1)->GetType() == TileElementType::Surface)
     {
         return;
     }

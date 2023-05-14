@@ -216,7 +216,7 @@ static constexpr const uint8_t Byte97B740[] = {
 struct TileDescriptor
 {
     TileCoordsXY tile_coords;
-    const TileElement* tile_element;
+    const SurfaceElement* surface;
     uint8_t terrain;
     uint8_t slope;
     CornerHeight corner_heights;
@@ -449,7 +449,7 @@ static void ViewportSurfaceSmoothenEdge(
 {
     PROFILED_FUNCTION();
 
-    if (neighbour.tile_element == nullptr)
+    if (neighbour.surface == nullptr)
         return;
 
     // The edge row consists of invisible grass tiles. Do not attempt to smooth with them.
@@ -553,10 +553,10 @@ static void ViewportSurfaceSmoothenEdge(
 
 static bool TileIsInsideClipView(const TileDescriptor& tile)
 {
-    if (tile.tile_element == nullptr)
+    if (tile.surface == nullptr)
         return false;
 
-    if (tile.tile_element->GetBaseZ() > gClipHeight * COORDS_Z_STEP)
+    if (tile.surface->GetBaseZ() > gClipHeight * COORDS_Z_STEP)
         return false;
 
     auto coords = tile.tile_coords.ToCoordsXY();
@@ -622,16 +622,16 @@ static void ViewportSurfaceDrawTileSideBottom(
 
     bool neighbourIsClippedAway = (session.ViewFlags & VIEWPORT_FLAG_CLIP_VIEW) && !TileIsInsideClipView(neighbour);
 
-    if (neighbour.tile_element == nullptr || neighbourIsClippedAway)
+    if (neighbour.surface == nullptr || neighbourIsClippedAway)
     {
         // The neighbour tile doesn't exist or isn't drawn - assume minimum height to draw full edges
         neighbourCornerHeight2 = MINIMUM_LAND_HEIGHT / 2;
         neighbourCornerHeight1 = MINIMUM_LAND_HEIGHT / 2;
     }
 
-    if (isWater && neighbour.tile_element != nullptr)
+    if (isWater && neighbour.surface != nullptr)
     {
-        auto waterHeight = neighbour.tile_element->AsSurface()->GetWaterHeight() / (COORDS_Z_STEP * 2);
+        auto waterHeight = neighbour.surface->GetWaterHeight() / (COORDS_Z_STEP * 2);
         if (waterHeight == height && !neighbourIsClippedAway)
         {
             // Don't draw the edge when the neighbour's water level is the same
@@ -827,7 +827,7 @@ static void ViewportSurfaceDrawTileSideTop(
     }
 
     // save ecx
-    if (neighbour.tile_element == nullptr)
+    if (neighbour.surface == nullptr)
     {
         neighbourCornerHeight1 = 1;
         neighbourCornerHeight2 = 1;
@@ -836,7 +836,7 @@ static void ViewportSurfaceDrawTileSideTop(
     {
         if (isWater)
         {
-            auto waterHeight = neighbour.tile_element->AsSurface()->GetWaterHeight() / (COORDS_Z_STEP * 2);
+            auto waterHeight = neighbour.surface->GetWaterHeight() / (COORDS_Z_STEP * 2);
             if (height == waterHeight)
             {
                 return;
@@ -1033,11 +1033,10 @@ void PaintSurface(PaintSession& session, uint8_t direction, uint16_t height, con
     const uint8_t surfaceShape = ViewportSurfacePaintSetupGetRelativeSlope(tileElement, rotation);
     const CoordsXY& base = session.SpritePosition;
     const CornerHeight& cornerHeights = corner_heights[surfaceShape];
-    const TileElement* elementPtr = &reinterpret_cast<const TileElement&>(tileElement);
 
     TileDescriptor selfDescriptor = {
         TileCoordsXY(base),
-        elementPtr,
+        &tileElement,
         static_cast<uint8_t>(terrain_type),
         surfaceShape,
         {
@@ -1058,12 +1057,20 @@ void PaintSurface(PaintSession& session, uint8_t direction, uint16_t height, con
 
         TileDescriptor& descriptor = tileDescriptors[i + 1];
 
-        descriptor.tile_element = nullptr;
-        if (!MapIsLocationValid(position))
+        if (MapIsEdge(position))
         {
+            descriptor.tile_coords = TileCoordsXY{ position };
+            descriptor.surface = nullptr;
+            descriptor.terrain = 0; // Hardcoded
+            descriptor.slope = 0; // Flat surface
+            descriptor.corner_heights.top = 6;
+            descriptor.corner_heights.right = 6;
+            descriptor.corner_heights.bottom = 6;
+            descriptor.corner_heights.left = 6;
             continue;
         }
 
+        descriptor.surface = nullptr;
         auto surfaceElement = MapGetSurfaceElementAt(position);
         if (surfaceElement == nullptr)
         {
@@ -1075,7 +1082,7 @@ void PaintSurface(PaintSession& session, uint8_t direction, uint16_t height, con
         const CornerHeight& ch = corner_heights[surfaceSlope];
 
         descriptor.tile_coords = TileCoordsXY{ position };
-        descriptor.tile_element = reinterpret_cast<TileElement*>(surfaceElement);
+        descriptor.surface = surfaceElement;
         descriptor.terrain = surfaceElement->GetSurfaceStyle();
         descriptor.slope = surfaceSlope;
         descriptor.corner_heights.top = baseHeight + ch.top;
@@ -1138,7 +1145,7 @@ void PaintSurface(PaintSession& session, uint8_t direction, uint16_t height, con
             imageId = imageId.WithTransparency(FilterPaletteID::PaletteDarken1);
         }
 
-        if (OpenRCT2::TileInspector::IsElementSelected(elementPtr))
+        if (OpenRCT2::TileInspector::IsElementSelected(tileElement.as<TileElement>()))
         {
             imageId = imageId.WithRemap(FilterPaletteID::PaletteGhost);
         }
